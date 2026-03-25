@@ -1,0 +1,100 @@
+// prisma/schema.prisma
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  name      String
+  password  String
+  level     String   @default("A1")
+  xp        Int      @default(0)
+  streak    Int      @default(0)
+  lastLogin DateTime?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  attempts  Attempt[]
+
+  @@map("users")
+}
+
+model Question {
+  id            Int      @id @default(autoincrement())
+  type          QuestionType
+  level         Level
+  category      Category
+  question      String   @db.Text
+  choices       Json?
+  correctAnswer String   @db.Text
+  explanation   String?  @db.Text
+  points        Int      @default(10)
+  createdAt     DateTime @default(now())
+
+  attempts      Attempt[]
+
+  @@map("questions")
+}
+
+model Attempt {
+  id         Int      @id @default(autoincrement())
+  userId     Int
+  questionId Int
+  userAnswer String   @db.Text
+  isCorrect  Boolean
+  score      Int      @default(0)
+  createdAt  DateTime @default(now())
+
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  question   Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+
+  @@map("attempts")
+}
+
+model Lesson {
+  id          Int      @id @default(autoincrement())
+  slug        String   @unique
+  title       String
+  description String   @db.Text
+  level       Level
+  subject     Subject
+  order       Int      @default(0)
+  content     Json     // array of { type: 'rule'|'example'|'tip'|'warning', text, highlight? }
+  createdAt   DateTime @default(now())
+
+  @@map("lessons")
+}
+
+enum QuestionType {
+  QCM
+  OPEN
+}
+
+enum Level {
+  A1
+  A2
+  B1
+  B2
+  C1
+  C2
+}
+
+enum Category {
+  GRAMMAR
+  VOCABULARY
+  READING
+  LISTENING
+}
+
+enum Subject {
+  GRAMMAR
+  CONJUGATION
+  SPELLING
+  VOCABULARY
+}
