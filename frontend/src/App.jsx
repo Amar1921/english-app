@@ -9,8 +9,10 @@ import AuthPage from './pages/AuthPage';
 import DashboardPage from './pages/DashboardPage';
 import QuizPage from './pages/QuizPage';
 import ProgressPage from './pages/ProgressPage';
-import LessonsPage from './pages/LessonsPage';
+// import LessonsPage from './pages/LessonsPage';
 import Layout from './components/Layout';
+import LessonsPage from "./pages/lessons/LessonsPage.jsx";
+import LessonDetail from "./pages/lessons/LessonDetail.jsx";
 
 function ProtectedRoute({ children }) {
   const { token, initialized } = useSelector((s) => s.auth);
@@ -51,6 +53,7 @@ export default function App() {
             <Route path="quiz" element={<QuizPage />} />
             <Route path="progress" element={<ProgressPage />} />
             <Route path="lessons" element={<LessonsPage />} />
+            <Route path="lessons/:slug" element={<LessonDetail />} />
           </Route>
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>

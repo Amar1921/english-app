@@ -1,12 +1,13 @@
+// src/routes/auth.js
 import { Router } from 'express';
 import {
-    register,
-    login,
-    getMe,
-    verifyEmail,
-    resendVerification,
-    forgotPassword,
-    resetPassword,
+  register,
+  login,
+  getMe,
+  verifyEmail,
+  resendVerification,
+  forgotPassword,
+  resetPassword,
 } from '../controllers/authController.js';
 import { authenticate } from '../middleware/auth.js';
 import { authLimiter } from '../middleware/rateLimiter.js';

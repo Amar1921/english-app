@@ -8,7 +8,7 @@ import progressRoutes from './routes/progress.js';
 import lessonsRoutes from './routes/lessons.js';
 
 const app = express();
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 4005;
 
 // Security
 app.use(helmet());

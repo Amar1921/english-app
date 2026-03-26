@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+
+# Bloquer les routes privées
+Disallow: /api/
+Disallow: /dashboard
+Disallow: /quiz
+Disallow: /progress
+Disallow: /lessons
+
+# Autoriser les pages publiques
+Allow: /$
+Allow: /login
+Allow: /register
+
+Sitemap: https://learn.amarsyll.pro/sitemap.xml

@@ -9,35 +9,58 @@ datasource db {
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
-  email     String   @unique
-  name      String
-  password  String
-  level     String   @default("A1")
-  xp        Int      @default(0)
-  streak    Int      @default(0)
-  lastLogin DateTime?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id        Int       @id @default(autoincrement())
+  email     String    @unique @db.VarChar(191)
+  name      String    @db.VarChar(191)
+  password  String    @db.VarChar(191)
+  level     String    @default("A1") @db.VarChar(191)
+  xp        Int       @default(0)
+  streak    Int       @default(0)
+  lastLogin DateTime? @db.DateTime(3)
+  createdAt DateTime  @default(now()) @db.DateTime(3)
+  updatedAt DateTime  @updatedAt @db.DateTime(3)
 
-  attempts  Attempt[]
+  isVerified        Boolean   @default(false)
+  verifyCode        String?   @db.VarChar(6)
+  verifyCodeExpires DateTime? @db.DateTime(3)
+
+  resetToken        String?   @db.VarChar(64)
+  resetTokenExpires DateTime? @db.DateTime(3)
+
+  attempts Attempt[]
+  progress UserProgress[]
 
   @@map("users")
 }
 
+model UserProgress {
+  id          Int            @id @default(autoincrement())
+  userId      Int            @map("user_id")
+  lessonId    String         @map("lesson_id") @db.VarChar(100) // slug du JSON
+  status      ProgressStatus @default(NOT_STARTED)
+  xpEarned    Int            @default(0) @map("xp_earned")
+  completedAt DateTime?      @map("completed_at") @db.DateTime(3)
+  updatedAt   DateTime       @updatedAt @map("updated_at") @db.DateTime(3)
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, lessonId])
+  @@map("user_progress")
+}
+
 model Question {
-  id            Int      @id @default(autoincrement())
+  id            Int          @id @default(autoincrement())
   type          QuestionType
   level         Level
   category      Category
-  question      String   @db.Text
+  question      String       @db.Text
   choices       Json?
-  correctAnswer String   @db.Text
-  explanation   String?  @db.Text
-  points        Int      @default(10)
-  createdAt     DateTime @default(now())
+  correctAnswer String       @map("correctAnswer") @db.Text
+  explanation   String?      @db.Text
+  points        Int          @default(10)
+  createdAt     DateTime     @default(now()) @db.DateTime(3)
 
-  attempts      Attempt[]
+  attempts Attempt[]
 
   @@map("questions")
 }
@@ -49,26 +72,18 @@ model Attempt {
   userAnswer String   @db.Text
   isCorrect  Boolean
   score      Int      @default(0)
-  createdAt  DateTime @default(now())
+  createdAt  DateTime @default(now()) @db.DateTime(3)
 
-  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  question   Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  question Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
 
   @@map("attempts")
 }
 
-model Lesson {
-  id          Int      @id @default(autoincrement())
-  slug        String   @unique
-  title       String
-  description String   @db.Text
-  level       Level
-  subject     Subject
-  order       Int      @default(0)
-  content     Json     // array of { type: 'rule'|'example'|'tip'|'warning', text, highlight? }
-  createdAt   DateTime @default(now())
-
-  @@map("lessons")
+enum ProgressStatus {
+  NOT_STARTED
+  IN_PROGRESS
+  COMPLETED
 }
 
 enum QuestionType {
@@ -97,4 +112,8 @@ enum Subject {
   CONJUGATION
   SPELLING
   VOCABULARY
+  PRONUNCIATION
+  IDIOMS
+  WRITING
+  LISTENING
 }
