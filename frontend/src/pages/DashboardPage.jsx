@@ -1,15 +1,27 @@
-import React, { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, {useEffect} from 'react';
+import {useNavigate} from 'react-router-dom';
 import {
-  Box, Grid, Card, CardContent, Typography, Button,
-  LinearProgress, Chip, Avatar, Stack, useTheme,
+    Avatar,
+    Box,
+    Button,
+    Card,
+    CardContent,
+    Chip,
+    Grid,
+    LinearProgress,
+    Stack,
+    Typography,
+    useTheme,
 } from '@mui/material';
 import {
-  SchoolRounded, BarChartRounded, LocalFireDepartmentRounded,
-  EmojiEventsRounded, ArrowForwardRounded, StarRounded,
+    ArrowForwardRounded,
+    EmojiEventsRounded,
+    LocalFireDepartmentRounded,
+    SchoolRounded,
+    StarRounded,
 } from '@mui/icons-material';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchProgress } from '../store/slices/progressSlice';
+import {useDispatch, useSelector} from 'react-redux';
+import {fetchProgress} from '../store/slices/progressSlice';
 
 const LEVEL_ORDER = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
 const LEVEL_COLORS = {

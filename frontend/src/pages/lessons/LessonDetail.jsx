@@ -1,15 +1,31 @@
-import React, {useEffect, useState} from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import React, {useEffect} from 'react';
+import {useNavigate, useParams} from 'react-router-dom';
 import {
-  Box, Typography, Chip, Button, Divider, Paper,
-  Table, TableBody, TableCell, TableHead, TableRow,
-  useTheme, Tooltip, LinearProgress,
+  Box,
+  Button,
+  Chip,
+  Divider,
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableRow,
+  Typography,
+  useTheme,
 } from '@mui/material';
 import {
-  ArrowBackRounded, AccessTimeRounded, BoltRounded,
-  WarningAmberRounded, TipsAndUpdatesRounded, InfoRounded,
-  ErrorRounded, CheckCircleRounded, StarRounded,
-  MenuBookRounded, AutoStoriesRounded, EmojiObjectsRounded,
+  AccessTimeRounded,
+  ArrowBackRounded,
+  AutoStoriesRounded,
+  BoltRounded,
+  CheckCircleRounded,
+  EmojiObjectsRounded,
+  ErrorRounded,
+  InfoRounded,
+  MenuBookRounded,
+  StarRounded,
+  TipsAndUpdatesRounded,
+  WarningAmberRounded,
 } from '@mui/icons-material';
 import lessonsData from '../../data/lessons.json';
 

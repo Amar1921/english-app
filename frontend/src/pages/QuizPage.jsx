@@ -1,20 +1,33 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, {useEffect, useState} from 'react';
 import {
-    Box, Card, CardContent, Typography, Button, TextField, Chip,
-    Select, MenuItem, FormControl, InputLabel, LinearProgress,
-    Stack, CircularProgress, Divider,
+    Box,
+    Button,
+    Card,
+    CardContent,
+    Chip,
+    CircularProgress,
+    Divider,
+    FormControl,
+    InputLabel,
+    MenuItem,
+    Select,
+    TextField,
+    Typography,
 } from '@mui/material';
 import {
-    CheckCircleRounded, CancelRounded, ArrowForwardRounded,
-    RefreshRounded, EmojiEventsRounded, SchoolRounded,
-    BoltRounded, TimerRounded, TrendingUpRounded,
-    SentimentVerySatisfiedRounded, SentimentNeutralRounded, SentimentVeryDissatisfiedRounded,
+    ArrowForwardRounded,
+    BoltRounded,
+    CancelRounded,
+    CheckCircleRounded,
+    RefreshRounded,
+    SchoolRounded,
+    SentimentNeutralRounded,
+    SentimentVeryDissatisfiedRounded,
+    SentimentVerySatisfiedRounded,
+    TrendingUpRounded,
 } from '@mui/icons-material';
-import { useDispatch, useSelector } from 'react-redux';
-import {
-    fetchQuestions, submitAnswer, nextQuestion,
-    resetSession, setFilters,
-} from '../store/slices/quizSlice';
+import {useDispatch, useSelector} from 'react-redux';
+import {fetchQuestions, nextQuestion, resetSession, setFilters, submitAnswer,} from '../store/slices/quizSlice';
 
 const LEVELS = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
 const CATEGORIES = ['', 'GRAMMAR', 'VOCABULARY', 'READING', 'LISTENING'];

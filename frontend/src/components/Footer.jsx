@@ -1,11 +1,14 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
+import {Box, Container, Divider, Link, Typography, useTheme,} from '@mui/material';
 import {
-    Box, Container, Typography, IconButton, Divider, Link, useTheme,
-} from '@mui/material';
-import {
-    SchoolRounded, HomeRounded, MenuBookRounded,
-    BarChartRounded, GitHub, EmailRounded, OpenInNewRounded,
+    BarChartRounded,
+    EmailRounded,
+    GitHub,
+    HomeRounded,
+    MenuBookRounded,
+    OpenInNewRounded,
+    SchoolRounded,
 } from '@mui/icons-material';
 
 const YEAR = new Date().getFullYear();

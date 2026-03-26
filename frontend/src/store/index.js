@@ -1,4 +1,4 @@
-import { configureStore } from '@reduxjs/toolkit';
+import {configureStore} from '@reduxjs/toolkit';
 import authReducer from './slices/authSlice';
 import quizReducer from './slices/quizSlice';
 import progressReducer from './slices/progressSlice';

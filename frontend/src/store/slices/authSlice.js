@@ -1,5 +1,5 @@
 // src/store/slices/authSlice.js
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import {createAsyncThunk, createSlice} from '@reduxjs/toolkit';
 import api from '../../utils/api';
 
 // ─── Thunks ───────────────────────────────────────────────────────────────────

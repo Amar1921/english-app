@@ -1,9 +1,8 @@
 // src/controllers/authController.js
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
-import crypto from 'crypto';
 import prisma from '../prisma.js';
-import { sendVerificationEmail, sendPasswordResetEmail } from '../services/mailService.js';
+import {sendPasswordResetEmail, sendVerificationEmail} from '../services/mailService.js';
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 

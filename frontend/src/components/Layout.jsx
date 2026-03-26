@@ -1,19 +1,38 @@
-import React, { useState } from 'react';
-import { Outlet, useNavigate, useLocation } from 'react-router-dom';
+import React, {useState} from 'react';
+import {Outlet, useLocation, useNavigate} from 'react-router-dom';
 import {
-  AppBar, Toolbar, Box, IconButton, Typography, Button,
-  Avatar, Chip, Tooltip, useTheme, Container,
-  Drawer, List, ListItemButton, ListItemIcon, ListItemText,
+  AppBar,
+  Avatar,
+  Box,
+  Button,
+  Chip,
+  Container,
   Divider,
+  Drawer,
+  IconButton,
+  List,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
+  Toolbar,
+  Tooltip,
+  Typography,
+  useTheme,
 } from '@mui/material';
 import {
-  DarkMode, LightMode, LogoutRounded,
-  SchoolRounded, BarChartRounded, HomeRounded, MenuBookRounded,
-  MenuRounded, CloseRounded,
+  BarChartRounded,
+  CloseRounded,
+  DarkMode,
+  HomeRounded,
+  LightMode,
+  LogoutRounded,
+  MenuBookRounded,
+  MenuRounded,
+  SchoolRounded,
 } from '@mui/icons-material';
-import { useDispatch, useSelector } from 'react-redux';
-import { toggleTheme } from '../store/slices/themeSlice';
-import { logout } from '../store/slices/authSlice';
+import {useDispatch, useSelector} from 'react-redux';
+import {toggleTheme} from '../store/slices/themeSlice';
+import {logout} from '../store/slices/authSlice';
 import Footer from "./Footer.jsx";
 
 const LEVEL_COLORS = {

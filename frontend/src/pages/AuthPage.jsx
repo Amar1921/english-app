@@ -1,22 +1,43 @@
 // src/pages/AuthPage.jsx
-import React, { useState, useEffect, useRef } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import React, {useEffect, useRef, useState} from 'react';
+import {Link, useNavigate} from 'react-router-dom';
 import {
-  Box, Card, CardContent, Typography, TextField, Button,
-  Alert, IconButton, InputAdornment, Divider, CircularProgress,
-  Stack,
+    Alert,
+    Box,
+    Button,
+    Card,
+    CardContent,
+    CircularProgress,
+    Divider,
+    IconButton,
+    InputAdornment,
+    Stack,
+    TextField,
+    Typography,
 } from '@mui/material';
 import {
-  Visibility, VisibilityOff, SchoolRounded, LightMode, DarkMode,
-  MarkEmailReadRounded, ArrowBackRounded, CheckCircleRounded,
+    ArrowBackRounded,
+    CheckCircleRounded,
+    DarkMode,
+    LightMode,
+    MarkEmailReadRounded,
+    SchoolRounded,
+    Visibility,
+    VisibilityOff,
 } from '@mui/icons-material';
-import { useDispatch, useSelector } from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {
-  login, register, verifyEmail, resendVerification,
-  forgotPassword, resetPassword,
-  clearError, startResetFlow, cancelResetFlow,
+    cancelResetFlow,
+    clearError,
+    forgotPassword,
+    login,
+    register,
+    resendVerification,
+    resetPassword,
+    startResetFlow,
+    verifyEmail,
 } from '../store/slices/authSlice';
-import { toggleTheme } from '../store/slices/themeSlice';
+import {toggleTheme} from '../store/slices/themeSlice';
 
 // ─── Code Input (6 chiffres) ──────────────────────────────────────────────────
 

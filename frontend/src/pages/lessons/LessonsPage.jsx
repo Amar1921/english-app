@@ -1,14 +1,29 @@
-import React, { useState, useMemo } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, {useMemo, useState} from 'react';
+import {useNavigate} from 'react-router-dom';
 import {
-  Box, Typography, Chip, TextField, InputAdornment,
-  Card, CardActionArea, CardContent, LinearProgress,
-  useTheme, ToggleButtonGroup, ToggleButton, Tooltip,
+  Box,
+  Card,
+  CardActionArea,
+  CardContent,
+  Chip,
+  InputAdornment,
+  LinearProgress,
+  TextField,
+  ToggleButton,
+  ToggleButtonGroup,
+  Tooltip,
+  Typography,
+  useTheme,
 } from '@mui/material';
 import {
-  SearchRounded, MenuBookRounded, AutoStoriesRounded,
-  EmojiObjectsRounded, AccessTimeRounded, BoltRounded,
-  SchoolRounded, CheckCircleRounded,
+  AccessTimeRounded,
+  AutoStoriesRounded,
+  BoltRounded,
+  CheckCircleRounded,
+  EmojiObjectsRounded,
+  MenuBookRounded,
+  SchoolRounded,
+  SearchRounded,
 } from '@mui/icons-material';
 import lessonsData from '../../data/lessons.json';
 

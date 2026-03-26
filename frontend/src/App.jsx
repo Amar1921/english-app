@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { ThemeProvider, CssBaseline, Box, CircularProgress } from '@mui/material';
-import { useDispatch, useSelector } from 'react-redux';
-import { getTheme } from './theme/theme';
-import { fetchMe } from './store/slices/authSlice';
+import React, {useEffect} from 'react';
+import {BrowserRouter, Navigate, Route, Routes} from 'react-router-dom';
+import {Box, CircularProgress, CssBaseline, ThemeProvider} from '@mui/material';
+import {useDispatch, useSelector} from 'react-redux';
+import {getTheme} from './theme/theme';
+import {fetchMe} from './store/slices/authSlice';
 
 import AuthPage from './pages/AuthPage';
 import DashboardPage from './pages/DashboardPage';

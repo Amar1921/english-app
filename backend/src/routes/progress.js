@@ -1,10 +1,6 @@
-import { Router } from 'express';
-import {
-    getProgress,
-    getLeaderboard,
-    updateProgress,
-} from '../controllers/progressController.js';
-import { authenticate } from '../middleware/auth.js';
+import {Router} from 'express';
+import {getLeaderboard, getProgress, updateProgress,} from '../controllers/progressController.js';
+import {authenticate} from '../middleware/auth.js';
 
 const router = Router();
 

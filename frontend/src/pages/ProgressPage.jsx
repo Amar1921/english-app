@@ -1,14 +1,26 @@
-import React, { useEffect } from 'react';
+import React, {useEffect} from 'react';
 import {
-  Box, Grid, Card, CardContent, Typography, LinearProgress,
-  Stack, Chip, Avatar, CircularProgress, Divider,
+    Avatar,
+    Box,
+    Card,
+    CardContent,
+    Chip,
+    CircularProgress,
+    Divider,
+    Grid,
+    LinearProgress,
+    Stack,
+    Typography,
 } from '@mui/material';
 import {
-  TrendingUpRounded, EmojiEventsRounded, CheckCircleRounded,
-  CancelRounded, LocalFireDepartmentRounded,
+    CancelRounded,
+    CheckCircleRounded,
+    EmojiEventsRounded,
+    LocalFireDepartmentRounded,
+    TrendingUpRounded,
 } from '@mui/icons-material';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchProgress, fetchLeaderboard } from '../store/slices/progressSlice';
+import {useDispatch, useSelector} from 'react-redux';
+import {fetchLeaderboard, fetchProgress} from '../store/slices/progressSlice';
 
 const LEVEL_COLORS = {
   A1: '#22C55E', A2: '#84CC16', B1: '#F59E0B',

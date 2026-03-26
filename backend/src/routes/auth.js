@@ -1,15 +1,15 @@
-import { Router } from 'express';
+import {Router} from 'express';
 import {
-    register,
-    login,
-    getMe,
-    verifyEmail,
-    resendVerification,
     forgotPassword,
+    getMe,
+    login,
+    register,
+    resendVerification,
     resetPassword,
+    verifyEmail,
 } from '../controllers/authController.js';
-import { authenticate } from '../middleware/auth.js';
-import { authLimiter } from '../middleware/rateLimiter.js';
+import {authenticate} from '../middleware/auth.js';
+import {authLimiter} from '../middleware/rateLimiter.js';
 
 const router = Router();
 

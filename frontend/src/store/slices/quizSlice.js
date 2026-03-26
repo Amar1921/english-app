@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import {createAsyncThunk, createSlice} from '@reduxjs/toolkit';
 import api from '../../utils/api';
 
 export const fetchQuestions = createAsyncThunk('quiz/fetchQuestions', async (params, { rejectWithValue }) => {
