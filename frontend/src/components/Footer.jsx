@@ -159,20 +159,6 @@ export default function Footer() {
                                 <GitHub sx={{ fontSize: 14 }} />
                                 github.com
                             </Link>
-                            <Link
-                                href="https://amarsyll.pro"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                underline="none"
-                                sx={{
-                                    display: 'flex', alignItems: 'center', gap: 1,
-                                    color: 'text.secondary', fontSize: 14,
-                                    '&:hover': { color: 'primary.main' },
-                                }}
-                            >
-                                <OpenInNewRounded sx={{ fontSize: 14 }} />
-                                amarsyll.pro
-                            </Link>
                         </Box>
                     </Box>
                 </Box>

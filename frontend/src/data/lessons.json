@@ -7,34 +7,45 @@
       "themeIcon": "grammar",
       "title": "Le verbe To Be (être)",
       "slug": "verbe-to-be",
-      "duration": 10,
+      "duration": 15,
       "xpReward": 20,
-      "summary": "Apprenez à utiliser le verbe fondamental 'to be' pour parler de vous et des autres.",
-      "explanation": "Le verbe 'to be' est le verbe le plus important en anglais. Il s'utilise pour dire qui on est, comment on se sent, ou décrire quelque chose. Contrairement au français, il ne se conjugue qu'avec trois formes au présent : am, is, are.",
+      "summary": "Le verbe le plus fondamental en anglais — maîtrisez ses 3 formes et évitez les erreurs classiques.",
+      "explanation": "Le verbe 'to be' est le pilier de la langue anglaise. Il sert à identifier (qui on est), décrire (comment on est), situer (où on est) et former des temps composés. Contrairement au français qui conjugue 'être' avec 6 formes, l'anglais n'en a que 3 au présent : AM (uniquement avec I), IS (he/she/it), ARE (you/we/they).",
       "conjugation": {
-        "title": "Conjugaison au présent",
+        "title": "Conjugaison complète au présent",
         "rows": [
-          { "pronoun": "I", "form": "am", "negative": "am not", "short": "I'm" },
-          { "pronoun": "You", "form": "are", "negative": "are not / aren't", "short": "You're" },
-          { "pronoun": "He / She / It", "form": "is", "negative": "is not / isn't", "short": "He's / She's / It's" },
-          { "pronoun": "We / They", "form": "are", "negative": "are not / aren't", "short": "We're / They're" }
+          { "pronoun": "I", "form": "am", "negative": "am not (I'm not)", "short": "I'm" },
+          { "pronoun": "You", "form": "are", "negative": "are not (aren't)", "short": "You're" },
+          { "pronoun": "He", "form": "is", "negative": "is not (isn't)", "short": "He's" },
+          { "pronoun": "She", "form": "is", "negative": "is not (isn't)", "short": "She's" },
+          { "pronoun": "It", "form": "is", "negative": "is not (isn't)", "short": "It's" },
+          { "pronoun": "We", "form": "are", "negative": "are not (aren't)", "short": "We're" },
+          { "pronoun": "They", "form": "are", "negative": "are not (aren't)", "short": "They're" }
         ]
       },
       "examples": [
-        { "en": "I am a student.", "fr": "Je suis étudiant(e)." },
-        { "en": "She is happy today.", "fr": "Elle est heureuse aujourd'hui." },
-        { "en": "They are not French.", "fr": "Ils ne sont pas français." },
-        { "en": "Are you tired?", "fr": "Tu es fatigué(e) ?" }
+        { "en": "I am a doctor.", "fr": "Je suis médecin. (profession = pas d'article en anglais)" },
+        { "en": "I am 25 years old.", "fr": "J'ai 25 ans. (âge = 'to be' en anglais, pas 'to have')" },
+        { "en": "She is very tall and elegant.", "fr": "Elle est très grande et élégante." },
+        { "en": "They are not from France — they are from Belgium.", "fr": "Ils ne sont pas français — ils sont belges." },
+        { "en": "Are you ready? — Yes, I am. / No, I'm not.", "fr": "Tu es prêt(e) ? — Oui. / Non." },
+        { "en": "It is cold today, isn't it?", "fr": "Il fait froid aujourd'hui, non ? (tag question)" },
+        { "en": "We are really happy to be here.", "fr": "Nous sommes vraiment heureux d'être ici." },
+        { "en": "Is he your brother or your cousin?", "fr": "C'est ton frère ou ton cousin ?" }
       ],
       "exceptions": [
-        { "text": "On n'utilise jamais 'I is' ou 'I are' — uniquement 'I am'.", "type": "error" },
-        { "text": "Dans les questions, l'ordre change : 'Are you…?' et non 'You are…?'", "type": "rule" }
+        { "text": "ERREUR CLASSIQUE : 'I is' ou 'I are' n'existent pas. 'I' utilise TOUJOURS 'am'. Même règle pour 'I am not' (jamais 'I amn't').", "type": "error" },
+        { "text": "En anglais, on utilise 'to be' pour l'âge et la météo là où le français utilise 'avoir' et 'faire' : I am 30 (j'ai 30 ans), It is hot (il fait chaud).", "type": "rule" },
+        { "text": "Pour les professions, on omet l'article après 'to be' : 'She is a teacher' (✓) mais pas 'She is teacher' (✗). L'article 'a/an' reste cependant présent !", "type": "rule" },
+        { "text": "Distinction 'it's' vs 'its' : 'it's' = it is (contraction). 'its' = son/sa/ses possessif. 'It's a cat and its fur is white' = C'est un chat et sa fourrure est blanche.", "type": "error" },
+        { "text": "Au passé : I/he/she/it WAS — you/we/they WERE. 'I was tired yesterday.' / 'They were late.'", "type": "info" }
       ],
       "notes": [
-        { "icon": "tip", "text": "Les contractions (I'm, She's…) sont très utilisées à l'oral et dans les textes informels." },
-        { "icon": "warning", "text": "Ne confondez pas 'it's' (it is) et 'its' (son/sa possessif)." }
+        { "icon": "tip", "text": "Les contractions (I'm, she's, we're…) sont obligatoires à l'oral et dans les écrits informels. Les formes pleines sonnent très formelles ou emphatiques : 'I AM your father' (insistance)." },
+        { "icon": "warning", "text": "La question négative 'Isn't it?' ou 'Aren't you?' sert de tag question pour chercher confirmation. En français : 'n'est-ce pas ?'." },
+        { "icon": "important", "text": "Trois usages principaux : (1) Identité/description : 'I am French.' (2) Localisation : 'She is at home.' (3) État temporaire : 'He is tired.' Apprenez à reconnaître lequel s'applique !" }
       ],
-      "keyPoints": ["am / is / are", "Contractions courantes", "Forme interrogative", "Forme négative"]
+      "keyPoints": ["am / is / are", "Contractions I'm / she's / we're", "Âge et météo avec to be", "Forme interrogative (inversion)", "Forme négative avec not", "it's ≠ its"]
     },
     {
       "id": "a1-verbe-avoir",
@@ -43,32 +54,39 @@
       "themeIcon": "grammar",
       "title": "Le verbe To Have (avoir)",
       "slug": "verbe-to-have",
-      "duration": 10,
+      "duration": 15,
       "xpReward": 20,
-      "summary": "Maîtrisez le verbe 'to have' pour exprimer la possession et les caractéristiques.",
-      "explanation": "Le verbe 'to have' exprime la possession en anglais. Il existe deux formes courantes : 'have' et 'has'. À la forme interrogative et négative, on utilise l'auxiliaire 'do/does'.",
+      "summary": "Exprimez la possession, les relations et les caractéristiques physiques avec 'to have'.",
+      "explanation": "Le verbe 'to have' exprime principalement la possession. Contrairement au français, il ne s'utilise pas pour l'âge (= 'to be') ni pour la faim/soif (= 'to be hungry/thirsty'). Au présent, il a deux formes : HAVE (I/you/we/they) et HAS (he/she/it). Pour les questions et la négation, on utilise les auxiliaires DO/DOES.",
       "conjugation": {
         "title": "Conjugaison au présent",
         "rows": [
-          { "pronoun": "I / You / We / They", "form": "have", "negative": "don't have", "short": "I've" },
+          { "pronoun": "I / You / We / They", "form": "have", "negative": "don't have", "short": "I've (rarement utilisé)" },
           { "pronoun": "He / She / It", "form": "has", "negative": "doesn't have", "short": "He's got" }
         ]
       },
       "examples": [
-        { "en": "I have a cat.", "fr": "J'ai un chat." },
-        { "en": "She has brown eyes.", "fr": "Elle a les yeux marron." },
-        { "en": "Do you have a car?", "fr": "Tu as une voiture ?" },
-        { "en": "He doesn't have any money.", "fr": "Il n'a pas d'argent." }
+        { "en": "I have two sisters and one brother.", "fr": "J'ai deux sœurs et un frère." },
+        { "en": "She has long brown hair and green eyes.", "fr": "Elle a de longs cheveux bruns et des yeux verts." },
+        { "en": "Do you have a pen I can borrow?", "fr": "Tu as un stylo que je peux emprunter ?" },
+        { "en": "He doesn't have a car, so he takes the bus.", "fr": "Il n'a pas de voiture, donc il prend le bus." },
+        { "en": "Does she have any brothers or sisters?", "fr": "Est-ce qu'elle a des frères et sœurs ?" },
+        { "en": "We have a meeting at 3 PM today.", "fr": "Nous avons une réunion à 15h aujourd'hui." },
+        { "en": "They have a lot of homework this weekend.", "fr": "Ils ont beaucoup de devoirs ce week-end." },
+        { "en": "I have a headache — do you have any aspirin?", "fr": "J'ai mal à la tête — tu as de l'aspirine ?" }
       ],
       "exceptions": [
-        { "text": "'Have got' est une alternative britannique à 'have'. 'I've got a dog' = 'I have a dog'.", "type": "info" },
-        { "text": "Pour les questions avec 'have got' : 'Have you got…?' (sans do/does).", "type": "rule" }
+        { "text": "PIÈGE MAJEUR : En anglais, la faim, la soif, la peur, la chance s'expriment avec TO BE, pas TO HAVE. 'I am hungry' (j'ai faim), 'I am thirsty' (j'ai soif), 'I am afraid' (j'ai peur), 'I am lucky' (j'ai de la chance).", "type": "error" },
+        { "text": "'Have got' est une alternative à 'have' pour la possession, très courant en anglais britannique. Même sens : 'I have a car' = 'I've got a car'. La question devient 'Have you got…?' (sans do).", "type": "info" },
+        { "text": "Questions avec HAVE GOT : 'Have you got a ticket?' — avec HAVE ordinaire : 'Do you have a ticket?' — Les deux sont corrects mais 'have got' est typiquement britannique.", "type": "rule" },
+        { "text": "ERREUR FRÉQUENTE : 'I have not a dog' est incorrect. Toujours utiliser : 'I don't have a dog' ou 'I haven't got a dog'.", "type": "error" }
       ],
       "notes": [
-        { "icon": "tip", "text": "'Have got' est plus courant en anglais britannique, 'have' est préféré en anglais américain." },
-        { "icon": "important", "text": "Ne dites pas 'I have not a car' — utilisez toujours 'I don't have a car'." }
+        { "icon": "tip", "text": "Mémorisez ces expressions avec TO BE (et non TO HAVE) : be hungry (faim), be thirsty (soif), be cold/hot (froid/chaud), be afraid (peur), be right (raison), be wrong (tort), be lucky (chance), be … years old (âge)." },
+        { "icon": "warning", "text": "'Have' a aussi des usages non-possessifs figés : have breakfast (prendre le petit déjeuner), have a shower (prendre une douche), have a look (jeter un œil), have fun (s'amuser). Ces expressions ne peuvent pas être remplacées par 'have got'." },
+        { "icon": "important", "text": "Au passé, 'have' devient 'had' pour tous les pronoms : 'I had a dog when I was a child.' / 'She didn't have time yesterday.'" }
       ],
-      "keyPoints": ["have / has", "Do/Does pour questions", "Have got (britannique)", "Négation avec don't/doesn't"]
+      "keyPoints": ["have / has", "do/does pour questions et négations", "have got (britannique)", "TO BE pour faim/soif/âge", "Expressions figées avec have"]
     },
     {
       "id": "a1-present-simple",
@@ -77,110 +95,143 @@
       "themeIcon": "grammar",
       "title": "Le Présent Simple",
       "slug": "present-simple",
-      "duration": 15,
+      "duration": 20,
       "xpReward": 30,
-      "summary": "Le temps de base pour parler de routines, habitudes et vérités générales.",
-      "explanation": "Le présent simple s'utilise pour exprimer des actions habituelles, des routines, des faits permanents et des vérités générales. Il correspond souvent au présent indicatif français. La forme de base est l'infinitif du verbe, sans 'to'.",
+      "summary": "Le temps fondamental pour les routines, habitudes, faits et vérités générales.",
+      "explanation": "Le présent simple est le temps de base en anglais. Il s'utilise pour : (1) les routines et habitudes régulières, (2) les faits permanents ou scientifiques, (3) les vérités générales, (4) les horaires fixes. Sa construction est simple : sujet + verbe infinitif (sans 'to'). À la 3e personne du singulier (he/she/it), on ajoute -s ou -es au verbe. Pour les questions et négations, on utilise DO ou DOES.",
       "conjugation": {
-        "title": "Formation",
+        "title": "Formation complète",
         "rows": [
-          { "pronoun": "I / You / We / They", "form": "verb (base)", "negative": "don't + verb", "short": "I work" },
-          { "pronoun": "He / She / It", "form": "verb + s/es", "negative": "doesn't + verb", "short": "She works" }
+          { "pronoun": "I", "form": "work", "negative": "don't work", "short": "I work every day" },
+          { "pronoun": "You", "form": "work", "negative": "don't work", "short": "You work here" },
+          { "pronoun": "He", "form": "works (+s)", "negative": "doesn't work", "short": "He works late" },
+          { "pronoun": "She", "form": "works (+s)", "negative": "doesn't work", "short": "She works hard" },
+          { "pronoun": "It", "form": "works (+s)", "negative": "doesn't work", "short": "It works well" },
+          { "pronoun": "We", "form": "work", "negative": "don't work", "short": "We work together" },
+          { "pronoun": "They", "form": "work", "negative": "don't work", "short": "They work fast" }
         ]
       },
       "examples": [
-        { "en": "I wake up at 7 every morning.", "fr": "Je me réveille à 7h chaque matin." },
-        { "en": "She works in a hospital.", "fr": "Elle travaille dans un hôpital." },
-        { "en": "Water boils at 100°C.", "fr": "L'eau bout à 100°C." },
-        { "en": "Does he play football?", "fr": "Est-ce qu'il joue au football ?" }
+        { "en": "I wake up at 6:30 every morning and drink a coffee.", "fr": "Je me réveille à 6h30 chaque matin et je bois un café. (routine)" },
+        { "en": "She teaches English at a secondary school.", "fr": "Elle enseigne l'anglais dans un lycée. (fait permanent)" },
+        { "en": "The Earth revolves around the Sun.", "fr": "La Terre tourne autour du Soleil. (vérité scientifique)" },
+        { "en": "The train to London leaves at 8:45.", "fr": "Le train pour Londres part à 8h45. (horaire fixe)" },
+        { "en": "Do you like spicy food?", "fr": "Tu aimes la nourriture épicée ?" },
+        { "en": "He doesn't speak Japanese, but he understands a little.", "fr": "Il ne parle pas japonais, mais il comprend un peu." },
+        { "en": "Does your sister live in Paris or in Lyon?", "fr": "Ta sœur vit à Paris ou à Lyon ?" },
+        { "en": "I don't usually eat meat, but I eat fish sometimes.", "fr": "Je ne mange généralement pas de viande, mais je mange parfois du poisson." }
       ],
       "exceptions": [
-        { "text": "Verbes se terminant par -ch, -sh, -x, -o, -ss : ajoutez -es (watches, goes, fixes).", "type": "rule" },
-        { "text": "Verbes se terminant par consonne + y : changez y → ies (study → studies).", "type": "rule" },
-        { "text": "Exceptions irrégulières : be → is, have → has.", "type": "error" }
+        { "text": "RÈGLE DU +S : Verbes terminés par -ch, -sh, -x, -ss, -o → ajoutez -ES : watch→watches, wish→wishes, fix→fixes, miss→misses, go→goes, do→does.", "type": "rule" },
+        { "text": "RÈGLE DU Y : Verbe terminé par consonne + Y → changez Y en I et ajoutez -ES : study→studies, fly→flies, try→tries, carry→carries. MAIS : voyelle + Y → ajoutez juste S : play→plays, say→says.", "type": "rule" },
+        { "text": "EXCEPTIONS TOTALES : be → is (pas 'bes'), have → has (pas 'haves'). Ces deux verbes sont entièrement irréguliers.", "type": "error" },
+        { "text": "N'utilisez JAMAIS 'do/does' avec 'be' et 'have (got)' dans les questions : 'Are you ready?' (pas 'Do you be ready?'), 'Have you got time?' (pas 'Do you have got time?').", "type": "error" }
       ],
       "notes": [
-        { "icon": "tip", "text": "Marqueurs temporels typiques : always, usually, often, sometimes, never, every day." },
-        { "icon": "warning", "text": "N'oubliez jamais le 's' à la 3e personne du singulier : 'He like' est incorrect, 'He likes' est correct." }
+        { "icon": "tip", "text": "Adverbes de fréquence et leur position : ALWAYS / USUALLY / OFTEN / SOMETIMES / RARELY / NEVER — se placent AVANT le verbe principal mais APRÈS 'to be'. Exemples : 'I always eat breakfast' mais 'She is always late'." },
+        { "icon": "warning", "text": "Le 'S' de la 3e personne est l'erreur la plus fréquente. Créez une règle mentale : dès que vous voyez he/she/it, cherchez le S à la fin du verbe. 'He work' = FAUX. 'He works' = JUSTE." },
+        { "icon": "important", "text": "Expressions temporelles typiques du présent simple : every day/week/month/year, always, usually, often, sometimes, rarely, never, on Mondays, twice a week, in the morning, at weekends." }
       ],
-      "keyPoints": ["Routines et habitudes", "+s à He/She/It", "Do/Does pour questions", "Adverbes de fréquence"]
+      "keyPoints": ["Routines, habitudes, faits permanents", "+s ou +es à he/she/it", "do/does pour questions et négations", "Adverbes de fréquence", "Horaires fixes", "Vérités générales"]
     },
     {
       "id": "a1-present-continu",
       "level": "A1",
       "theme": "Grammaire",
       "themeIcon": "grammar",
-      "title": "Le Présent Continu",
+      "title": "Le Présent Continu (Present Continuous)",
       "slug": "present-continu",
-      "duration": 15,
+      "duration": 20,
       "xpReward": 30,
-      "summary": "Exprimer ce qui se passe en ce moment ou une action temporaire.",
-      "explanation": "Le présent continu (present continuous) s'utilise pour parler d'actions en cours au moment où l'on parle, ou d'actions temporaires. Il se forme avec 'to be' + verbe en -ing.",
+      "summary": "Parler de ce qui se passe en ce moment, d'actions temporaires et de plans proches.",
+      "explanation": "Le présent continu s'utilise pour des actions EN COURS au moment de parler, des situations temporaires (pas permanentes), et des plans futurs proches et déjà organisés. Sa formation est : sujet + AM/IS/ARE + verbe-ING. Attention : certains verbes (stative verbs) ne s'utilisent JAMAIS à la forme continue.",
       "conjugation": {
         "title": "Formation : be + verb-ing",
         "rows": [
           { "pronoun": "I", "form": "am + verb-ing", "negative": "am not + verb-ing", "short": "I'm working" },
-          { "pronoun": "He / She / It", "form": "is + verb-ing", "negative": "isn't + verb-ing", "short": "She's working" },
-          { "pronoun": "You / We / They", "form": "are + verb-ing", "negative": "aren't + verb-ing", "short": "They're working" }
+          { "pronoun": "You", "form": "are + verb-ing", "negative": "aren't + verb-ing", "short": "You're studying" },
+          { "pronoun": "He / She / It", "form": "is + verb-ing", "negative": "isn't + verb-ing", "short": "She's running" },
+          { "pronoun": "We / They", "form": "are + verb-ing", "negative": "aren't + verb-ing", "short": "They're waiting" }
         ]
       },
       "examples": [
-        { "en": "I am studying English right now.", "fr": "J'étudie l'anglais en ce moment." },
-        { "en": "She is cooking dinner.", "fr": "Elle est en train de cuisiner le dîner." },
-        { "en": "They are not watching TV.", "fr": "Ils ne regardent pas la télé." },
-        { "en": "Are you coming to the party?", "fr": "Tu viens à la fête ?" }
+        { "en": "I'm studying for my English exam right now.", "fr": "Je révise pour mon examen d'anglais en ce moment." },
+        { "en": "She is cooking pasta — dinner will be ready soon.", "fr": "Elle fait cuire des pâtes — le dîner sera bientôt prêt." },
+        { "en": "Why are you crying? What happened?", "fr": "Pourquoi tu pleures ? Qu'est-ce qui s'est passé ?" },
+        { "en": "They're not watching TV — they're playing video games.", "fr": "Ils ne regardent pas la TV — ils jouent aux jeux vidéo." },
+        { "en": "He's living with his parents temporarily while he looks for a flat.", "fr": "Il vit chez ses parents temporairement pendant qu'il cherche un appartement." },
+        { "en": "We are meeting the director tomorrow at 10 AM.", "fr": "Nous rencontrons le directeur demain à 10h. (plan organisé)" },
+        { "en": "Is it raining outside? Should I take an umbrella?", "fr": "Il pleut dehors ? Je devrais prendre un parapluie ?" },
+        { "en": "The kids are being really noisy today — I can't concentrate.", "fr": "Les enfants font vraiment du bruit aujourd'hui — je n'arrive pas à me concentrer." }
       ],
       "exceptions": [
-        { "text": "Verbes d'état (stative verbs) N'utilisent PAS le continu : know, like, love, want, need, believe, understand.", "type": "error" },
-        { "text": "Verbe terminé par -e muet : supprimez le e avant -ing (come → coming, make → making).", "type": "rule" },
-        { "text": "Verbe court terminé par consonne+voyelle+consonne : doublez la consonne finale (run → running, sit → sitting).", "type": "rule" }
+        { "text": "STATIVE VERBS (jamais en -ing) — Verbes de perception et d'état mental : know, understand, believe, think (opinion), remember, forget, mean, want, need, prefer, love, like, hate, seem, appear, belong, contain, consist, depend. FAUX : 'I am knowing the answer'. JUSTE : 'I know the answer'.", "type": "error" },
+        { "text": "RÈGLE DU E MUET : Verbe terminé par -e muet → supprimez le e avant -ing : come→coming, make→making, write→writing, dance→dancing, love→loving. EXCEPTION : être→being (conserve le e).", "type": "rule" },
+        { "text": "DOUBLEMENT DE CONSONNE : Verbe court terminé par consonne-voyelle-consonne → doublez la consonne finale : run→running, swim→swimming, sit→sitting, get→getting, put→putting, cut→cutting, stop→stopping. Ne doublez PAS si la dernière syllabe n'est pas accentuée : visit→visiting, open→opening.", "type": "rule" },
+        { "text": "THINK et HAVE sont ambigus : 'I think' (= je pense/crois, opinion) → pas de -ing. MAIS 'I'm thinking about you' (= je suis en train de penser à toi, action mentale active) → -ing possible.", "type": "info" }
       ],
       "notes": [
-        { "icon": "warning", "text": "Ne dites jamais 'I am knowing' ou 'She is wanting' — ces verbes n'ont pas de forme continue." },
-        { "icon": "tip", "text": "Marqueurs temporels : now, right now, at the moment, currently, today, this week." }
+        { "icon": "warning", "text": "Ne dites JAMAIS : 'I am knowing', 'She is wanting', 'He is needing', 'They are liking', 'I am understanding'. Ces stative verbs (verbes d'état) décrivent des états permanents, pas des actions, donc pas de forme continue." },
+        { "icon": "tip", "text": "Marqueurs temporels du présent continu : now, right now, at the moment, currently, at present, today, this week/month, temporarily, for now, Look! Listen!" },
+        { "icon": "important", "text": "Présent simple vs présent continu — LA DIFFÉRENCE CLÉ : 'I walk to work' (= je vais toujours au travail à pied, habitude) vs 'I'm walking to work today' (= aujourd'hui exceptionnellement je marche, pas d'habitude)." }
       ],
-      "keyPoints": ["be + verb-ing", "Action en cours", "Stative verbs (pas de -ing)", "Doublement de consonne"]
+      "keyPoints": ["be + verb-ing", "Action en cours au moment présent", "Situation temporaire vs permanente", "Plan futur proche organisé", "Stative verbs JAMAIS en -ing", "Règle du e muet et doublement"]
     },
     {
       "id": "a1-vocabulaire-famille",
       "level": "A1",
       "theme": "Vocabulaire",
       "themeIcon": "vocabulary",
-      "title": "La Famille",
+      "title": "La Famille en Anglais",
       "slug": "vocabulaire-famille",
-      "duration": 10,
+      "duration": 15,
       "xpReward": 20,
-      "summary": "Le vocabulaire essentiel pour parler de sa famille.",
-      "explanation": "En anglais, les mots de la famille sont assez similaires au français. Une différence importante : l'anglais distingue rarement 'beau-père' du père de votre conjoint(e) et votre père remarié — les deux s'appellent 'stepfather' ou 'father-in-law' selon le contexte.",
+      "summary": "Tout le vocabulaire pour parler de votre famille, y compris les pièges culturels.",
+      "explanation": "Le vocabulaire de la famille en anglais contient plusieurs pièges pour les francophones. L'anglais fait des distinctions importantes entre 'step-' (famille recomposée) et 'in-law' (belle-famille par mariage). De plus, certains mots comme 'parents' ont un sens différent de leur faux-ami français.",
       "vocabulary": [
-        { "en": "mother / mum (BR) / mom (US)", "fr": "mère / maman" },
-        { "en": "father / dad", "fr": "père / papa" },
-        { "en": "brother", "fr": "frère" },
-        { "en": "sister", "fr": "sœur" },
-        { "en": "grandparents", "fr": "grands-parents" },
-        { "en": "grandmother / grandma", "fr": "grand-mère / mamie" },
-        { "en": "grandfather / grandpa", "fr": "grand-père / papy" },
-        { "en": "uncle / aunt", "fr": "oncle / tante" },
-        { "en": "cousin", "fr": "cousin(e)" },
-        { "en": "nephew / niece", "fr": "neveu / nièce" },
-        { "en": "stepmother / stepfather", "fr": "belle-mère / beau-père (famille recomposée)" },
-        { "en": "mother-in-law / father-in-law", "fr": "belle-mère / beau-père (belle-famille)" }
+        { "en": "mother / mum (BR) / mom (US)", "fr": "mère / maman", "emoji": "👩" },
+        { "en": "father / dad / daddy", "fr": "père / papa", "emoji": "👨" },
+        { "en": "parents", "fr": "les parents (père ET mère UNIQUEMENT — pas la famille élargie !)", "emoji": "👨‍👩‍👧" },
+        { "en": "brother / sister", "fr": "frère / sœur", "emoji": "👦👧" },
+        { "en": "sibling(s)", "fr": "frère(s) et/ou sœur(s) (terme neutre)", "emoji": "👫" },
+        { "en": "grandmother / grandma / nan (BR)", "fr": "grand-mère / mamie", "emoji": "👵" },
+        { "en": "grandfather / grandpa / grandad (BR)", "fr": "grand-père / papy", "emoji": "👴" },
+        { "en": "grandparents", "fr": "grands-parents", "emoji": "👴👵" },
+        { "en": "aunt / uncle", "fr": "tante / oncle", "emoji": "👩👨" },
+        { "en": "cousin", "fr": "cousin(e) — INVARIABLE en anglais !", "emoji": "🧑" },
+        { "en": "nephew / niece", "fr": "neveu / nièce", "emoji": "👦👧" },
+        { "en": "stepmother / stepfather", "fr": "belle-mère / beau-père (par REMARIAGE)", "emoji": "👩👨" },
+        { "en": "mother-in-law / father-in-law", "fr": "belle-mère / beau-père (parents du conjoint)", "emoji": "👩👨" },
+        { "en": "stepsister / stepbrother", "fr": "demi-sœur / demi-frère (par remariage)", "emoji": "👧👦" },
+        { "en": "half-sister / half-brother", "fr": "demi-sœur / demi-frère (même père ou mère)", "emoji": "👧👦" },
+        { "en": "wife / husband / spouse", "fr": "femme / mari / conjoint(e)", "emoji": "💑" },
+        { "en": "partner / boyfriend / girlfriend", "fr": "partenaire / petit ami / petite amie", "emoji": "💏" },
+        { "en": "only child", "fr": "enfant unique", "emoji": "🧒" },
+        { "en": "twins", "fr": "jumeaux/jumelles", "emoji": "👫" },
+        { "en": "relatives / extended family", "fr": "la famille élargie (tous les membres)", "emoji": "👨‍👩‍👧‍👦" }
       ],
       "examples": [
-        { "en": "My mother is a teacher.", "fr": "Ma mère est professeure." },
-        { "en": "I have two brothers and one sister.", "fr": "J'ai deux frères et une sœur." },
-        { "en": "Her grandparents live in the countryside.", "fr": "Ses grands-parents vivent à la campagne." },
-        { "en": "He is my father-in-law.", "fr": "C'est mon beau-père (père de mon/ma conjoint(e))." }
+        { "en": "I have one older brother and two younger sisters.", "fr": "J'ai un grand frère et deux petites sœurs." },
+        { "en": "My parents have been married for 30 years.", "fr": "Mes parents sont mariés depuis 30 ans." },
+        { "en": "Her stepfather is very kind — he treats her like his own daughter.", "fr": "Son beau-père (remariage) est très gentil — il la traite comme sa propre fille." },
+        { "en": "I get on very well with my mother-in-law.", "fr": "Je m'entends très bien avec ma belle-mère (mère de mon mari/femme)." },
+        { "en": "He is an only child, so he grew up without siblings.", "fr": "Il est enfant unique, il a donc grandi sans frères ni sœurs." },
+        { "en": "We're organising a family reunion for all our relatives.", "fr": "Nous organisons une réunion de famille pour tous nos proches." },
+        { "en": "My cousin Sarah is getting married next summer.", "fr": "Ma cousine Sarah se marie l'été prochain." },
+        { "en": "She's expecting twins — a boy and a girl!", "fr": "Elle attend des jumeaux — un garçon et une fille !" }
       ],
       "exceptions": [
-        { "text": "'Cousin' en anglais ne change pas au féminin — un cousin et une cousine sont tous les deux 'cousin'.", "type": "info" },
-        { "text": "'Stepmother' = belle-mère par remariage. 'Mother-in-law' = belle-mère par mariage. Ne pas confondre.", "type": "error" }
+        { "text": "FAUX-AMI : 'Parents' en anglais = père et mère UNIQUEMENT. Pour dire 'mes parents' au sens large (famille), utilisez 'relatives' ou 'family members'. 'My parents are coming' = mon père et ma mère viennent.", "type": "error" },
+        { "text": "'Cousin' est invariable en genre en anglais. Un cousin et une cousine se disent tous les deux 'cousin'. Pour préciser : 'my male cousin' / 'my female cousin'.", "type": "info" },
+        { "text": "STEP vs HALF vs IN-LAW : step- = famille recomposée (remariage). half- = même père OU même mère biologique. in-law = famille par mariage. Ces distinctions n'existent pas en français où 'beau/belle' couvre tout.", "type": "rule" },
+        { "text": "'Elder / Eldest' vs 'Older / Oldest' : pour la fratrie, les deux sont corrects. 'My elder sister' ou 'my older sister'. En langage formel, 'elder' est préféré.", "type": "info" }
       ],
       "notes": [
-        { "icon": "tip", "text": "Pour parler de toute la famille d'un coup : 'my family' ou 'my relatives'." },
-        { "icon": "important", "text": "'Parents' en anglais signifie uniquement père et mère, pas tous les membres de la famille comme en français." }
+        { "icon": "tip", "text": "Pour décrire votre famille, utilisez ces structures : 'I come from a family of four.' (famille de 4) — 'I'm the eldest of three children.' (je suis l'aîné(e) de 3 enfants) — 'We are a close-knit family.' (famille très unie)." },
+        { "icon": "warning", "text": "En anglais britannique : 'mum' et 'nan'. En anglais américain : 'mom' et 'grandma'. Les deux sont compris internationalement mais montrent votre variété d'anglais." },
+        { "icon": "important", "text": "Expressions utiles sur la famille : 'to take after someone' (ressembler à quelqu'un) — 'to get on well with' (bien s'entendre avec) — 'to be close to' (être proche de) — 'to grow up' (grandir) — 'to raise children' (élever des enfants)." }
       ],
-      "keyPoints": ["step- vs in-law", "cousin (invariable)", "mum/mom (variante)", "relatives = famille élargie"]
+      "keyPoints": ["step- vs in-law vs half-", "parents = père et mère UNIQUEMENT", "cousin invariable", "siblings = frères et sœurs", "relatives = famille élargie", "elder vs older"]
     },
     {
       "id": "a2-past-simple",
@@ -189,430 +240,527 @@
       "themeIcon": "grammar",
       "title": "Le Passé Simple (Past Simple)",
       "slug": "past-simple",
-      "duration": 20,
+      "duration": 25,
       "xpReward": 40,
-      "summary": "Parler d'actions terminées dans le passé à un moment précis.",
-      "explanation": "Le past simple s'utilise pour des actions achevées dans le passé, à un moment précis. Pour les verbes réguliers, on ajoute -ed. Mais l'anglais a de nombreux verbes irréguliers qu'il faut mémoriser.",
+      "summary": "Racontez des événements passés terminés — maîtrisez les réguliers ET les irréguliers.",
+      "explanation": "Le past simple s'utilise pour des actions TERMINÉES dans le passé, généralement avec un moment précis mentionné ou implicite. Pour les verbes réguliers, on ajoute -ed. Mais environ 200 verbes irréguliers très courants ont une forme passée unique qu'il faut mémoriser. Pour les questions et négations, on utilise toujours DID + verbe infinitif (base).",
       "conjugation": {
         "title": "Formation",
         "rows": [
-          { "pronoun": "All pronouns (régulier)", "form": "verb + ed", "negative": "didn't + base verb", "short": "worked" },
-          { "pronoun": "All pronouns (irrégulier)", "form": "forme irrégulière", "negative": "didn't + base verb", "short": "went / saw / had" }
+          { "pronoun": "Tous (verbe régulier)", "form": "verb + ed", "negative": "didn't + base verb", "short": "worked / played / lived" },
+          { "pronoun": "Tous (verbe irrégulier)", "form": "forme irrégulière", "negative": "didn't + base verb", "short": "went / saw / had / made" },
+          { "pronoun": "Question", "form": "Did + sujet + base verb?", "negative": "—", "short": "Did you go? / Did she see?" }
         ]
       },
       "examples": [
-        { "en": "I visited Paris last year.", "fr": "J'ai visité Paris l'année dernière." },
-        { "en": "She went to the market this morning.", "fr": "Elle est allée au marché ce matin." },
-        { "en": "Did you call him yesterday?", "fr": "Tu l'as appelé hier ?" },
-        { "en": "They didn't watch the match.", "fr": "Ils n'ont pas regardé le match." }
+        { "en": "I visited my grandmother last weekend.", "fr": "J'ai rendu visite à ma grand-mère le week-end dernier." },
+        { "en": "She didn't come to the party — she was ill.", "fr": "Elle n'est pas venue à la fête — elle était malade." },
+        { "en": "Did you enjoy the concert? — Yes, I loved it!", "fr": "Tu as aimé le concert ? — Oui, je l'ai adoré !" },
+        { "en": "He woke up late, missed his train, and arrived at work at noon.", "fr": "Il s'est réveillé tard, a raté son train et est arrivé au travail à midi." },
+        { "en": "We met at university and became close friends immediately.", "fr": "Nous nous sommes rencontrés à l'université et sommes immédiatement devenus de bons amis." },
+        { "en": "The match didn't start on time because of the rain.", "fr": "Le match n'a pas commencé à l'heure à cause de la pluie." },
+        { "en": "Where did you go for your last holiday?", "fr": "Où es-tu allé(e) pour tes dernières vacances ?" },
+        { "en": "She wrote three novels before she was 30.", "fr": "Elle a écrit trois romans avant ses 30 ans." }
       ],
       "irregularVerbs": [
+        { "base": "be", "past": "was / were", "fr": "être" },
+        { "base": "have", "past": "had", "fr": "avoir" },
+        { "base": "do", "past": "did", "fr": "faire" },
         { "base": "go", "past": "went", "fr": "aller" },
         { "base": "come", "past": "came", "fr": "venir" },
         { "base": "see", "past": "saw", "fr": "voir" },
-        { "base": "have", "past": "had", "fr": "avoir" },
-        { "base": "make", "past": "made", "fr": "faire" },
-        { "base": "take", "past": "took", "fr": "prendre" },
-        { "base": "eat", "past": "ate", "fr": "manger" },
-        { "base": "give", "past": "gave", "fr": "donner" },
         { "base": "say", "past": "said", "fr": "dire" },
-        { "base": "know", "past": "knew", "fr": "savoir/connaître" },
-        { "base": "think", "past": "thought", "fr": "penser" },
-        { "base": "buy", "past": "bought", "fr": "acheter" }
+        { "base": "get", "past": "got", "fr": "obtenir / avoir / devenir" },
+        { "base": "make", "past": "made", "fr": "faire / fabriquer" },
+        { "base": "take", "past": "took", "fr": "prendre" },
+        { "base": "know", "past": "knew", "fr": "savoir / connaître" },
+        { "base": "think", "past": "thought", "fr": "penser / croire" },
+        { "base": "find", "past": "found", "fr": "trouver" },
+        { "base": "give", "past": "gave", "fr": "donner" },
+        { "base": "tell", "past": "told", "fr": "dire / raconter" },
+        { "base": "become", "past": "became", "fr": "devenir" },
+        { "base": "leave", "past": "left", "fr": "partir / laisser" },
+        { "base": "put", "past": "put", "fr": "mettre (identique !)" },
+        { "base": "buy", "past": "bought", "fr": "acheter" },
+        { "base": "eat", "past": "ate", "fr": "manger" },
+        { "base": "drink", "past": "drank", "fr": "boire" },
+        { "base": "write", "past": "wrote", "fr": "écrire" },
+        { "base": "read", "past": "read", "fr": "lire (prononciation différente : 'red')" },
+        { "base": "meet", "past": "met", "fr": "rencontrer / retrouver" },
+        { "base": "feel", "past": "felt", "fr": "ressentir / se sentir" }
       ],
       "exceptions": [
-        { "text": "Verbes terminés par consonne+voyelle+consonne (courte) : doublez la consonne (stop → stopped, travel → travelled en BR).", "type": "rule" },
-        { "text": "Verbes terminés par -e : ajoutez seulement -d (love → loved, use → used).", "type": "rule" },
-        { "text": "Dans les questions et négations, utilisez TOUJOURS la base verbale après did/didn't : 'Did she go?' et non 'Did she went?'", "type": "error" }
+        { "text": "RÈGLE DES RÉGULIERS — Verbe terminé par E : ajoutez seulement D : love→loved, use→used, dance→danced. Verbe terminé par consonne+voyelle+consonne (1 syllabe accentuée) : doublez : stop→stopped, plan→planned. Verbe terminé par Y (consonne+Y) : changez Y→I+ED : study→studied, carry→carried.", "type": "rule" },
+        { "text": "PIÈGE ABSOLU : Après DID et DIDN'T, TOUJOURS utiliser la forme de base (infinitif). 'Did she went?' = FAUX. 'Did she go?' = JUSTE. 'He didn't came' = FAUX. 'He didn't come' = JUSTE.", "type": "error" },
+        { "text": "Quelques verbes identiques au présent ET au passé (formes invariables) : put→put, cut→cut, hit→hit, let→let, set→set, hurt→hurt, cost→cost, read→read (prononciation change : /riːd/→/rɛd/).", "type": "info" }
       ],
       "notes": [
-        { "icon": "warning", "text": "'Did she went?' est une erreur très fréquente. Après 'did', on utilise toujours l'infinitif." },
-        { "icon": "tip", "text": "Marqueurs temporels : yesterday, last week/month/year, ago, in 2020, this morning." }
+        { "icon": "tip", "text": "Marqueurs temporels du past simple (toujours utilisés avec cette période TERMINÉE) : yesterday, last night/week/month/year, ago (il y a), in + année (in 2020), this morning (si la journée est finie), once, when I was a child, at that time, then, finally, afterwards." },
+        { "icon": "warning", "text": "Le past simple et le present perfect se traduisent TOUS LES DEUX par le passé composé français — mais en anglais, ils sont DIFFÉRENTS : 'I went to Paris' (past simple, moment précis ou révolu) vs 'I have been to Paris' (present perfect, expérience de vie, lien avec le présent)." },
+        { "icon": "important", "text": "Stratégie pour mémoriser les irréguliers : regroupez-les par famille sonore. Exemples : think/thought, bring/brought, buy/bought — speak/spoke, break/broke, wake/woke — sing/sang, drink/drank, swim/swam." }
       ],
-      "keyPoints": ["verb + ed (réguliers)", "Formes irrégulières à mémoriser", "did + base verb (questions)", "didn't + base verb (négation)"]
+      "keyPoints": ["verb + ed (réguliers)", "200 formes irrégulières à mémoriser", "did + BASE VERB (questions)", "didn't + BASE VERB (négation)", "Marqueurs temporels précis", "Verbes identiques présent/passé"]
     },
     {
       "id": "a2-futur-will",
       "level": "A2",
       "theme": "Grammaire",
       "themeIcon": "grammar",
-      "title": "Le Futur avec Will",
+      "title": "Le Futur : Will & Going To",
       "slug": "futur-will",
-      "duration": 15,
+      "duration": 20,
       "xpReward": 30,
-      "summary": "Exprimer des décisions spontanées, prédictions et promesses.",
-      "explanation": "Le futur avec 'will' s'utilise pour des décisions prises au moment de parler, des prédictions, des promesses ou des offres. Il est invariable pour tous les pronoms.",
+      "summary": "Deux façons d'exprimer le futur — comprendre quand utiliser l'une ou l'autre.",
+      "explanation": "En anglais, il n'y a pas UN futur mais PLUSIEURS façons d'exprimer l'avenir. Les deux principales : WILL (décisions spontanées, promesses, prédictions basées sur une opinion) et GOING TO (plans décidés à l'avance, prédictions basées sur des preuves visibles). Cette distinction est cruciale et souvent mal comprise par les francophones.",
       "conjugation": {
-        "title": "Formation : will + base verb",
+        "title": "Formation : will et going to",
         "rows": [
-          { "pronoun": "All pronouns", "form": "will + verb", "negative": "won't + verb", "short": "I'll / She'll" }
+          { "pronoun": "Tous (will)", "form": "will + base verb", "negative": "won't + base verb", "short": "I'll / She'll / They'll" },
+          { "pronoun": "I (going to)", "form": "am going to + base verb", "negative": "am not going to", "short": "I'm going to travel" },
+          { "pronoun": "He/She/It (going to)", "form": "is going to + base verb", "negative": "isn't going to", "short": "She's going to study" },
+          { "pronoun": "You/We/They (going to)", "form": "are going to + base verb", "negative": "aren't going to", "short": "They're going to move" }
         ]
       },
       "examples": [
-        { "en": "I'll call you tomorrow.", "fr": "Je t'appellerai demain." },
-        { "en": "It will rain this afternoon, I think.", "fr": "Je pense qu'il va pleuvoir cet après-midi." },
-        { "en": "I won't tell anyone your secret.", "fr": "Je ne dirai ton secret à personne." },
-        { "en": "Will you help me with this?", "fr": "Tu veux bien m'aider avec ça ?" }
+        { "en": "The phone is ringing — I'll get it! (décision spontanée)", "fr": "Le téléphone sonne — je réponds ! (décision prise maintenant)" },
+        { "en": "I promise I won't tell anyone your secret. (promesse)", "fr": "Je promets que je ne dirai ton secret à personne." },
+        { "en": "I think it will rain this afternoon. (prédiction/opinion)", "fr": "Je pense qu'il va pleuvoir cet après-midi. (opinion personnelle)" },
+        { "en": "Look at those clouds — it's going to rain! (prédiction/preuve)", "fr": "Regarde ces nuages — il va pleuvoir ! (preuve visible)" },
+        { "en": "We're going to visit Japan next spring — we already bought the tickets. (plan)", "fr": "Nous allons visiter le Japon au printemps prochain — nous avons déjà acheté les billets." },
+        { "en": "She's going to have a baby in March. (plan/fait certain)", "fr": "Elle va avoir un bébé en mars." },
+        { "en": "Will you help me with this report? (demande polie)", "fr": "Veux-tu bien m'aider avec ce rapport ?" },
+        { "en": "I won't be available tomorrow morning — I have a dentist appointment.", "fr": "Je ne serai pas disponible demain matin — j'ai un rendez-vous chez le dentiste." }
       ],
       "exceptions": [
-        { "text": "'Will' et 'going to' ne sont pas toujours interchangeables. 'Will' = décision spontanée. 'Going to' = plan prévu à l'avance.", "type": "info" },
-        { "text": "'Shall' peut remplacer 'will' avec I/We en anglais formel ou britannique : 'Shall I open the window?'", "type": "rule" }
+        { "text": "WILL vs GOING TO — LA RÈGLE SIMPLE : WILL = décision prise MAINTENANT, au moment de parler. GOING TO = décision prise AVANT, plan déjà fait. Exemple : On vous demande quoi boire → 'I'll have a coffee' (décision spontanée, will). Mais si vous avez déjà commandé → 'I'm going to have a coffee' (décision préalable, going to).", "type": "rule" },
+        { "text": "WILL = jamais dans la clause IF des conditionnelles : 'If it rains, I will stay home' (juste). JAMAIS : 'If it will rain, I will stay home' (faux).", "type": "error" },
+        { "text": "SHALL peut remplacer WILL avec I/WE dans un anglais formel ou britannique, surtout dans les offres et suggestions : 'Shall I open the window?' (formel) = 'Do you want me to open the window?' En usage courant, shall est rare.", "type": "info" },
+        { "text": "Le présent continu peut aussi exprimer le futur pour des ARRANGEMENTS PERSONNELS FIXES : 'I'm having dinner with Sara on Friday' (= j'ai un arrangement, c'est décidé et organisé). Souvent interchangeable avec going to dans ce cas.", "type": "info" }
       ],
       "notes": [
-        { "icon": "tip", "text": "Quelqu'un frappe à la porte → 'I'll get it!' (décision spontanée = will). Vous avez déjà planifié → 'I'm going to open the door' (plan = going to)." },
-        { "icon": "important", "text": "La contraction de 'will not' est 'won't', pas 'willn't'." }
+        { "icon": "tip", "text": "Moyen mnémotechnique : WILL = décision SPONTANÉE (comme une lumière qui s'allume soudainement). GOING TO = PLAN (vous regardez la direction dans laquelle vous allez déjà). Imaginez quelqu'un qui trébuche : 'He's going to fall!' (going to, preuve visible). Après la chute : 'I'll help him up!' (will, décision spontanée)." },
+        { "icon": "warning", "text": "Contractions importantes : will → 'll (I'll, you'll, he'll, she'll, we'll, they'll). will not → won't (pas 'willn't'). going to → souvent prononcé 'gonna' à l'oral, mais écrivez toujours 'going to' à l'écrit formel." },
+        { "icon": "important", "text": "Autres formes du futur à connaître : Present simple pour horaires fixes ('The plane leaves at 7') — Present continuous pour plans sociaux ('I'm meeting Tom tonight') — Be about to pour futur immédiat ('I'm about to leave' = je suis sur le point de partir)." }
       ],
-      "keyPoints": ["will + base verb", "won't (négation)", "Décision spontanée", "will vs going to"]
+      "keyPoints": ["will = décision spontanée, promesse, prédiction (opinion)", "going to = plan prévu, prédiction (preuve)", "won't = will not", "will JAMAIS dans clause if", "shall (formel/britannique)", "gonna = oral uniquement"]
     },
     {
       "id": "a2-vocabulaire-couleurs-nombres",
       "level": "A2",
       "theme": "Vocabulaire",
       "themeIcon": "vocabulary",
-      "title": "Couleurs, Nombres & Descriptions",
+      "title": "Adjectifs, Couleurs & Descriptions",
       "slug": "couleurs-nombres-descriptions",
-      "duration": 10,
+      "duration": 15,
       "xpReward": 20,
-      "summary": "Décrire des objets et personnes avec précision.",
-      "explanation": "En anglais, les adjectifs se placent AVANT le nom, contrairement au français où ils se placent souvent après. De plus, les adjectifs sont invariables — pas d'accord en genre ou en nombre.",
+      "summary": "Décrivez personnes, objets et lieux avec précision — maîtrisez l'ordre des adjectifs.",
+      "explanation": "En anglais, les adjectifs se placent AVANT le nom (pas après comme en français) et sont totalement invariables — jamais d'accord en genre ou en nombre. Le point le plus difficile est l'ordre des adjectifs : quand plusieurs adjectifs se suivent, ils obéissent à un ordre strict. La règle à retenir : Opinion → Taille → Âge → Forme → Couleur → Origine → Matière → But/Type.",
       "vocabulary": [
-        { "en": "red / blue / green / yellow", "fr": "rouge / bleu / vert / jaune" },
-        { "en": "black / white / grey", "fr": "noir / blanc / gris" },
-        { "en": "light blue / dark green", "fr": "bleu clair / vert foncé" },
-        { "en": "tall / short", "fr": "grand / petit (taille)" },
-        { "en": "big / small", "fr": "grand / petit (taille générale)" },
-        { "en": "beautiful / ugly", "fr": "beau / laid" },
-        { "en": "young / old", "fr": "jeune / vieux" },
-        { "en": "first, second, third…", "fr": "premier, deuxième, troisième…" }
+        { "en": "red / blue / green / yellow / orange / purple / pink", "fr": "rouge / bleu / vert / jaune / orange / violet / rose", "emoji": "🎨" },
+        { "en": "black / white / grey / brown / beige", "fr": "noir / blanc / gris / marron / beige", "emoji": "⬛⬜" },
+        { "en": "light + colour / dark + colour", "fr": "clair / foncé : light blue (bleu clair), dark green (vert foncé)", "emoji": "🔵" },
+        { "en": "tall / short (height) / long / short (length)", "fr": "grand/petit (hauteur) / long/court (longueur)", "emoji": "📏" },
+        { "en": "big / large / small / tiny / huge / enormous", "fr": "grand / grand / petit / minuscule / énorme / gigantesque", "emoji": "📐" },
+        { "en": "young / old / middle-aged / elderly / ancient / modern", "fr": "jeune / vieux / d'âge moyen / âgé / ancien / moderne", "emoji": "👴👶" },
+        { "en": "round / square / oval / rectangular / triangular", "fr": "rond / carré / ovale / rectangulaire / triangulaire", "emoji": "⭕" },
+        { "en": "beautiful / gorgeous / attractive / plain / ugly", "fr": "beau / magnifique / attrayant / ordinaire / laid", "emoji": "✨" },
+        { "en": "French / Italian / Japanese / British / American", "fr": "français / italien / japonais / britannique / américain", "emoji": "🌍" },
+        { "en": "wooden / metal / plastic / glass / leather / silk", "fr": "en bois / en métal / en plastique / en verre / en cuir / en soie", "emoji": "🪵" }
       ],
       "examples": [
-        { "en": "She has beautiful blue eyes.", "fr": "Elle a de beaux yeux bleus." },
-        { "en": "I live in a big white house.", "fr": "J'habite dans une grande maison blanche." },
-        { "en": "He is a tall young man.", "fr": "C'est un grand jeune homme." },
-        { "en": "It's my third time in London.", "fr": "C'est ma troisième fois à Londres." }
+        { "en": "She has beautiful long dark hair. (opinion→taille→couleur)", "fr": "Elle a de beaux longs cheveux foncés." },
+        { "en": "He drives an expensive old Italian sports car. (opinion→âge→origine→type)", "fr": "Il conduit une chère vieille voiture de sport italienne." },
+        { "en": "They live in a lovely small modern flat. (opinion→taille→âge)", "fr": "Ils habitent dans un charmant petit appartement moderne." },
+        { "en": "I'm looking for a large rectangular wooden table.", "fr": "Je cherche une grande table rectangulaire en bois." },
+        { "en": "She's wearing a gorgeous red silk dress.", "fr": "Elle porte une magnifique robe en soie rouge." },
+        { "en": "It's my third visit to this enormous ancient temple.", "fr": "C'est ma troisième visite dans cet énorme temple ancien." },
+        { "en": "He bought a brand new black Japanese motorcycle.", "fr": "Il a acheté une nouvelle moto japonaise noire." },
+        { "en": "The adjectives are invariable — two tall men, three red cars, many beautiful women.", "fr": "Les adjectifs sont invariables : deux grands hommes, trois voitures rouges, beaucoup de belles femmes." }
       ],
       "exceptions": [
-        { "text": "Les adjectifs en anglais sont invariables : 'a red car' / 'two red cars' (pas de 's' à red).", "type": "rule" },
-        { "text": "Ordre des adjectifs : Opinion → Taille → Âge → Forme → Couleur → Origine → Matière (ex: a lovely small old round red French silver box).", "type": "important" }
+        { "text": "ORDRE DES ADJECTIFS (OSASCOMP) : Opinion, Size (taille), Age, Shape (forme), Colour, Origin (origine), Material (matière), Purpose (but). Exemple complet (rare en pratique) : 'a lovely little old rectangular green French silver whittling knife' = un joli petit vieux couteau rectangulaire vert français en argent à sculpter.", "type": "rule" },
+        { "text": "ADJECTIFS INVARIABLES : en anglais, pas d'accord. 'A tall man' / 'Two tall men' (pas 'talls'). 'A red car' / 'Three red cars' (pas 'reds'). 'A beautiful woman' / 'Beautiful women' (pas 'beautifuls').", "type": "rule" },
+        { "text": "NOMBRES ORDINAUX IRRÉGULIERS : 1st=first, 2nd=second, 3rd=third, 4th=fourth, 5th=FIFTH (pas fiveth), 6th=sixth, 7th=seventh, 8th=EIGHTH (pas eighthth), 9th=NINTH (pas nineth), 12th=twelfth, 20th=twentieth.", "type": "error" }
       ],
       "notes": [
-        { "icon": "tip", "text": "Pour les nombres ordinaux irréguliers : first (1st), second (2nd), third (3rd) — ensuite : fourth, fifth, sixth…" },
-        { "icon": "warning", "text": "Five → fifth (pas 'fiveth'). Eight → eighth (pas 'eighthth'). Nine → ninth (pas 'nineth')." }
+        { "icon": "tip", "text": "Truc pour l'ordre : pensez à OSASCOMP ou créez une phrase mnémotechnique. En pratique, on utilise rarement plus de 2-3 adjectifs à la suite. Le bon sens linguistique guide souvent naturellement." },
+        { "icon": "warning", "text": "Attention aux adjectifs qui changent de sens selon leur position : 'An old friend' (un ami de longue date, pas forcément âgé) vs 'a friend who is old' (un ami âgé). 'A certain result' (un résultat précis) vs 'a result that is certain' (un résultat qui est sûr)." },
+        { "icon": "important", "text": "Adjectifs composés courants : good-looking (beau), well-known (célèbre), hard-working (travailleur), easy-going (décontracté), open-minded (ouvert d'esprit), short-sighted (myope/à courte vue), long-lasting (durable). Ces adjectifs se placent aussi AVANT le nom." }
       ],
-      "keyPoints": ["Adjectif avant le nom", "Adjectifs invariables", "Ordre des adjectifs", "Nombres ordinaux irréguliers"]
+      "keyPoints": ["Adjectif AVANT le nom", "Adjectifs invariables (jamais de s/es)", "Ordre OSASCOMP", "Nombres ordinaux irréguliers", "Adjectifs composés avec tiret", "light/dark + couleur"]
     },
     {
       "id": "b1-present-perfect",
       "level": "B1",
       "theme": "Grammaire",
       "themeIcon": "grammar",
-      "title": "Le Present Perfect",
+      "title": "Le Present Perfect — Le temps qui relie le passé au présent",
       "slug": "present-perfect",
-      "duration": 25,
+      "duration": 30,
       "xpReward": 50,
-      "summary": "Le temps qui lie le passé au présent — l'un des plus complexes pour les francophones.",
-      "explanation": "Le present perfect n'a pas d'équivalent direct en français. Il s'utilise pour des actions passées qui ont un lien avec le présent : expériences de vie, actions récentes avec résultats visibles, actions qui durent encore. Il se forme avec have/has + participe passé.",
+      "summary": "Le temps le plus difficile pour les francophones — mais essentiel pour paraître naturel.",
+      "explanation": "Le present perfect n'a pas d'équivalent direct en français — c'est pour ça qu'il pose tant de problèmes. Il s'utilise quand une action passée a un LIEN AVEC LE PRÉSENT : (1) expériences de vie sans moment précis, (2) actions récentes avec résultats visibles maintenant, (3) situations qui ont COMMENCÉ dans le passé et CONTINUENT dans le présent. Formation : HAVE/HAS + participe passé. C'est la différence entre 'I did it' (passé simple = c'est fini, coupé du présent) et 'I have done it' (present perfect = lien avec maintenant).",
       "conjugation": {
         "title": "Formation : have/has + past participle",
         "rows": [
-          { "pronoun": "I / You / We / They", "form": "have + past participle", "negative": "haven't + past participle", "short": "I've seen" },
-          { "pronoun": "He / She / It", "form": "has + past participle", "negative": "hasn't + past participle", "short": "She's been" }
+          { "pronoun": "I / You / We / They", "form": "have + past participle", "negative": "haven't + past participle", "short": "I've seen / You've eaten" },
+          { "pronoun": "He / She / It", "form": "has + past participle", "negative": "hasn't + past participle", "short": "She's gone / He's finished" }
         ]
       },
       "examples": [
-        { "en": "I have never been to Japan.", "fr": "Je ne suis jamais allé(e) au Japon. (expérience de vie)" },
-        { "en": "She has just finished her homework.", "fr": "Elle vient de finir ses devoirs. (action très récente)" },
-        { "en": "Have you ever eaten sushi?", "fr": "As-tu déjà mangé des sushis ?" },
-        { "en": "I have lived here for 5 years.", "fr": "J'habite ici depuis 5 ans. (action qui continue)" }
+        { "en": "I have never been to Australia. Have you?", "fr": "Je ne suis jamais allé en Australie. Et toi ? (expérience de vie, pas de moment précis)" },
+        { "en": "She has just arrived — she's still in the car.", "fr": "Elle vient juste d'arriver — elle est encore dans la voiture. (action très récente, résultat visible)" },
+        { "en": "I have already finished my homework, so I can go out.", "fr": "J'ai déjà fini mes devoirs, donc je peux sortir. (résultat visible : les devoirs sont faits)" },
+        { "en": "Have you ever eaten fugu (Japanese puffer fish)?", "fr": "As-tu déjà mangé du fugu (poisson-globe japonais) ? (expérience, moment non précisé)" },
+        { "en": "I have lived in London for three years. (et j'y vis toujours)", "fr": "J'habite à Londres depuis trois ans. (action commencée dans le passé, continue)" },
+        { "en": "She hasn't called me back yet — I'm starting to worry.", "fr": "Elle ne m'a pas encore rappelé — je commence à m'inquiéter. (non accompli jusqu'à maintenant)" },
+        { "en": "They have visited over 50 countries in their lives!", "fr": "Ils ont visité plus de 50 pays dans leur vie ! (expérience, bilan de vie)" },
+        { "en": "He has been very stressed recently — he needs a holiday.", "fr": "Il a été très stressé récemment — il a besoin de vacances. (période récente jusqu'à maintenant)" }
       ],
       "exceptions": [
-        { "text": "Avec une date ou heure précise dans le passé → utilisez le past simple, pas le present perfect. 'I saw him yesterday' (pas 'I have seen him yesterday').", "type": "error" },
-        { "text": "For = durée ('for 3 years'). Since = point de départ ('since 2020'). Ne pas les confondre.", "type": "rule" },
-        { "text": "En anglais américain, 'Did you eat yet?' est courant là où l'anglais britannique dirait 'Have you eaten yet?'.", "type": "info" }
+        { "text": "RÈGLE D'OR : Avec une expression de temps PRÉCISE et TERMINÉE → PAST SIMPLE. Avec une expression de temps OUVERTE ou liée au présent → PRESENT PERFECT. 'I saw him yesterday' (yesterday = précis et terminé). 'I have seen him recently' (recently = période ouverte liée au présent).", "type": "rule" },
+        { "text": "FOR vs SINCE : FOR + durée ('for 3 years', 'for a long time', 'for two months'). SINCE + point de départ précis ('since 2019', 'since Monday', 'since I was a child'). Erreur classique : 'I have lived here since 3 years' → FAUX. Juste : 'I have lived here FOR 3 years' ou 'since 2021'.", "type": "error" },
+        { "text": "ALREADY / YET / JUST / STILL : ALREADY (déjà) → affirmations, position avant le participe. YET (encore / déjà) → questions et négations, toujours EN FIN de phrase. JUST (venir de) → affirmations, entre have et participe. STILL (toujours) → avec haven't/hasn't pour insistance ('I still haven't finished').", "type": "rule" },
+        { "text": "DIFFÉRENCE AMÉRICAIN/BRITANNIQUE : Les Américains utilisent souvent le past simple là où les Britanniques utilisent le present perfect. 'Did you eat yet?' (Am) vs 'Have you eaten yet?' (Br). Les deux sont corrects dans leurs contextes respectifs.", "type": "info" }
       ],
       "notes": [
-        { "icon": "warning", "text": "Jamais de marqueur de temps précis avec le present perfect : 'I have seen him yesterday' est faux." },
-        { "icon": "tip", "text": "Marqueurs typiques : already, yet, just, ever, never, for, since, recently, lately." },
-        { "icon": "important", "text": "La phrase 'I live here since 5 years' est une erreur typique des francophones. Correct : 'I have lived here for 5 years'." }
+        { "icon": "warning", "text": "Les 5 erreurs les plus fréquentes : (1) 'I have seen him YESTERDAY' (✗ — yesterday = date précise → past simple). (2) 'I live here since 5 years' (✗ → 'I have lived here for 5 years'). (3) 'Have you ever went' (✗ → 'Have you ever gone/been'). (4) 'She has arrived yesterday' (✗ → 'She arrived yesterday'). (5) 'Did you ever visit London?' (✗ en BR → 'Have you ever visited London?')." },
+        { "icon": "tip", "text": "Marqueurs du present perfect à mémoriser : ever (déjà dans la vie ?), never (jamais), already (déjà, résultat), yet (encore/déjà, en fin de phrase), just (venir de), recently (récemment), lately (dernièrement), so far (jusqu'ici), in recent years (ces dernières années), since (depuis un moment précis), for (depuis une durée)." },
+        { "icon": "important", "text": "QUESTION PIÈGES : 'It's the first/best/worst… I have ever + participe passé.' = C'est le premier/meilleur/pire… que j'aie jamais + participé. Exemple : 'It's the most delicious meal I have ever eaten' (= c'est le repas le plus délicieux que j'aie jamais mangé)." }
       ],
-      "keyPoints": ["have/has + past participle", "Lien passé-présent", "for vs since", "Jamais avec date précise"]
+      "keyPoints": ["have/has + past participle", "Lien passé-présent indispensable", "for (durée) vs since (point départ)", "already / yet / just / ever / never", "JAMAIS avec date précise passée", "Past simple vs Present Perfect"]
     },
     {
       "id": "b1-modaux",
       "level": "B1",
       "theme": "Grammaire",
       "themeIcon": "grammar",
-      "title": "Les Verbes Modaux",
+      "title": "Les Verbes Modaux — Nuances et Subtilités",
       "slug": "verbes-modaux",
-      "duration": 25,
+      "duration": 30,
       "xpReward": 50,
-      "summary": "Can, could, must, should, may, might — exprimer capacité, obligation et possibilité.",
-      "explanation": "Les modaux sont des auxiliaires particuliers qui expriment des nuances comme la capacité, l'obligation, la permission ou la possibilité. Ils ne prennent jamais de -s à la 3e personne et sont toujours suivis de l'infinitif sans 'to'.",
+      "summary": "Maîtrisez can, could, must, should, may, might, would — et leurs différences subtiles.",
+      "explanation": "Les verbes modaux sont des auxiliaires spéciaux qui expriment des nuances de sens : capacité, permission, obligation, conseil, possibilité, probabilité. Règles communes à TOUS les modaux : (1) Jamais de S à la 3e personne (pas 'she cans'). (2) Toujours suivis de l'infinitif sans TO (pas 'can to swim'). (3) Pas de DO/DOES pour les questions — inversion directe ('Can you...?'). (4) Pas de forme -ing ni de participe passé — on utilise des périphrases.",
       "vocabulary": [
-        { "en": "can / could", "fr": "pouvoir / capacité (présent / passé ou politesse)" },
-        { "en": "must / have to", "fr": "devoir / obligation" },
-        { "en": "should / ought to", "fr": "devrais / conseil" },
-        { "en": "may / might", "fr": "peut-être / possibilité" },
-        { "en": "will / would", "fr": "futur / conditionnel" },
-        { "en": "shall", "fr": "suggestion / futur formel" },
-        { "en": "need to", "fr": "avoir besoin de" }
+        { "en": "CAN → capacité présente, permission informelle", "fr": "pouvoir (capacité actuelle) : 'I can swim 2km'", "emoji": "💪" },
+        { "en": "COULD → capacité passée, suggestion polie, possibilité", "fr": "pouvais/pourrait : 'I could swim as a child' / 'Could you help me?'", "emoji": "🔄" },
+        { "en": "MUST → obligation forte (interne/subjective)", "fr": "devoir absolument : 'I must call her' (c'est moi qui le ressens)", "emoji": "⚠️" },
+        { "en": "HAVE TO → obligation externe (règle, nécessité)", "fr": "devoir (obligation imposée) : 'I have to wear a uniform at work'", "emoji": "📋" },
+        { "en": "SHOULD → conseil, recommandation, obligation morale légère", "fr": "devrais : 'You should see a doctor' / 'You shouldn't smoke'", "emoji": "💡" },
+        { "en": "MAY → permission formelle, possibilité probable", "fr": "peut-être (probable) / puis-je : 'It may rain' / 'May I sit here?'", "emoji": "🌤️" },
+        { "en": "MIGHT → possibilité moins probable", "fr": "peut-être (moins probable) : 'I might come, but I'm not sure'", "emoji": "❓" },
+        { "en": "WOULD → conditionnel, demandes polies, habitude passée", "fr": "conditionnel : 'I would love to' / 'Would you like some coffee?'", "emoji": "🎩" },
+        { "en": "NEED TO → nécessité (verbe ordinaire avec do/does)", "fr": "avoir besoin de : 'Do you need to leave early?'", "emoji": "🔑" },
+        { "en": "BE ABLE TO → capacité (remplace can au futur et au présent perfect)", "fr": "être capable de : 'I won't be able to come' / 'I've never been able to drive'", "emoji": "🎯" }
       ],
       "examples": [
-        { "en": "She can speak three languages.", "fr": "Elle peut parler trois langues." },
-        { "en": "You should see a doctor.", "fr": "Tu devrais voir un médecin." },
-        { "en": "It might rain later.", "fr": "Il se pourrait qu'il pleuve plus tard." },
-        { "en": "You must not park here.", "fr": "Vous ne devez pas vous garer ici." }
+        { "en": "Can you speak any other languages besides French?", "fr": "Tu parles d'autres langues en plus du français ? (capacité)" },
+        { "en": "You must submit the application before Friday — it's the deadline. (obligation externe = have to)", "fr": "Tu dois soumettre la candidature avant vendredi — c'est la date limite." },
+        { "en": "You mustn't park here — it's a fire exit! (interdiction absolue)", "fr": "Tu ne dois absolument pas te garer ici — c'est une sortie de secours !" },
+        { "en": "You don't have to come if you're tired — it's completely optional. (pas obligatoire)", "fr": "Tu n'es pas obligé(e) de venir si tu es fatigué(e) — c'est totalement optionnel." },
+        { "en": "It might snow tomorrow — have you checked the forecast?", "fr": "Il pourrait neiger demain — tu as regardé la météo ?" },
+        { "en": "Would you like another cup of tea? (offre polie)", "fr": "Voulez-vous une autre tasse de thé ?" },
+        { "en": "She should really apologize — what she said was quite rude.", "fr": "Elle devrait vraiment s'excuser — ce qu'elle a dit était assez impoli." },
+        { "en": "I could ride a bike when I was 5, but I couldn't swim until I was 8. (capacité passée)", "fr": "Je savais faire du vélo à 5 ans, mais je ne savais pas nager avant 8 ans." }
       ],
       "exceptions": [
-        { "text": "Jamais de 'to' après un modal : 'She can to swim' est incorrect. Correct : 'She can swim'.", "type": "error" },
-        { "text": "'Must not' (mustn't) = interdiction forte. 'Don't have to' = pas obligatoire. Sens très différent !", "type": "error" },
-        { "text": "'Can' n'a pas de futur ni de participe passé — on utilise 'be able to' : 'I will be able to help you tomorrow'.", "type": "rule" }
+        { "text": "MUST vs HAVE TO — DIFFÉRENCE CLUE : MUST = obligation INTERNE (je me sens obligé, c'est ma décision). HAVE TO = obligation EXTERNE (quelqu'un ou quelque chose m'y oblige). 'I must call my mother' (je ressens le besoin). 'I have to wear a helmet — it's the law' (la loi l'impose).", "type": "rule" },
+        { "text": "MUSTN'T vs DON'T HAVE TO — CONFUSION DANGEREUSE : MUSTN'T = interdiction absolue ('You mustn't drink and drive'). DON'T HAVE TO = pas d'obligation ('You don't have to tip in Japan'). Ces deux expressions ont des sens OPPOSÉS !", "type": "error" },
+        { "text": "CAN au futur/passé/perfect → impossible, utilisez BE ABLE TO. 'I will be able to drive after my lessons.' 'I've never been able to understand him.' 'I wasn't able to sleep last night.'", "type": "rule" },
+        { "text": "Modaux au passé : modal + HAVE + past participle = jugement sur le passé. 'You should have called me' (tu aurais dû m'appeler). 'She must have forgotten' (elle a dû oublier). 'They might have missed the train' (ils ont peut-être raté le train).", "type": "info" }
       ],
       "notes": [
-        { "icon": "warning", "text": "'You mustn't go' (tu ne dois pas y aller) ≠ 'You don't have to go' (tu n'es pas obligé d'y aller). Erreur très courante." },
-        { "icon": "tip", "text": "Pour exprimer la possibilité : may > might en terme de probabilité (may = plus probable)." }
+        { "icon": "warning", "text": "Jamais de S, jamais de TO, jamais de DO pour les questions : 'She can swim' (pas 'She cans'). 'I want to be able to drive' (pas 'I want to can drive'). 'Can you help?' (pas 'Do you can help?')." },
+        { "icon": "tip", "text": "Tableau de probabilité décroissante : WILL (100% certain) > MUST (déduction très forte, 95%) > SHOULD (logiquement probable, 80%) > MAY (possible, 50%) > MIGHT (moins probable, 30%) > COULD (éventuellement possible, 20%)." },
+        { "icon": "important", "text": "Demandes polies — du moins formel au plus formel : 'Can you...?' (informel, entre amis) → 'Could you...?' (poli, standard) → 'Would you mind...+ing?' (très poli, formel) → 'Would it be possible to...?' (très formel)." }
       ],
-      "keyPoints": ["Modal + infinitif sans to", "mustn't vs don't have to", "can → be able to (futur)", "may vs might"]
+      "keyPoints": ["Modaux invariables (pas de S)", "Toujours + infinitif sans TO", "must (interne) vs have to (externe)", "mustn't (interdit) ≠ don't have to (pas obligatoire)", "can → be able to (futur/perfect)", "Modal + have + pp (jugement sur passé)"]
     },
     {
       "id": "b1-expressions-idiomatiques",
       "level": "B1",
       "theme": "Expressions",
       "themeIcon": "idioms",
-      "title": "Expressions Idiomatiques du Quotidien",
+      "title": "Expressions Idiomatiques Essentielles",
       "slug": "expressions-idiomatiques-quotidien",
-      "duration": 20,
+      "duration": 25,
       "xpReward": 40,
-      "summary": "Les expressions que les anglophones natifs utilisent tous les jours.",
-      "explanation": "Les expressions idiomatiques sont des groupes de mots dont le sens ne peut pas être déduit mot à mot. Elles sont essentielles pour comprendre les films, séries et conversations naturelles en anglais.",
+      "summary": "30 expressions incontournables pour comprendre les natifs et sonner naturel.",
+      "explanation": "Les expressions idiomatiques sont au cœur de l'anglais authentique. Leur sens ne peut pas être deviné à partir des mots individuels — elles forment une image ou une métaphore. Les maîtriser vous permettra de comprendre les films, séries, livres et conversations réelles. Elles sont organisées par thème pour faciliter la mémorisation.",
       "idioms": [
-        { "en": "Break a leg!", "fr": "Bonne chance ! (littéralement : Casse-toi une jambe)", "usage": "Avant une performance, audition, examen" },
-        { "en": "It's raining cats and dogs.", "fr": "Il pleut des cordes. (littéralement : il pleut des chats et des chiens)", "usage": "Pluie très forte" },
-        { "en": "Hit the nail on the head", "fr": "Mettre le doigt dessus / Toucher juste", "usage": "Quelqu'un dit exactement la bonne chose" },
-        { "en": "Under the weather", "fr": "Ne pas être dans son assiette / Se sentir mal", "usage": "Légèrement malade" },
-        { "en": "Bite the bullet", "fr": "Serrer les dents / Prendre son courage à deux mains", "usage": "Faire quelque chose de difficile" },
-        { "en": "Piece of cake", "fr": "C'est du gâteau / Fastoche", "usage": "Quelque chose de très facile" },
+        { "en": "Break a leg!", "fr": "Bonne chance ! (littéralement : casse-toi une jambe)", "usage": "Avant une performance, audition, examen, entretien" },
+        { "en": "It's raining cats and dogs.", "fr": "Il pleut des cordes. (pluie torrentielle)", "usage": "Météo très mauvaise, pluie intense" },
+        { "en": "Hit the nail on the head", "fr": "Mettre le doigt dessus / Toucher juste", "usage": "Quelqu'un a dit exactement la bonne chose" },
+        { "en": "Under the weather", "fr": "Ne pas être dans son assiette / Pas en forme", "usage": "Se sentir légèrement malade, fatigué" },
+        { "en": "Bite the bullet", "fr": "Serrer les dents / Prendre son courage à deux mains", "usage": "Accepter une situation difficile et l'affronter" },
+        { "en": "Piece of cake", "fr": "C'est du gâteau / Fastoche / Les doigts dans le nez", "usage": "Quelque chose de très facile" },
         { "en": "Once in a blue moon", "fr": "Très rarement / Une fois tous les 36 du mois", "usage": "Événement très rare" },
-        { "en": "Spill the beans", "fr": "Vendre la mèche / Révéler un secret", "usage": "Révéler une information secrète" },
-        { "en": "Cost an arm and a leg", "fr": "Coûter les yeux de la tête", "usage": "Très cher" },
-        { "en": "The ball is in your court", "fr": "La balle est dans ton camp", "usage": "C'est à toi de décider ou d'agir" }
+        { "en": "Spill the beans", "fr": "Vendre la mèche / Révéler un secret", "usage": "Divulguer une information confidentielle" },
+        { "en": "Cost an arm and a leg", "fr": "Coûter les yeux de la tête / Une fortune", "usage": "Quelque chose d'extrêmement cher" },
+        { "en": "The ball is in your court", "fr": "La balle est dans ton camp / C'est à toi de jouer", "usage": "C'est à l'autre personne de décider ou d'agir" },
+        { "en": "Beat around the bush", "fr": "Tourner autour du pot / Ne pas aller droit au but", "usage": "Éviter de dire quelque chose directement" },
+        { "en": "Hit the sack / hit the hay", "fr": "Aller se pieuter / Se coucher", "usage": "Aller se coucher (informel)" },
+        { "en": "Let the cat out of the bag", "fr": "Vendre la mèche / Révéler un secret par erreur", "usage": "Révéler accidentellement une surprise ou un secret" },
+        { "en": "Bite off more than you can chew", "fr": "Avoir les yeux plus gros que le ventre / Se surestimer", "usage": "Entreprendre quelque chose de trop difficile" },
+        { "en": "Every cloud has a silver lining", "fr": "Après la pluie, le beau temps / Il y a toujours quelque chose de positif", "usage": "Trouver un aspect positif dans une situation difficile" },
+        { "en": "Kill two birds with one stone", "fr": "Faire d'une pierre deux coups", "usage": "Accomplir deux choses avec une seule action" },
+        { "en": "The tip of the iceberg", "fr": "La partie émergée de l'iceberg / Le début des problèmes", "usage": "Ce qu'on voit n'est qu'une petite partie du problème réel" },
+        { "en": "Burn bridges", "fr": "Brûler ses vaisseaux / Couper les ponts définitivement", "usage": "Détruire définitivement une relation ou opportunité" },
+        { "en": "On the fence", "fr": "Indécis / Entre deux chaises / Ne pas se mouiller", "usage": "Impossible de choisir, refus de prendre position" },
+        { "en": "Pull someone's leg", "fr": "Se payer la tête de quelqu'un / Faire une blague", "usage": "Plaisanter, taquiner sans méchanceté" }
       ],
       "examples": [
-        { "en": "The exam was a piece of cake!", "fr": "L'examen, c'était du gâteau !" },
-        { "en": "I only see my cousin once in a blue moon.", "fr": "Je vois mon cousin très rarement." },
-        { "en": "Break a leg at your interview tomorrow!", "fr": "Bonne chance pour ton entretien demain !" },
-        { "en": "That new phone costs an arm and a leg.", "fr": "Ce nouveau téléphone coûte les yeux de la tête." }
+        { "en": "A: 'I passed my driving test first try!' B: 'Really?! No way, you're pulling my leg!'", "fr": "A: 'J'ai eu mon permis du premier coup !' B: 'Vraiment ?! Non, tu te fous de moi !'" },
+        { "en": "The project is just the tip of the iceberg — we have months of work ahead.", "fr": "Le projet n'est que la partie émergée de l'iceberg — nous avons des mois de travail devant nous." },
+        { "en": "I need to take the train AND do my shopping — perfect, I can kill two birds with one stone.", "fr": "Je dois prendre le train ET faire mes courses — parfait, je fais d'une pierre deux coups." },
+        { "en": "I was on the fence about going, but my friend convinced me.", "fr": "J'étais indécis(e) à propos d'y aller, mais mon ami m'a convaincu(e)." }
       ],
       "exceptions": [
-        { "text": "Ne traduisez JAMAIS les idiomes mot à mot ! 'Break a leg' ne signifie pas se blesser.", "type": "error" },
-        { "text": "Certains idiomes varient entre l'anglais britannique et américain.", "type": "info" }
+        { "text": "Ne JAMAIS traduire un idiome mot à mot. 'I'm pulling your leg' ne signifie pas tirer une jambe physiquement — ça veut dire plaisanter. Le contexte et la connaissance de l'expression sont indispensables.", "type": "error" },
+        { "text": "Certains idiomes varient selon le pays : 'Knock on wood' (Am) = 'Touch wood' (Br) pour dire 'je touche du bois'. 'I'm stuffed' (Br, plein après avoir mangé) peut être vulgaire en Am. Renseignez-vous sur votre variété cible.", "type": "info" },
+        { "text": "Niveau de formalité : ces expressions sont INFORMELLES. Ne les utilisez pas dans un contexte académique ou professionnel formel, sauf si vous maîtrisez parfaitement leur nuance.", "type": "rule" }
       ],
       "notes": [
-        { "icon": "tip", "text": "La meilleure façon d'apprendre les idiomes : regarder des séries en VO et noter les expressions inconnues." },
-        { "icon": "important", "text": "Attention au contexte : certaines expressions sont informelles et ne conviennent pas en contexte professionnel." }
+        { "icon": "tip", "text": "Méthode d'apprentissage efficace : (1) Regardez des séries en VO avec sous-titres anglais. (2) Notez les expressions inconnues. (3) Cherchez leur sens dans un dictionnaire idiomatique. (4) Utilisez-les dans une phrase personnelle. (5) Réutilisez-les à l'oral dès que possible." },
+        { "icon": "warning", "text": "Les expressions idiomatiques évoluent : certaines datent et sonnent 'vieillot' pour les jeunes natifs. D'autres sont très récentes (internet slang). Exposez-vous à l'anglais actuel via Netflix, YouTube, podcasts pour rester à jour." },
+        { "icon": "important", "text": "Pour les utiliser correctement, vous devez comprendre leur image mentale. 'On the fence' = assis sur une clôture, incapable de choisir un côté. 'Bite the bullet' = à l'époque des cowboys, on mordait une balle pendant une opération sans anesthésie pour supporter la douleur. Ces images aident à mémoriser." }
       ],
-      "keyPoints": ["Sens non-littéral", "Usage contextuel", "Registre informel", "Équivalents français"]
+      "keyPoints": ["Sens non-littéral toujours", "Ne pas traduire mot à mot", "Registre informel", "Variantes BR vs AM", "Mémoriser l'image mentale", "Contexte d'usage crucial"]
     },
     {
       "id": "b2-past-perfect",
       "level": "B2",
       "theme": "Grammaire",
       "themeIcon": "grammar",
-      "title": "Le Past Perfect (Plus-que-parfait)",
+      "title": "Le Past Perfect — Exprimer l'antériorité dans le passé",
       "slug": "past-perfect",
-      "duration": 20,
+      "duration": 25,
       "xpReward": 50,
-      "summary": "Exprimer une action antérieure à une autre action dans le passé.",
-      "explanation": "Le past perfect s'utilise pour exprimer une action qui s'est produite avant une autre action passée. Il se forme avec 'had' + participe passé pour tous les pronoms. C'est l'équivalent du plus-que-parfait français.",
+      "summary": "Clarifiez la chronologie d'événements passés et maîtrisez le discours indirect.",
+      "explanation": "Le past perfect (ou pluperfect) s'utilise pour exprimer une action qui a eu lieu AVANT une autre action dans le passé. C'est l'équivalent du plus-que-parfait français. Il se forme avec HAD + participe passé pour tous les pronoms. Il est souvent utilisé en combinaison avec le past simple : le past perfect pour l'action la plus ancienne, le past simple pour l'action plus récente.",
       "conjugation": {
-        "title": "Formation : had + past participle",
+        "title": "Formation : had + past participle (tous les pronoms)",
         "rows": [
-          { "pronoun": "All pronouns", "form": "had + past participle", "negative": "hadn't + past participle", "short": "I'd gone / She'd eaten" }
+          { "pronoun": "Tous les pronoms", "form": "had + past participle", "negative": "hadn't + past participle", "short": "I'd gone / She'd eaten / They'd left" }
         ]
       },
       "examples": [
-        { "en": "When I arrived, she had already left.", "fr": "Quand je suis arrivé, elle était déjà partie." },
-        { "en": "He hadn't eaten anything before the meeting.", "fr": "Il n'avait rien mangé avant la réunion." },
-        { "en": "Had you ever visited London before 2019?", "fr": "Aviez-vous déjà visité Londres avant 2019 ?" },
-        { "en": "I realized I had forgotten my passport.", "fr": "J'ai réalisé que j'avais oublié mon passeport." }
+        { "en": "When I arrived at the cinema, the film had already started.", "fr": "Quand je suis arrivé au cinéma, le film avait déjà commencé. (film = avant, arrivée = après)" },
+        { "en": "She failed the exam because she hadn't studied enough.", "fr": "Elle a échoué à l'examen parce qu'elle n'avait pas assez étudié." },
+        { "en": "By the time the ambulance arrived, the accident had already happened.", "fr": "Au moment où l'ambulance est arrivée, l'accident s'était déjà produit." },
+        { "en": "He told me he had never eaten sushi before that night.", "fr": "Il m'a dit qu'il n'avait jamais mangé de sushis avant ce soir-là." },
+        { "en": "Had you ever visited London before your work trip in 2022?", "fr": "Aviez-vous déjà visité Londres avant votre voyage d'affaires en 2022 ?" },
+        { "en": "I realized I had left my passport at home — I had to go back.", "fr": "J'ai réalisé que j'avais laissé mon passeport à la maison — j'ai dû faire demi-tour." },
+        { "en": "They had been married for 20 years before they divorced.", "fr": "Ils avaient été mariés 20 ans avant de divorcer." },
+        { "en": "Once she had finished the report, she sent it immediately.", "fr": "Une fois qu'elle eut terminé le rapport, elle l'envoya immédiatement." }
       ],
       "exceptions": [
-        { "text": "Si les deux actions sont simultanées ou si l'ordre est clair grâce au contexte, le past simple peut suffire.", "type": "info" },
-        { "text": "Avec 'after' et 'before', le past perfect n'est pas toujours obligatoire car la chronologie est déjà claire.", "type": "rule" }
+        { "text": "QUAND le past perfect est OPTIONNEL : Avec 'before' et 'after', la chronologie est déjà claire, donc le past perfect n'est pas toujours obligatoire. 'I ate before I left' et 'I had eaten before I left' sont tous deux corrects. Mais sans connecteur de temps, le past perfect EST nécessaire : 'She was tired — she had worked all night' (obligatoire pour montrer la cause).", "type": "rule" },
+        { "text": "DISCOURS INDIRECT (reported speech) : Le past perfect sert à 'reculer' les temps. 'I ate pizza' (direct) → She said she had eaten pizza (indirect). 'I am tired' → He said he was tired. 'I have finished' → She said she had finished.", "type": "info" },
+        { "text": "PAST PERFECT CONTINUOUS : had been + verb-ing. Insiste sur la DURÉE de l'action avant un moment passé. 'She was exhausted because she had been working for 12 hours straight.' (elle avait travaillé sans interruption pendant 12 heures).", "type": "info" }
       ],
       "notes": [
-        { "icon": "tip", "text": "Le past perfect est souvent utilisé dans le discours indirect (reported speech) pour reculer les temps." },
-        { "icon": "important", "text": "Signal words : before, after, when, already, just, by the time, until." }
+        { "icon": "tip", "text": "Mots-signaux du past perfect : by the time (au moment où), already (déjà), just (venait de), before (avant), after (après), when (quand, avec implication d'antériorité), once (une fois que), until (jusqu'à ce que), never...before (jamais auparavant)." },
+        { "icon": "warning", "text": "Ne sur-utilisez pas le past perfect. Si la chronologie est déjà claire grâce à 'before' ou 'after', le past simple peut suffire. 'After she finished work, she went to the gym' est parfaitement correct sans past perfect." },
+        { "icon": "important", "text": "Conditionnels avec past perfect : Le 3e conditionnel utilise le past perfect dans la clause en 'if'. 'If I had known, I would have called.' (Si j'avais su, j'aurais appelé.) = situation impossible, le passé ne peut pas être changé." }
       ],
-      "keyPoints": ["had + past participle", "Action avant une autre au passé", "Chronologie clarifiée", "Discours indirect"]
+      "keyPoints": ["had + past participle (tous pronoms)", "Action avant une autre action passée", "Discours indirect (reported speech)", "Optionnel avec before/after", "Past perfect continuous (had been + ing)", "3e conditionnel"]
     },
     {
       "id": "b2-conditionnels",
       "level": "B2",
       "theme": "Grammaire",
       "themeIcon": "grammar",
-      "title": "Les Conditionnels (0, 1, 2, 3)",
+      "title": "Les 4 Conditionnels — Maîtrise Complète",
       "slug": "conditionnels",
-      "duration": 30,
+      "duration": 35,
       "xpReward": 60,
-      "summary": "Maîtrisez les quatre types de phrases conditionnelles en anglais.",
-      "explanation": "Les conditionnelles expriment des hypothèses et leurs conséquences. Il existe quatre types principaux, selon que la situation est réelle, probable, improbable ou impossible.",
+      "summary": "Les quatre types de phrases conditionnelles + les mixed conditionals pour atteindre un niveau avancé.",
+      "explanation": "Les phrases conditionnelles expriment des hypothèses et leurs conséquences. L'anglais en a quatre types principaux selon la probabilité et le rapport au temps (présent, futur, passé). Un 5e type (mixed conditional) combine des éléments des types 2 et 3. La règle universelle : JAMAIS de WILL ou WOULD dans la clause commençant par IF (sauf exceptions très rares).",
       "vocabulary": [
-        { "en": "Zero conditional : If + present, present", "fr": "Vérité générale, fait scientifique" },
-        { "en": "First conditional : If + present, will + base verb", "fr": "Situation réelle et probable (futur)" },
-        { "en": "Second conditional : If + past simple, would + base verb", "fr": "Situation hypothétique ou improbable (présent/futur)" },
-        { "en": "Third conditional : If + past perfect, would have + past participle", "fr": "Situation impossible (le passé aurait pu être différent)" }
+        { "en": "Zero conditional : If + present simple, present simple", "fr": "Vérité générale, fait scientifique, action automatique — probabilité 100%", "emoji": "🔬" },
+        { "en": "First conditional : If + present simple, will + base verb", "fr": "Situation réelle et probable dans le futur — probabilité élevée", "emoji": "☀️" },
+        { "en": "Second conditional : If + past simple, would + base verb", "fr": "Situation hypothétique ou improbable au présent/futur — probabilité faible", "emoji": "🌙" },
+        { "en": "Third conditional : If + past perfect, would have + past participle", "fr": "Situation imaginaire dans le passé — impossible à changer", "emoji": "⭐" },
+        { "en": "Mixed conditional (2+3) : If + past perfect, would + base verb", "fr": "Condition dans le passé, conséquence dans le présent", "emoji": "🌐" }
       ],
       "examples": [
-        { "en": "If you heat water to 100°C, it boils. (0)", "fr": "Si tu chauffes l'eau à 100°C, elle bout." },
-        { "en": "If it rains tomorrow, I will stay home. (1)", "fr": "S'il pleut demain, je resterai à la maison." },
-        { "en": "If I were rich, I would travel the world. (2)", "fr": "Si j'étais riche, je voyagerais dans le monde entier." },
-        { "en": "If she had studied harder, she would have passed. (3)", "fr": "Si elle avait étudié davantage, elle aurait réussi." }
+        { "en": "Zero: If you heat ice, it melts. / If you don't water plants, they die.", "fr": "Si tu chauffes de la glace, elle fond. / Si tu n'arroses pas les plantes, elles meurent. (toujours vrai)" },
+        { "en": "First: If it doesn't rain tomorrow, we'll have the barbecue as planned.", "fr": "S'il ne pleut pas demain, nous ferons le barbecue comme prévu. (probable)" },
+        { "en": "First: If you study hard, you will pass your exams.", "fr": "Si tu travailles dur, tu réussiras tes examens. (conseil + probabilité)" },
+        { "en": "Second: If I won the lottery, I would quit my job and travel the world.", "fr": "Si je gagnais à la loterie, je quitterais mon travail et voyagerais. (hypothétique)" },
+        { "en": "Second: If I were you, I wouldn't accept that job offer.", "fr": "Si j'étais toi, je n'accepterais pas cette offre d'emploi. (conseil hypothétique)" },
+        { "en": "Third: If she had studied harder, she would have passed the exam.", "fr": "Si elle avait plus étudié, elle aurait réussi l'examen. (passé impossible à changer)" },
+        { "en": "Third: If we hadn't taken that shortcut, we wouldn't have been late.", "fr": "Si nous n'avions pas pris ce raccourci, nous n'aurions pas été en retard." },
+        { "en": "Mixed: If I had studied medicine (past), I would be a doctor now (present).", "fr": "Si j'avais étudié la médecine, je serais médecin maintenant. (passé → conséquence présente)" }
       ],
       "exceptions": [
-        { "text": "Dans le 2e conditionnel, on utilise 'were' pour tous les pronoms (pas 'was') dans un style formel : 'If I were you…' (pas 'If I was you').", "type": "rule" },
-        { "text": "'Unless' = 'if not'. 'Unless you hurry, you'll be late' = 'If you don't hurry, you'll be late'.", "type": "info" },
-        { "text": "Le 'mixed conditional' mélange les types 2 et 3 : 'If I had studied medicine (3), I would be a doctor now (2)'.", "type": "important" }
+        { "text": "RÈGLE ABSOLUE : JAMAIS de will/would dans la clause IF pour les types 0, 1, 2. 'If it will rain' (FAUX) → 'If it rains' (JUSTE). 'If I would have money' (FAUX) → 'If I had money' (JUSTE). Exceptions très rares : pour exprimer la volonté ('If you will be patient, I'll explain' = si tu veux bien être patient) — c'est un usage avancé et rare.", "type": "error" },
+        { "text": "2e conditionnel : WERE pour tous les pronoms dans un style formel et en anglais correct. 'If I were rich' (formel, recommandé) est préférable à 'If I was rich' (courant à l'oral). Toujours 'If I were you' (pas 'If I was you').", "type": "rule" },
+        { "text": "UNLESS = IF NOT : 'Unless you hurry, you'll be late' = 'If you don't hurry, you'll be late'. UNLESS s'utilise avec le conditionnel 1 principalement : 'I won't go unless you come with me' (je n'irai pas si tu ne viens pas).", "type": "info" },
+        { "text": "INVERSIONS FORMELLES (sans IF) : 'Were I in your position...' = 'If I were in your position'. 'Had I known...' = 'If I had known'. 'Should you need help...' = 'If you should need help'. Ces structures sont très formelles, typiques de l'écrit académique ou juridique.", "type": "info" }
       ],
       "notes": [
-        { "icon": "warning", "text": "Jamais de 'will' ou 'would' dans la clause en 'if' pour les conditionnels 0, 1 et 2." },
-        { "icon": "tip", "text": "Pour retenir : 0 = toujours vrai, 1 = possible, 2 = peu probable, 3 = impossible (passé)." }
+        { "icon": "tip", "text": "Moyen mnémotechnique pour les 4 types — pensez à la RÉALITÉ : (0) C'est toujours vrai (eau + 100°C = vapeur). (1) C'est vraiment possible (il y a des nuages, ça va peut-être pleuvoir). (2) C'est peu probable ou imaginaire (si j'étais riche, mais je ne le suis pas). (3) C'est du passé, impossible à changer (si j'avais étudié, mais je ne l'ai pas fait)." },
+        { "icon": "warning", "text": "Erreurs classiques : 'If I would have' (✗ → If I had). 'If she would be' (✗ → If she were/was). 'I would have studied if I knew' (✗ → 'if I had known'). Dans le 3e conditionnel, ALWAYS : if + had + pp → would have + pp." },
+        { "icon": "important", "text": "Mixed conditional — deux variantes : (A) Passé→Présent : 'If I had studied law [passé], I would be a lawyer now [présent].' (B) Présent→Passé : 'If I weren't so clumsy [présent], I wouldn't have dropped the vase [passé].' Ces structures montrent un niveau vraiment avancé." }
       ],
-      "keyPoints": ["4 types de conditionnels", "If + were (2e conditionnel)", "Unless = if not", "Mixed conditional"]
+      "keyPoints": ["4 types selon probabilité", "JAMAIS will/would dans clause if (types 0,1,2)", "were pour tous (2e conditionnel formel)", "unless = if not", "Mixed conditional (2+3)", "Inversions formelles sans if"]
     },
     {
       "id": "b2-expressions-professionnelles",
       "level": "B2",
       "theme": "Expressions",
       "themeIcon": "idioms",
-      "title": "Expressions Professionnelles & Business",
+      "title": "Anglais Professionnel & Business",
       "slug": "expressions-professionnelles",
-      "duration": 20,
+      "duration": 25,
       "xpReward": 50,
-      "summary": "Le vocabulaire et les expressions clés pour le monde professionnel anglophone.",
-      "explanation": "En contexte professionnel, les anglophones utilisent des expressions figées très spécifiques. Les maîtriser vous permettra de participer à des réunions, rédiger des emails et communiquer efficacement.",
+      "summary": "Emails, réunions, présentations — tout le vocabulaire pour exceller en contexte pro anglophone.",
+      "explanation": "L'anglais professionnel a ses propres codes, expressions et registres. Maîtriser ces nuances vous permettra non seulement de comprendre vos collègues anglophones, mais aussi de faire bonne impression. Cette leçon couvre le jargon business, les formules d'email, et les expressions de réunion.",
       "idioms": [
-        { "en": "Touch base", "fr": "Prendre contact / Faire un point", "usage": "Email ou réunion : 'Let's touch base next week'" },
-        { "en": "Get the ball rolling", "fr": "Démarrer / Lancer quelque chose", "usage": "Début de projet ou réunion" },
-        { "en": "Think outside the box", "fr": "Sortir des sentiers battus / Penser de manière créative", "usage": "Brainstorming, innovation" },
-        { "en": "On the same page", "fr": "Sur la même longueur d'onde / D'accord", "usage": "'Are we all on the same page?'" },
-        { "en": "Take it offline", "fr": "En discuter en dehors de la réunion", "usage": "Sujet trop long pour la réunion en cours" },
-        { "en": "Circle back", "fr": "Revenir sur le sujet plus tard", "usage": "Reporter une discussion" },
-        { "en": "Bottom line", "fr": "L'essentiel / Le résultat final", "usage": "'The bottom line is we need more budget'" },
-        { "en": "Bandwidth", "fr": "Capacité de travail disponible", "usage": "'I don't have the bandwidth for this right now'" }
+        { "en": "Touch base (with someone)", "fr": "Faire un point / Prendre contact", "usage": "'Let's touch base on Friday to discuss the results.'" },
+        { "en": "Get the ball rolling", "fr": "Lancer / Démarrer quelque chose", "usage": "'Shall we get the ball rolling? I'll start the presentation.'" },
+        { "en": "Think outside the box", "fr": "Innover / Penser de façon créative", "usage": "'We need to think outside the box to solve this problem.'" },
+        { "en": "On the same page", "fr": "D'accord / Sur la même longueur d'onde", "usage": "'Before we start, let's make sure we're all on the same page.'" },
+        { "en": "Take it offline", "fr": "En discuter en dehors de la réunion", "usage": "'This is getting complex — let's take it offline after the meeting.'" },
+        { "en": "Circle back (on something)", "fr": "Revenir sur un sujet plus tard", "usage": "'Let me circle back to you on that once I have the figures.'" },
+        { "en": "Bottom line", "fr": "L'essentiel / Le résultat final / En bref", "usage": "'The bottom line is: we need more budget or fewer features.'" },
+        { "en": "Bandwidth", "fr": "Capacité de travail disponible / Disponibilité", "usage": "'I don't have the bandwidth to take on a new project right now.'" },
+        { "en": "Low-hanging fruit", "fr": "Les gains faciles / Ce qui est accessible rapidement", "usage": "'Let's start with the low-hanging fruit before tackling the harder issues.'" },
+        { "en": "Move the needle", "fr": "Faire bouger les choses / Avoir un impact réel", "usage": "'Does this initiative really move the needle on our key metrics?'" },
+        { "en": "Deep dive", "fr": "Analyse approfondie", "usage": "'We need to do a deep dive into the customer data before the meeting.'" },
+        { "en": "Action items", "fr": "Points d'action / Tâches à effectuer", "usage": "'Let's review the action items from our last meeting.'" }
       ],
       "examples": [
-        { "en": "Let's touch base on Thursday to discuss the project.", "fr": "Faisons un point jeudi pour discuter du projet." },
-        { "en": "We need to think outside the box to solve this.", "fr": "Nous devons sortir des sentiers battus pour résoudre ça." },
-        { "en": "Are we all on the same page about the deadline?", "fr": "Sommes-nous tous d'accord sur la date limite ?" },
-        { "en": "I don't have the bandwidth to take on a new project.", "fr": "Je n'ai pas la capacité de prendre en charge un nouveau projet." }
+        { "en": "I'm reaching out to touch base regarding the Q3 report.", "fr": "Je vous contacte pour faire le point concernant le rapport du T3. (email formel)" },
+        { "en": "Going forward, all requests should be sent by email for tracking purposes.", "fr": "À partir de maintenant, toutes les demandes doivent être envoyées par email à des fins de suivi." },
+        { "en": "Could you please revert to me by end of day with the updated figures?", "fr": "Pourriez-vous me revenir avant la fin de journée avec les chiffres mis à jour ?" },
+        { "en": "As per our conversation this morning, I'm attaching the contract.", "fr": "Comme convenu lors de notre conversation ce matin, je joins le contrat." }
       ],
       "exceptions": [
-        { "text": "Ces expressions de 'corporate speak' sont parfois critiquées comme du jargon vide de sens. À utiliser avec discernement.", "type": "info" }
+        { "text": "Ces expressions de 'corporate speak' sont parfois critiquées comme du jargon vide de sens ('buzzwords'). Un usage excessif dans un seul email ou réunion peut sembler artificiel ou prétentieux. Dosez-les intelligemment.", "type": "info" },
+        { "text": "ATTENTION : 'Revert' en anglais britannique des affaires signifie 'répondre / revenir vers quelqu'un'. En anglais standard, 'revert' signifie 'revenir à un état antérieur'. Ne confondez pas ces usages selon votre contexte.", "type": "warning" }
       ],
       "notes": [
-        { "icon": "tip", "text": "Ces expressions sont très courantes dans les entreprises internationales et les startups anglophones." },
-        { "icon": "important", "text": "Évitez le suremploi : trop d'expressions corporates dans un seul message peut sembler artificiel." }
+        { "icon": "tip", "text": "Formules d'emails professionnels — Ouverture : 'I hope this email finds you well.' / 'I'm writing with regard to...' / 'Further to our meeting...' Clôture : 'Please don't hesitate to contact me.' / 'I look forward to hearing from you.' / 'Best regards / Kind regards / Yours sincerely.'" },
+        { "icon": "warning", "text": "Niveaux de formalité : 'Hi Tom' (collègue proche) → 'Dear Mr Smith' (formel, première approche) → 'To Whom It May Concern' (très formel, inconnu). Dans le monde anglophone, les prénoms sont utilisés beaucoup plus tôt qu'en France — ne soyez pas surpris." },
+        { "icon": "important", "text": "Expressions utiles en réunion : 'Could you elaborate on that?' (pourriez-vous développer ?), 'Could we get back on track?' (revenons au sujet), 'Just to clarify...' (pour clarifier), 'I take your point, but...' (je comprends votre argument, mais), 'Let's wrap up' (concluons), 'Any other business?' (autres points à l'ordre du jour ?)." }
       ],
-      "keyPoints": ["Registre formel/professionnel", "Emails et réunions", "Jargon business courant", "Usage contextuel"]
+      "keyPoints": ["Jargon business courant", "Formules d'email professionnelles", "Niveaux de formalité", "Expressions de réunion", "Éviter le sur-usage de buzzwords", "revert = répondre (BR business)"]
     },
     {
       "id": "c1-subjonctif-avance",
       "level": "C1",
       "theme": "Grammaire",
       "themeIcon": "grammar",
-      "title": "Le Subjonctif & Structures Avancées",
+      "title": "Structures Avancées : Subjonctif, Inversions & Emphase",
       "slug": "subjonctif-structures-avancees",
-      "duration": 30,
+      "duration": 35,
       "xpReward": 70,
-      "summary": "Maîtriser les structures complexes qui caractérisent un niveau avancé.",
-      "explanation": "En anglais, le subjonctif existe mais il est peu visible car sa forme est souvent identique à l'indicatif. Il s'utilise dans des contextes formels, après des expressions de suggestion, recommandation ou nécessité.",
+      "summary": "Les structures complexes qui distinguent un niveau C1 — pour paraître natif à l'écrit.",
+      "explanation": "À niveau C1, il ne suffit plus de communiquer correctement — il faut maîtriser les structures qui donnent de l'élégance, de l'emphase et de la précision à votre anglais. Cette leçon couvre : (1) le subjonctif formel, (2) les inversions pour l'emphase, (3) les cleft sentences pour mettre en relief, (4) les ellipses et structures parallèles. Ces outils sont essentiels pour les examens (IELTS, TOEFL, CAE), l'écriture académique et la communication professionnelle de haut niveau.",
       "examples": [
-        { "en": "I suggest that he be present at the meeting.", "fr": "Je suggère qu'il soit présent à la réunion. (subjonctif formel)" },
-        { "en": "It is essential that she submit the report by Friday.", "fr": "Il est essentiel qu'elle soumette le rapport avant vendredi." },
-        { "en": "If I were to resign, who would replace me?", "fr": "Si je devais démissionner, qui me remplacerait ?" },
-        { "en": "Had I known, I would have acted differently.", "fr": "Si j'avais su, j'aurais agi différemment. (inversion sans 'if')" }
+        { "en": "SUBJONCTIF: It is essential that every student submit their work on time. (pas 'submits')", "fr": "Il est essentiel que chaque étudiant remette son travail à temps." },
+        { "en": "SUBJONCTIF: The committee recommends that he be present at the hearing.", "fr": "Le comité recommande qu'il soit présent à l'audience." },
+        { "en": "INVERSION après Never: Never have I seen such a beautiful landscape.", "fr": "Jamais je n'ai vu un paysage aussi beau. (inversion sujet-auxiliaire)" },
+        { "en": "INVERSION après Rarely: Rarely does she make mistakes — she's extremely careful.", "fr": "Elle fait rarement des erreurs — elle est extrêmement prudente." },
+        { "en": "INVERSION conditionnelle: Had I known about the problem, I would have fixed it immediately.", "fr": "Si j'avais connu le problème, je l'aurais réglé immédiatement." },
+        { "en": "CLEFT: It was Maria who told me the news, not Peter.", "fr": "C'est Maria qui m'a dit la nouvelle, pas Peter. (mise en relief)" },
+        { "en": "CLEFT: What I really need is a long holiday.", "fr": "Ce dont j'ai vraiment besoin, c'est de longues vacances." },
+        { "en": "EMPHASE: Little did she know that her life was about to change forever.", "fr": "Elle ne savait guère que sa vie était sur le point de changer pour toujours." }
       ],
       "exceptions": [
-        { "text": "L'inversion sans 'if' dans les conditionnels est une structure formelle avancée : 'Had I known' = 'If I had known'.", "type": "rule" },
-        { "text": "Le subjonctif se distingue à la 3e pers. singulier : 'It is important that he be here' (pas 'is').", "type": "rule" },
-        { "text": "Verbes suivis du subjonctif : suggest, recommend, insist, demand, require, propose, ask (dans contexte formel).", "type": "info" }
+        { "text": "LE SUBJONCTIF ANGLAIS se distingue à la 3e personne du singulier : 'It is vital that he BE here' (subjonctif, pas 'is'). 'The law requires that every citizen HAVE the right to vote' (subjonctif, pas 'has'). La forme est identique à l'infinitif, pour tous les pronoms.", "type": "rule" },
+        { "text": "INVERSIONS — mots déclencheurs (followed by auxiliary + subject) : Never, Rarely, Seldom, Hardly (ever), Scarcely, No sooner... than, Not only... but also, Only then, Under no circumstances, At no time, Not until, So + adj. Exemple : 'So beautiful was the music that everyone fell silent.'", "type": "rule" },
+        { "text": "CLEFT SENTENCES types : IT-cleft ('It was Tom who called') pour l'identification. WH-cleft/pseudo-cleft ('What he needs is...', 'The thing that surprised me was...') pour la mise en relief d'une information. ALL-cleft ('All I want is...') pour la restriction.", "type": "info" }
       ],
       "notes": [
-        { "icon": "important", "text": "Ces structures apparaissent fréquemment dans les textes académiques, juridiques et journalistiques." },
-        { "icon": "tip", "text": "L'alternative informelle au subjonctif : 'I suggest that he should be present' — les deux sont acceptés." }
+        { "icon": "important", "text": "Verbes qui déclenchent le subjonctif formel (RIDA : Recommend, Insist, Demand, Ask/Advise + that) : recommend, suggest, insist, demand, require, propose, ask, advise, urge, request, stipulate, mandate. Exemple : 'The doctor insists that she REST' / 'I suggest that everyone CONSIDER the proposal carefully'." },
+        { "icon": "tip", "text": "L'alternative informelle au subjonctif est 'should' : 'It's essential that he should be present' = 'It's essential that he be present'. Les deux sont acceptés, mais le subjonctif pur est plus formel et prestigieux dans l'écrit académique." },
+        { "icon": "warning", "text": "Ces structures apparaissent dans les textes juridiques, académiques, journalistiques et dans les discours. Savoir les reconnaître est indispensable pour le niveau C1. Les produire activement montre une maîtrise exceptionnelle." }
       ],
-      "keyPoints": ["Subjonctif formel", "Inversion conditionnelle", "Texte académique/juridique", "Verbes de suggestion"]
+      "keyPoints": ["Subjonctif formel (base verbale sans s)", "Inversions emphatiques (never/rarely/...)", "Cleft sentences (it was... who/that)", "WH-cleft (What I need is...)", "Inversions conditionnelles sans if", "Structures parallèles et emphase"]
     },
     {
       "id": "c1-nuances-vocabulaire",
       "level": "C1",
       "theme": "Vocabulaire",
       "themeIcon": "vocabulary",
-      "title": "Nuances de Vocabulaire & Registres",
+      "title": "Nuances Lexicales, Collocations & Registres",
       "slug": "nuances-vocabulaire-registres",
-      "duration": 25,
+      "duration": 30,
       "xpReward": 60,
-      "summary": "Comprendre et utiliser les subtilités du vocabulaire selon le contexte.",
-      "explanation": "À niveau C1, la maîtrise des nuances de sens entre des mots similaires est cruciale. L'anglais possède une richesse vocabulaire exceptionnelle grâce à ses origines germaniques et latines — souvent, il existe un mot informel (germanique) et un mot formel (latin/français).",
+      "summary": "Choisir le mot exact selon le contexte, la nuance et le registre — la marque d'un locuteur avancé.",
+      "explanation": "À niveau C1, la richesse du vocabulaire anglais devient votre meilleur allié. L'anglais possède environ 170 000 mots en usage actif, souvent avec des synonymes aux nuances très différentes selon le contexte. Cette richesse vient de ses deux grandes sources : les mots germaniques (courts, courants, informels) et les mots latins/français (plus longs, plus formels). Maîtriser les collocations (combinaisons de mots qui 'vont ensemble' naturellement) est tout aussi crucial.",
       "vocabulary": [
-        { "en": "ask → inquire / request", "fr": "demander (informel) → se renseigner / solliciter (formel)" },
-        { "en": "start → commence / initiate", "fr": "commencer (informel) → commencer / initier (formel)" },
-        { "en": "end → conclude / terminate", "fr": "finir (informel) → conclure / terminer (formel)" },
-        { "en": "show → demonstrate / exhibit", "fr": "montrer (informel) → démontrer / exposer (formel)" },
-        { "en": "help → assist / facilitate", "fr": "aider (informel) → assister / faciliter (formel)" },
-        { "en": "use → utilize / employ", "fr": "utiliser (informel) → utiliser / employer (formel)" }
+        { "en": "look (at) → observe, examine, scrutinize, glance, stare, peer, glare", "fr": "regarder → observer, examiner, scruter, jeter un coup d'œil, fixer, regarder furtivement, lancer un regard sévère", "emoji": "👁️" },
+        { "en": "say → state, claim, argue, contend, assert, maintain, acknowledge, admit", "fr": "dire → déclarer, prétendre, soutenir, défendre (une thèse), affirmer, maintenir, reconnaître, admettre", "emoji": "💬" },
+        { "en": "think → believe, reckon, suppose, assume, presume, speculate, contemplate", "fr": "penser → croire, estimer, supposer, présumer, présupposer, spéculer, méditer sur", "emoji": "🧠" },
+        { "en": "big → large, substantial, considerable, significant, enormous, vast, immense, colossal", "fr": "grand/gros → large, substantiel, considérable, significatif, énorme, vaste, immense, colossal", "emoji": "📊" },
+        { "en": "bad → poor, inadequate, substandard, detrimental, adverse, detestable, appalling", "fr": "mauvais → médiocre, inadéquat, inférieur aux normes, nuisible, défavorable, détestable, effroyable", "emoji": "❌" },
+        { "en": "get better → improve, recover, recuperate, convalesce, bounce back", "fr": "aller mieux → s'améliorer, se remettre, récupérer, être convalescent, rebondir", "emoji": "📈" }
       ],
       "examples": [
-        { "en": "Could you help me? (informel) / Could you assist me? (formel)", "fr": "Tu peux m'aider ? / Pourriez-vous m'assister ?" },
-        { "en": "The CEO will start the meeting. / The CEO will commence proceedings.", "fr": "Le PDG va commencer la réunion. (formel)" },
-        { "en": "The study shows that… / The study demonstrates that…", "fr": "L'étude montre que… (informel vs formel)" },
-        { "en": "We need to end this contract. / We need to terminate this agreement.", "fr": "Nous devons mettre fin à ce contrat. (formel/juridique)" }
+        { "en": "The study ARGUES (not 'says') that climate change is accelerating. (registre académique)", "fr": "L'étude soutient que le changement climatique s'accélère." },
+        { "en": "She GLANCED nervously at her watch before the interview. (coup d'œil rapide et nerveux)", "fr": "Elle jeta un coup d'œil nerveux à sa montre avant l'entretien." },
+        { "en": "He STARED at her for what seemed like an eternity. (fixer intensément, longuement)", "fr": "Il la fixa pendant ce qui sembla une éternité." },
+        { "en": "MAKE a decision (not 'do'). TAKE an exam (not 'make'). DO business (not 'make'). HAVE a meeting (not 'do').", "fr": "Collocations avec make/do/take/have — chaque verbe a ses propres combinaisons figées." }
       ],
       "exceptions": [
-        { "text": "Attention : 'utilize' n'est pas toujours meilleur qu''use'. Dans beaucoup de cas, 'use' est plus naturel même en contexte formel.", "type": "warning" },
-        { "text": "Les mots d'origine française en anglais sont souvent plus formels : 'commence' (fr) vs 'start' (germanique).", "type": "info" }
+        { "text": "COLLOCATIONS — combinaisons obligatoires : make a mistake (pas 'do a mistake'), do homework (pas 'make homework'), take a photo (pas 'make a photo'), have a bath (BR)/take a bath (AM), make progress, do research, take part in, pay attention, break a record, keep a promise, miss an opportunity, catch a bus, raise awareness, meet a deadline.", "type": "rule" },
+        { "text": "FAUX AMIS AVANCÉS : 'Eventually' = finalement, à terme (PAS 'éventuellement' = possibly). 'Actually' = en fait, vraiment (PAS 'actuellement' = currently). 'Sensible' = raisonnable, sensé (PAS 'sensible' = sensitive). 'Sympathetic' = compréhensif, compatissant (PAS 'sympathique' = nice/pleasant).", "type": "error" },
+        { "text": "PRÉPOSITIONS avec les adjectifs et verbes : ces combinaisons sont souvent arbitraires et doivent être mémorisées. Exemples : interested IN (pas 'by'), good AT (pas 'in'), different FROM/TO (pas 'than' en BR), depend ON, consist OF, result IN, result FROM, suffer FROM, congratulate ON, accused OF, devoted TO.", "type": "rule" }
       ],
       "notes": [
-        { "icon": "tip", "text": "Règle générale : mots courts germaniques = informels/quotidiens. Mots longs latins/français = formels/académiques." },
-        { "icon": "important", "text": "Adapter son registre est une compétence clé au niveau C1 : discours académique, email professionnel, conversation quotidienne." }
+        { "icon": "tip", "text": "Stratégie des synonymes gradués : au lieu d'apprendre des synonymes interchangeables, apprenez les nuances. 'Tired' (fatigué) → 'exhausted' (épuisé, bien plus fort) → 'worn out' (à bout) → 'drained' (vidé, émotionnellement aussi) → 'shattered' (BR, complètement épuisé). Chaque mot exprime une INTENSITÉ différente." },
+        { "icon": "warning", "text": "Règle des origines : les mots courts d'origine GERMANIQUE sont courants et informels (start, end, help, show, ask). Les mots longs d'origine LATINE/FRANÇAISE sont formels (commence, terminate, assist, demonstrate, inquire). 'Ask → inquire', 'show → demonstrate', 'help → assist'. Adaptez selon le registre." },
+        { "icon": "important", "text": "Phrasal verbs vs verbes formels : À l'oral et dans les textes informels, on utilise les phrasal verbs. À l'écrit formel, on préfère le verbe latin. 'Find out' → 'discover/ascertain'. 'Put off' → 'postpone'. 'Make up' → 'fabricate/invent'. 'Go up' → 'increase/rise'. 'Come down' → 'decrease/fall'." }
       ],
-      "keyPoints": ["Registres informel/formel", "Origines germaniques vs latines", "Nuances de sens", "Contexte d'usage"]
+      "keyWords": ["Collocations make/do/take/have", "Synonymes gradués (intensité)", "Faux amis avancés", "Phrasal verbs vs verbes formels", "Prépositions figées", "Registre informel (germanique) vs formel (latin)"]
     },
     {
       "id": "c2-rhetorique-style",
       "level": "C2",
       "theme": "Expressions",
       "themeIcon": "idioms",
-      "title": "Rhétorique, Style & Figures de Style",
+      "title": "Rhétorique, Style Littéraire & Maîtrise du Discours",
       "slug": "rhetorique-style",
-      "duration": 30,
+      "duration": 40,
       "xpReward": 80,
-      "summary": "Maîtriser les outils stylistiques pour une expression écrite et orale de très haut niveau.",
-      "explanation": "Au niveau C2, la maîtrise de l'anglais va au-delà de la grammaire — il s'agit de comprendre et d'utiliser les figures de style, la rhétorique et les nuances stylistiques qui caractérisent les grands auteurs et orateurs anglophones.",
+      "summary": "Le niveau le plus élevé : comprendre et utiliser les outils des grands auteurs et orateurs.",
+      "explanation": "Au niveau C2, vous maîtrisez la grammaire et le vocabulaire. L'objectif maintenant est de comprendre et d'utiliser les outils stylistiques et rhétoriques qui caractérisent les grands textes et discours anglophones. Ces outils permettent de persuader, d'émouvoir, d'instruire et de surprendre. Ils sont présents dans la littérature, les discours politiques, la publicité, le journalisme et la comédie.",
       "vocabulary": [
-        { "en": "Alliteration", "fr": "Allitération : répétition du même son initial ('She sells seashells')" },
-        { "en": "Anaphora", "fr": "Anaphore : répétition en début de phrase ('I have a dream… I have a dream…')" },
-        { "en": "Euphemism", "fr": "Euphémisme : expression adoucie ('passed away' pour 'died')" },
-        { "en": "Litotes", "fr": "Litote : affirmation par la négation du contraire ('not bad' = 'good')" },
-        { "en": "Irony / Sarcasm", "fr": "Ironie / Sarcasme : sens contraire au sens littéral" },
-        { "en": "Hyperbole", "fr": "Hyperbole : exagération délibérée ('I've told you a million times')" }
+        { "en": "Alliteration — répétition du même son initial", "fr": "'She sells seashells by the seashore' / 'Peter Piper picked a peck of pickled peppers'", "emoji": "🔡" },
+        { "en": "Anaphora — répétition en début de phrase/clause", "fr": "'I have a dream... I have a dream... I have a dream' (Martin Luther King)", "emoji": "🔄" },
+        { "en": "Antithesis — opposition de deux idées dans une structure parallèle", "fr": "'It was the best of times, it was the worst of times' (Dickens)", "emoji": "⚖️" },
+        { "en": "Chiasmus — inversion de l'ordre dans une structure parallèle", "fr": "'Ask not what your country can do for you — ask what you can do for your country' (Kennedy)", "emoji": "✖️" },
+        { "en": "Euphemism — expression adoucie pour remplacer un mot difficile", "fr": "'Passed away' (died), 'let go' (fired), 'collateral damage' (civilian deaths)", "emoji": "🌸" },
+        { "en": "Litotes — affirmation par la négation du contraire (understatement)", "fr": "'Not bad' (= good), 'not unlikely' (= probable), 'not the most exciting film' (= boring)", "emoji": "➖" },
+        { "en": "Hyperbole — exagération délibérée pour créer un effet", "fr": "'I've told you a million times!' / 'I'm so hungry I could eat a horse!'", "emoji": "💥" },
+        { "en": "Irony/Sarcasm — dire le contraire de ce qu'on pense", "fr": "'Oh great, another Monday.' (sarcasme) / 'How lovely!' (dit d'un temps horrible)", "emoji": "😏" },
+        { "en": "Metaphor — comparaison directe (sans 'like' ou 'as')", "fr": "'Life is a journey.' / 'Time is money.' / 'She has a heart of gold.'", "emoji": "🎭" },
+        { "en": "Simile — comparaison avec 'like' ou 'as... as'", "fr": "'As brave as a lion.' / 'Like a fish out of water.' / 'She runs like the wind.'", "emoji": "🔍" },
+        { "en": "Personification — donner des qualités humaines à un objet/concept", "fr": "'The wind whispered through the trees.' / 'Fortune smiles on the brave.'", "emoji": "🌿" },
+        { "en": "Oxymoron — combinaison de deux termes contradictoires", "fr": "'Bittersweet' / 'Deafening silence' / 'Living death' / 'Organized chaos'", "emoji": "🔀" }
       ],
       "examples": [
-        { "en": "It's not the worst idea I've heard. (litotes)", "fr": "C'est une bonne idée. (affirmé par la négative)" },
-        { "en": "We shall fight on the beaches… (anaphore — Churchill)", "fr": "Répétition de 'we shall' pour amplifier l'effet rhétorique." },
-        { "en": "She's pushing up daisies. (euphémisme)", "fr": "Elle est morte. (expression adoucie)" },
-        { "en": "Oh great, another Monday. (ironie)", "fr": "Sens opposé au sens littéral — exprimé avec intonation." }
+        { "en": "LITOTES: 'The exam wasn't exactly a piece of cake.' = The exam was very difficult.", "fr": "Litote : affirmation par la négation du contraire, typiquement britannique pour l'understatement." },
+        { "en": "ANAPHORE (Churchill, 1940): 'We shall fight on the beaches, we shall fight on the landing grounds, we shall fight in the fields...'", "fr": "La répétition de 'we shall fight' crée un rythme et amplifie la détermination — effet rhétorique puissant." },
+        { "en": "CHIASME (Kennedy): 'Ask not what your country can do for you — ask what you can do for your country.'", "fr": "L'inversion crée une structure mémorable qui force à réfléchir — rhétorique politique parfaite." },
+        { "en": "MÉTAPHORE ÉTENDUE: 'All the world's a stage, and all the men and women merely players.' (Shakespeare)", "fr": "Shakespeare compare le monde entier à un théâtre, avec les humains comme acteurs — métaphore développée sur tout un poème." }
       ],
       "exceptions": [
-        { "text": "L'ironie anglaise (surtout britannique) est souvent subtile et peut être mal interprétée par les non-natifs.", "type": "warning" },
-        { "text": "Les figures de style varient en fréquence selon la culture : les Britanniques utilisent plus souvent l'euphémisme et la litote.", "type": "info" }
+        { "text": "L'IRONIE BRITANNIQUE est souvent subtile et peut facilement être mal interprétée. Un Britannique disant 'Well, that's just marvellous' (avec un certain ton) peut vouloir dire exactement le contraire. L'intonation et le contexte sont indispensables pour la détecter.", "type": "warning" },
+        { "text": "UNDERSTATEMENT (atténuation) est un trait culturel PROFONDÉMENT britannique. Là où un Américain dirait 'This is amazing!', un Britannique dira 'Not bad, actually.' Là où vous attendez 'I'm devastated', vous entendrez 'I'm not terribly pleased.' Ne confondez pas froideur et understatement.", "type": "info" },
+        { "text": "DIFFÉRENCE METAPHORE / SIMILE : Métaphore = 'She IS a lion' (comparaison directe, la plus forte). Simile = 'She fights LIKE a lion' ou 'She is AS brave AS a lion' (comparaison avec like/as, plus explicite). Les deux créent des images, la métaphore est plus percutante.", "type": "rule" }
       ],
       "notes": [
-        { "icon": "important", "text": "Ces outils sont essentiels pour comprendre la littérature, les discours politiques et les médias anglophones." },
-        { "icon": "tip", "text": "Exercice recommandé : analysez un discours célèbre (Obama, Churchill, MLK) pour identifier les figures de style." }
+        { "icon": "important", "text": "Ces figures de style sont omniprésentes dans : (1) la littérature anglophone (Shakespeare, Dickens, Orwell, Hemingway, Toni Morrison), (2) les discours politiques (Churchill, MLK, Obama, Kennedy), (3) la publicité ('Just do it' — Nike, anaphore + impératif), (4) le journalisme d'opinion, (5) l'humour britannique. Savoir les identifier enrichit RADICALEMENT votre compréhension de ces textes." },
+        { "icon": "tip", "text": "Exercice pratique recommandé : choisissez un discours célèbre (Kennedy, MLK, Churchill, Obama) et identifiez systématiquement chaque figure de style. Vous serez surpris de la densité rhétorique de ces textes. TED Talks sont aussi excellents pour l'analyse rhétorique moderne." },
+        { "icon": "warning", "text": "Surcharge rhétorique : utiliser trop de figures de style dans un texte rend l'écriture artificielle et difficile à lire. Les meilleurs auteurs les dosent avec parcimonie. Qualité > quantité. Un seul chiasme bien placé vaut mieux que dix métaphores forcées." }
       ],
-      "keyPoints": ["Figures de style", "Rhétorique anglophone", "Ironie britannique", "Analyse de discours"]
+      "keyPoints": ["12 figures de style principales", "Understatement britannique", "Anaphore (discours politiques)", "Chiasme (structure mémorable)", "Ironie vs sarcasme", "Métaphore vs simile", "Analyse de discours authentiques"]
     }
   ],
   "themes": [

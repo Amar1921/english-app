@@ -4,7 +4,7 @@ import quizReducer from './slices/quizSlice';
 import progressReducer from './slices/progressSlice';
 import themeReducer from './slices/themeSlice';
 import lessonsReducer from './slices/lessonsSlice';
-
+//import userReducer from './slices/userSlice';
 export const store = configureStore({
   reducer: {
     auth: authReducer,
@@ -12,5 +12,6 @@ export const store = configureStore({
     progress: progressReducer,
     theme: themeReducer,
     lessons: lessonsReducer,
+   // user:     userReducer,
   },
 });

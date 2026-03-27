@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Outlet, useLocation, useNavigate} from 'react-router-dom';
+import {NavLink, Outlet, useLocation, useNavigate} from 'react-router-dom';
 import {
   AppBar,
   Avatar,
@@ -149,9 +149,11 @@ export default function Layout() {
                         variant="outlined"
                         sx={{ display: { xs: 'none', sm: 'flex' }, fontWeight: 700 }}
                     />
-                    <Avatar sx={{ width: 34, height: 34, bgcolor: 'primary.main', fontSize: 14, fontWeight: 700 }}>
-                      {user.name?.[0]?.toUpperCase()}
-                    </Avatar>
+                    <NavLink to="/profile" sx={{ display: { xs: 'none', sm: 'flex' } }}>
+                      <Avatar sx={{ width: 34, height: 34, bgcolor: 'primary.main', fontSize: 14, fontWeight: 700 }}>
+                        {user.name?.[0]?.toUpperCase()}
+                      </Avatar>
+                    </NavLink>
                   </>
               )}
 

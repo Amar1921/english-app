@@ -1,35 +1,44 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
+    Alert,
     Box,
     Button,
     Card,
     CardContent,
     Chip,
     CircularProgress,
+    Dialog,
+    DialogActions,
+    DialogContent,
+    DialogTitle,
     Divider,
     FormControl,
     InputLabel,
     MenuItem,
     Select,
-    TextField,
+    Snackbar,
     Typography,
 } from '@mui/material';
 import {
     ArrowForwardRounded,
+    AutoStoriesRounded,
     BoltRounded,
     CancelRounded,
     CheckCircleRounded,
+    EmojiEventsRounded,
     RefreshRounded,
     SchoolRounded,
     SentimentNeutralRounded,
     SentimentVeryDissatisfiedRounded,
     SentimentVerySatisfiedRounded,
+    StopRounded,
     TrendingUpRounded,
 } from '@mui/icons-material';
-import {useDispatch, useSelector} from 'react-redux';
-import {fetchQuestions, nextQuestion, resetSession, setFilters, submitAnswer,} from '../store/slices/quizSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { clearLevelUp, fetchQuestions, nextQuestion, resetSession, setFilters, submitAnswer } from '../store/slices/quizSlice';
 
-const LEVELS = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
+const LEVELS     = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
 const CATEGORIES = ['', 'GRAMMAR', 'VOCABULARY', 'READING', 'LISTENING'];
 
 const LEVEL_COLORS = {
@@ -48,17 +57,67 @@ const CAT_LABELS = {
     LISTENING: 'Écoute / Listening',
 };
 
+// ─── Stop confirmation dialog ─────────────────────────────────────────────────
+
+function StopDialog({ open, onConfirm, onCancel, answeredCount, totalCount }) {
+    return (
+        <Dialog open={open} onClose={onCancel} maxWidth="xs" fullWidth PaperProps={{ sx: { borderRadius: 3 } }}>
+            <DialogTitle sx={{ fontWeight: 700, pb: 1 }}>
+                ⏹ Arrêter le quiz ?
+            </DialogTitle>
+            <DialogContent>
+                <Typography color="text.secondary" variant="body2">
+                    Tu as répondu à <strong>{answeredCount}</strong> question{answeredCount > 1 ? 's' : ''} sur <strong>{totalCount}</strong>.
+                    Ton score partiel sera sauvegardé, mais le quiz ne sera pas validé.
+                </Typography>
+            </DialogContent>
+            <DialogActions sx={{ px: 3, pb: 2.5, gap: 1 }}>
+                <Button onClick={onCancel} variant="outlined" sx={{ borderRadius: 2 }}>
+                    Continuer
+                </Button>
+                <Button onClick={onConfirm} variant="contained" color="error" sx={{ borderRadius: 2 }}>
+                    Arrêter
+                </Button>
+            </DialogActions>
+        </Dialog>
+    );
+}
+
+// ─── Validate confirmation dialog ─────────────────────────────────────────────
+
+function ValidateDialog({ open, onConfirm, onCancel, remaining }) {
+    return (
+        <Dialog open={open} onClose={onCancel} maxWidth="xs" fullWidth PaperProps={{ sx: { borderRadius: 3 } }}>
+            <DialogTitle sx={{ fontWeight: 700, pb: 1 }}>
+                ✅ Valider le quiz ?
+            </DialogTitle>
+            <DialogContent>
+                <Typography color="text.secondary" variant="body2">
+                    Il reste encore <strong>{remaining}</strong> question{remaining > 1 ? 's' : ''}.
+                    Veux-tu valider maintenant et voir ton résultat ?
+                </Typography>
+            </DialogContent>
+            <DialogActions sx={{ px: 3, pb: 2.5, gap: 1 }}>
+                <Button onClick={onCancel} variant="outlined" sx={{ borderRadius: 2 }}>
+                    Continuer
+                </Button>
+                <Button onClick={onConfirm} variant="contained" color="success" sx={{ borderRadius: 2 }}>
+                    Valider
+                </Button>
+            </DialogActions>
+        </Dialog>
+    );
+}
+
 // ─── Setup ────────────────────────────────────────────────────────────────────
 
 function QuizSetup({ filters, onStart, loading }) {
     const dispatch = useDispatch();
     const [hovered, setHovered] = useState(null);
-
     const levelSelect = (l) => dispatch(setFilters({ level: l }));
 
     return (
         <Box sx={{ maxWidth: 520, mx: 'auto', pt: 2 }}>
-            {/* Hero */}
             <Box sx={{ textAlign: 'center', mb: 5 }}>
                 <Box sx={{
                     width: 72, height: 72, borderRadius: '20px', mx: 'auto', mb: 2.5,
@@ -76,7 +135,6 @@ function QuizSetup({ filters, onStart, loading }) {
                 </Typography>
             </Box>
 
-            {/* Level picker — visual pills */}
             <Typography variant="overline" color="text.secondary" sx={{ letterSpacing: 1.5, fontWeight: 700, display: 'block', mb: 1.5 }}>
                 Niveau / Level
             </Typography>
@@ -107,7 +165,6 @@ function QuizSetup({ filters, onStart, loading }) {
                 })}
             </Box>
 
-            {/* Category + limit */}
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2, mb: 3.5 }}>
                 <FormControl fullWidth>
                     <InputLabel>Catégorie / Category</InputLabel>
@@ -133,11 +190,7 @@ function QuizSetup({ filters, onStart, loading }) {
                             <MenuItem key={n} value={n}>
                                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                                     {n} questions
-                                    <Chip
-                                        label={`~${n * 1.5} min`}
-                                        size="small"
-                                        sx={{ ml: 'auto', fontSize: 11, bgcolor: 'action.hover' }}
-                                    />
+                                    <Chip label={`~${n * 1.5} min`} size="small" sx={{ ml: 'auto', fontSize: 11, bgcolor: 'action.hover' }} />
                                 </Box>
                             </MenuItem>
                         ))}
@@ -145,7 +198,6 @@ function QuizSetup({ filters, onStart, loading }) {
                 </FormControl>
             </Box>
 
-            {/* Start */}
             <Button
                 variant="contained" size="large" fullWidth
                 onClick={onStart} disabled={loading}
@@ -159,8 +211,7 @@ function QuizSetup({ filters, onStart, loading }) {
                 {loading
                     ? <CircularProgress size={22} color="inherit" />
                     : <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                        Commencer le quiz
-                        <ArrowForwardRounded />
+                        Commencer le quiz <ArrowForwardRounded />
                     </Box>
                 }
             </Button>
@@ -168,320 +219,255 @@ function QuizSetup({ filters, onStart, loading }) {
     );
 }
 
-// ─── QCM ─────────────────────────────────────────────────────────────────────
+// ─── QCM ──────────────────────────────────────────────────────────────────────
 
 function ChoiceItem({ choice, index, answered, isSelected, isCorrect, isWrong, onSelect }) {
     const letter = String.fromCharCode(65 + index);
-
     return (
         <Box
             onClick={onSelect}
             sx={{
-                p: 2, borderRadius: 2.5,
-                border: '2px solid',
-                cursor: answered ? 'default' : 'pointer',
+                p: 2, borderRadius: 2.5, border: '2px solid', cursor: answered ? 'default' : 'pointer',
                 transition: 'all 0.18s ease',
                 borderColor: isCorrect ? '#22C55E' : isWrong ? '#EF4444' : isSelected ? 'primary.main' : 'divider',
                 bgcolor: isCorrect ? '#f0fdf4' : isWrong ? '#fef2f2' : isSelected ? 'primary.main' + '0d' : 'background.paper',
                 display: 'flex', alignItems: 'center', gap: 1.5,
-                transform: isCorrect || isWrong ? 'scale(1.01)' : 'scale(1)',
-                '&:hover': !answered ? {
-                    borderColor: 'primary.main',
-                    bgcolor: 'primary.main' + '08',
-                    transform: 'translateX(3px)',
-                } : {},
+                '&:hover': !answered ? { borderColor: 'primary.main', bgcolor: 'primary.main' + '08' } : {},
             }}
         >
-            {/* Letter badge */}
             <Box sx={{
-                width: 30, height: 30, borderRadius: '8px', flexShrink: 0,
+                width: 28, height: 28, borderRadius: '50%', flexShrink: 0,
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
-                fontWeight: 800, fontSize: 13,
-                bgcolor: isCorrect ? '#22C55E' : isWrong ? '#EF4444'
-                    : isSelected ? 'primary.main' : 'action.hover',
-                color: isCorrect || isWrong || isSelected ? 'white' : 'text.secondary',
-                transition: 'all 0.18s',
+                fontWeight: 800, fontSize: 12,
+                bgcolor: isCorrect ? '#22C55E' : isWrong ? '#EF4444' : isSelected ? 'primary.main' : 'action.hover',
+                color: (isCorrect || isWrong || isSelected) ? 'white' : 'text.secondary',
             }}>
-                {isCorrect
-                    ? <CheckCircleRounded sx={{ fontSize: 16 }} />
-                    : isWrong
-                        ? <CancelRounded sx={{ fontSize: 16 }} />
-                        : letter}
+                {letter}
             </Box>
-            <Typography variant="body2" fontWeight={isSelected || isCorrect ? 600 : 400} sx={{ lineHeight: 1.5 }}>
+            <Typography variant="body2" fontWeight={isSelected || isCorrect ? 600 : 400} flex={1}>
                 {choice}
             </Typography>
+            {isCorrect && <CheckCircleRounded sx={{ color: '#22C55E', fontSize: 18, flexShrink: 0 }} />}
+            {isWrong   && <CancelRounded      sx={{ color: '#EF4444', fontSize: 18, flexShrink: 0 }} />}
         </Box>
     );
 }
 
-function QcmQuestion({ question, questionIndex, onSubmit, submitting, result }) {
+function QcmQuestion({ question, onSubmit, submitting, result }) {
     const [selected, setSelected] = useState(null);
-    const choices = Array.isArray(question.choices) ? question.choices : JSON.parse(question.choices || '[]');
     const answered = !!result;
 
-    useEffect(() => { setSelected(null); }, [questionIndex]);
+    // choices peut arriver comme string JSON depuis la DB (Prisma Json field)
+    const choices = (() => {
+        const raw = question.choices;
+        if (!raw) return [];
+        if (Array.isArray(raw)) return raw;
+        try { return JSON.parse(raw); } catch { return []; }
+    })();
+
+    useEffect(() => { setSelected(null); }, [question.id]);
 
     return (
-        <Box>
-            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.25, mt: 1 }}>
-                {choices.map((choice, i) => (
+        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.25 }}>
+            {choices.map((choice, i) => {
+                const isSelected = selected === choice;
+                const isCorrect  = answered && choice === result.correctAnswer;
+                const isWrong    = answered && isSelected && !result.isCorrect;
+                return (
                     <ChoiceItem
                         key={i} choice={choice} index={i}
-                        answered={answered} isSelected={selected === i}
-                        isCorrect={answered && choice === result?.correctAnswer}
-                        isWrong={answered && choice === result?.userAnswer && !result?.isCorrect}
-                        onSelect={() => !answered && setSelected(i)}
+                        answered={answered} isSelected={isSelected || (answered && selected === choice)}
+                        isCorrect={isCorrect} isWrong={isWrong}
+                        onSelect={() => {
+                            if (answered || submitting) return;
+                            setSelected(choice);
+                            onSubmit(choice);
+                        }}
                     />
-                ))}
-            </Box>
-            {!answered && (
-                <Button
-                    variant="contained" fullWidth
-                    onClick={() => onSubmit(choices[selected])}
-                    disabled={selected === null || submitting}
-                    sx={{ mt: 2.5, py: 1.4, borderRadius: 2, fontWeight: 700 }}
-                >
-                    {submitting ? <CircularProgress size={20} color="inherit" /> : 'Valider / Confirm'}
-                </Button>
-            )}
+                );
+            })}
         </Box>
     );
 }
 
-// ─── Open ─────────────────────────────────────────────────────────────────────
+// ─── Open question ─────────────────────────────────────────────────────────────
 
-function OpenQuestion({ question, questionIndex, onSubmit, submitting, result }) {
-    const [answer, setAnswer] = useState('');
+function OpenQuestion({ question, onSubmit, submitting, result }) {
+    const [value, setValue] = useState('');
     const answered = !!result;
 
-    useEffect(() => { setAnswer(''); }, [questionIndex]);
+    useEffect(() => { setValue(''); }, [question.id]);
 
     return (
         <Box>
-            <TextField
-                fullWidth multiline rows={3}
-                label="Votre réponse / Your answer"
-                value={answer}
-                onChange={(e) => setAnswer(e.target.value)}
-                disabled={answered}
-                placeholder="Écrivez votre réponse ici…"
+            <Box
+                component="input"
+                value={value}
+                onChange={(e) => setValue(e.target.value)}
+                onKeyDown={(e) => {
+                    if (e.key === 'Enter' && value.trim() && !answered && !submitting) onSubmit(value.trim());
+                }}
+                disabled={answered || submitting}
+                placeholder="Type your answer…"
                 sx={{
-                    mt: 1,
-                    '& .MuiOutlinedInput-root': { borderRadius: 2 },
+                    width: '100%', p: 1.75, fontSize: 15, fontWeight: 500,
+                    borderRadius: 2, border: '2px solid',
+                    borderColor: answered ? (result.isCorrect ? '#22C55E' : '#EF4444') : 'divider',
+                    bgcolor: answered ? (result.isCorrect ? '#f0fdf4' : '#fef2f2') : 'background.paper',
+                    color: 'text.primary', outline: 'none', fontFamily: 'inherit',
+                    '&:focus': { borderColor: 'primary.main' },
+                    transition: 'border-color 0.18s',
+                    boxSizing: 'border-box',
                 }}
             />
             {!answered && (
                 <Button
                     variant="contained" fullWidth
-                    onClick={() => onSubmit(answer)}
-                    disabled={!answer.trim() || submitting}
-                    sx={{ mt: 2, py: 1.4, borderRadius: 2, fontWeight: 700 }}
+                    onClick={() => value.trim() && onSubmit(value.trim())}
+                    disabled={!value.trim() || submitting}
+                    sx={{ mt: 1.5, borderRadius: 2, fontWeight: 700 }}
                 >
-                    {submitting ? <CircularProgress size={20} color="inherit" /> : 'Soumettre / Submit'}
+                    {submitting ? <CircularProgress size={18} color="inherit" /> : 'Valider / Submit'}
                 </Button>
             )}
         </Box>
     );
 }
 
-// ─── Feedback ─────────────────────────────────────────────────────────────────
+// ─── Feedback ────────────────────────────────────────────────────────────────
 
 function ResultFeedback({ result }) {
     if (!result) return null;
-
     return (
-        <Box
-            sx={{
-                mt: 2.5, p: 2, borderRadius: 2.5,
-                border: '1.5px solid',
-                borderColor: result.isCorrect ? '#86efac' : '#fca5a5',
-                bgcolor: result.isCorrect ? '#f0fdf4' : '#fef2f2',
-                animation: 'feedbackIn 0.25s ease',
-                '@keyframes feedbackIn': {
-                    from: { opacity: 0, transform: 'translateY(8px)' },
-                    to:   { opacity: 1, transform: 'translateY(0)' },
-                },
-            }}
-        >
-            <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 1.5 }}>
-                <Box sx={{
-                    width: 36, height: 36, borderRadius: '10px', flexShrink: 0,
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    bgcolor: result.isCorrect ? '#22C55E' : '#EF4444',
-                }}>
-                    {result.isCorrect
-                        ? <CheckCircleRounded sx={{ color: 'white', fontSize: 20 }} />
-                        : <CancelRounded sx={{ color: 'white', fontSize: 20 }} />}
-                </Box>
-                <Box sx={{ flex: 1 }}>
-                    <Typography fontWeight={700} sx={{ color: result.isCorrect ? '#15803d' : '#b91c1c', fontSize: 14 }}>
-                        {result.isCorrect
-                            ? `Correct ! +${result.score} XP 🎉`
-                            : `Incorrect — Bonne réponse : "${result.correctAnswer}"`}
-                    </Typography>
-                    {result.explanation && (
-                        <Typography variant="body2" sx={{ mt: 0.75, color: result.isCorrect ? '#166534' : '#991b1b', lineHeight: 1.6 }}>
-                            {result.explanation}
-                        </Typography>
-                    )}
-                </Box>
+        <Box sx={{
+            mt: 2, p: 2, borderRadius: 2,
+            bgcolor: result.isCorrect ? '#f0fdf4' : '#fef2f2',
+            border: `1.5px solid ${result.isCorrect ? '#22C55E44' : '#EF444444'}`,
+            animation: 'fadeIn 0.2s ease',
+            '@keyframes fadeIn': { from: { opacity: 0, transform: 'translateY(4px)' }, to: { opacity: 1, transform: 'translateY(0)' } },
+        }}>
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: result.explanation ? 1 : 0 }}>
+                {result.isCorrect
+                    ? <CheckCircleRounded sx={{ color: '#22C55E', fontSize: 18 }} />
+                    : <CancelRounded      sx={{ color: '#EF4444', fontSize: 18 }} />
+                }
+                <Typography variant="body2" fontWeight={700} color={result.isCorrect ? '#22C55E' : '#EF4444'}>
+                    {result.isCorrect ? `Correct ! +${result.score} XP` : `Incorrect — Réponse : ${result.correctAnswer}`}
+                </Typography>
             </Box>
+            {result.explanation && (
+                <Typography variant="body2" color="text.secondary" sx={{ pl: 3.25 }}>
+                    {result.explanation}
+                </Typography>
+            )}
         </Box>
     );
 }
 
-// ─── Summary ──────────────────────────────────────────────────────────────────
+// ─── Session summary ──────────────────────────────────────────────────────────
 
-function MiniBar({ value, color }) {
-    return (
-        <Box sx={{ height: 6, borderRadius: 3, bgcolor: 'action.hover', overflow: 'hidden', mt: 0.75 }}>
-            <Box sx={{
-                height: '100%', width: `${value}%`, borderRadius: 3, bgcolor: color,
-                transition: 'width 1s ease',
-            }} />
-        </Box>
-    );
-}
+function SessionSummary({ questions, answers, onRestart, wasValidated, onGoLessons }) {
+    const totalAnswered  = Object.keys(answers).length;
+    const correct        = Object.values(answers).filter((a) => a.isCorrect).length;
+    const totalXp        = Object.values(answers).reduce((s, a) => s + a.score, 0);
+    const accuracy       = totalAnswered ? Math.round((correct / totalAnswered) * 100) : 0;
+    const allAnswered    = totalAnswered === questions.length;
 
-function SessionSummary({ questions, answers, onRestart }) {
-    const total = questions.length;
-    const correct = Object.values(answers).filter((a) => a.isCorrect).length;
-    const score = Object.values(answers).reduce((s, a) => s + a.score, 0);
-    const accuracy = total ? Math.round((correct / total) * 100) : 0;
+    // "Terminé" si toutes les questions ont été répondues (naturellement ou via Valider)
+    const isCompleted = allAnswered || wasValidated;
 
-    const mood =
-        accuracy >= 80
-            ? { label: 'Excellent !', sublabel: 'Outstanding performance', icon: <SentimentVerySatisfiedRounded sx={{ fontSize: 40 }} />, color: '#22C55E', bg: '#f0fdf4' }
-            : accuracy >= 50
-                ? { label: 'Bien joué !', sublabel: 'Good effort, keep going', icon: <SentimentNeutralRounded sx={{ fontSize: 40 }} />, color: '#F59E0B', bg: '#fffbeb' }
-                : { label: 'Continuez !', sublabel: 'Practice makes perfect', icon: <SentimentVeryDissatisfiedRounded sx={{ fontSize: 40 }} />, color: '#EF4444', bg: '#fef2f2' };
+    const Icon = accuracy >= 80
+        ? SentimentVerySatisfiedRounded
+        : accuracy >= 50
+            ? SentimentNeutralRounded
+            : SentimentVeryDissatisfiedRounded;
 
-    // Stats by category from answered questions
-    const byCategory = {};
-    questions.forEach((q) => {
-        const ans = answers[q.id];
-        if (!ans) return;
-        if (!byCategory[q.category]) byCategory[q.category] = { total: 0, correct: 0 };
-        byCategory[q.category].total++;
-        if (ans.isCorrect) byCategory[q.category].correct++;
-    });
+    const color = accuracy >= 80 ? '#22C55E' : accuracy >= 50 ? '#F59E0B' : '#EF4444';
+
+    const title = isCompleted ? 'Quiz terminé ! 🎉' : 'Quiz arrêté';
+    const chipLabel = isCompleted ? 'Résultats sauvegardés' : `${totalAnswered}/${questions.length} questions répondues`;
+    const chipColor = isCompleted ? '#22C55E' : '#F59E0B';
 
     return (
-        <Box sx={{ maxWidth: 480, mx: 'auto' }}>
-            {/* Result card */}
-            <Box sx={{
-                textAlign: 'center', p: 4, borderRadius: 3, mb: 2.5,
-                bgcolor: mood.bg,
-                border: `1.5px solid ${mood.color}44`,
-                animation: 'summaryIn 0.4s ease',
-                '@keyframes summaryIn': {
-                    from: { opacity: 0, transform: 'scale(0.96)' },
-                    to:   { opacity: 1, transform: 'scale(1)' },
-                },
-            }}>
-                <Box sx={{
-                    width: 72, height: 72, borderRadius: '20px', mx: 'auto', mb: 2,
-                    bgcolor: mood.color + '22', display: 'flex', alignItems: 'center',
-                    justifyContent: 'center', color: mood.color,
-                }}>
-                    {mood.icon}
-                </Box>
-                <Typography variant="h4" fontWeight={800} sx={{ color: mood.color, letterSpacing: -0.5 }}>
-                    {mood.label}
-                </Typography>
-                <Typography color="text.secondary" sx={{ mt: 0.5, mb: 3 }}>
-                    {mood.sublabel}
-                </Typography>
+        <Box sx={{ maxWidth: 500, mx: 'auto', textAlign: 'center', pt: 2 }}>
+            <Icon sx={{ fontSize: 72, color, mb: 2 }} />
+            <Typography variant="h4" fontWeight={800} mb={1}>
+                {title}
+            </Typography>
 
-                {/* 3 stats */}
-                <Box sx={{
-                    display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 2,
-                    p: 2, borderRadius: 2, bgcolor: 'background.paper',
-                }}>
-                    {[
-                        { label: 'Précision', value: `${accuracy}%`, icon: <TrendingUpRounded sx={{ fontSize: 18 }} />, color: mood.color },
-                        { label: 'Correct', value: `${correct}/${total}`, icon: <CheckCircleRounded sx={{ fontSize: 18 }} />, color: '#22C55E' },
-                        { label: 'XP gagnés', value: `+${score}`, icon: <BoltRounded sx={{ fontSize: 18 }} />, color: '#F59E0B' },
-                    ].map(({ label, value, icon, color }) => (
-                        <Box key={label} sx={{ textAlign: 'center' }}>
-                            <Box sx={{ color, display: 'flex', justifyContent: 'center', mb: 0.5 }}>{icon}</Box>
-                            <Typography fontWeight={800} fontSize={20}>{value}</Typography>
-                            <Typography variant="caption" color="text.secondary">{label}</Typography>
-                        </Box>
-                    ))}
-                </Box>
+            <Chip
+                icon={<EmojiEventsRounded sx={{ fontSize: '16px !important', color: `${chipColor} !important` }} />}
+                label={chipLabel}
+                sx={{ mb: 2, bgcolor: chipColor + '18', color: chipColor, fontWeight: 700 }}
+            />
+
+            <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, flexWrap: 'wrap', mb: 3 }}>
+                {[
+                    { label: 'Questions', value: `${totalAnswered}/${questions.length}` },
+                    { label: 'Réponses correctes', value: correct, color: '#22C55E' },
+                    { label: 'XP gagnés', value: `+${totalXp}`, color: '#F59E0B' },
+                    { label: 'Précision', value: `${accuracy}%`, color },
+                ].map(({ label, value, color: c }) => (
+                    <Box key={label} sx={{
+                        p: 2, borderRadius: 2, minWidth: 100,
+                        border: '1px solid', borderColor: 'divider',
+                        bgcolor: 'background.paper',
+                    }}>
+                        <Typography variant="h5" fontWeight={800} sx={{ color: c || 'text.primary' }}>{value}</Typography>
+                        <Typography variant="caption" color="text.secondary">{label}</Typography>
+                    </Box>
+                ))}
             </Box>
 
-            {/* By category */}
-            {Object.keys(byCategory).length > 1 && (
-                <Card elevation={0} sx={{ border: '1px solid', borderColor: 'divider', borderRadius: 2.5, mb: 2.5 }}>
-                    <CardContent>
-                        <Typography variant="overline" color="text.secondary" fontWeight={700} sx={{ letterSpacing: 1.5 }}>
-                            Par catégorie
-                        </Typography>
-                        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5, mt: 1.5 }}>
-                            {Object.entries(byCategory).map(([cat, { total: t, correct: c }]) => {
-                                const pct = Math.round((c / t) * 100);
-                                return (
-                                    <Box key={cat}>
-                                        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                                            <Typography variant="body2" fontWeight={600}>{cat}</Typography>
-                                            <Typography variant="caption" color="text.secondary">{c}/{t} — {pct}%</Typography>
-                                        </Box>
-                                        <MiniBar
-                                            value={pct}
-                                            color={pct >= 80 ? '#22C55E' : pct >= 50 ? '#F59E0B' : '#EF4444'}
-                                        />
-                                    </Box>
-                                );
-                            })}
+            {/* Per-question recap */}
+            <Box sx={{ textAlign: 'left', mb: 3 }}>
+                {questions.filter((q) => answers[q.id]).map((q, i) => {
+                    const ans = answers[q.id];
+                    return (
+                        <Box key={q.id} sx={{
+                            display: 'flex', alignItems: 'center', gap: 1.5,
+                            p: 1.5, mb: 1, borderRadius: 2, bgcolor: 'action.hover',
+                        }}>
+                            <Typography variant="caption" color="text.disabled" sx={{ minWidth: 20, flexShrink: 0 }}>
+                                {i + 1}.
+                            </Typography>
+                            {ans.isCorrect
+                                ? <CheckCircleRounded sx={{ color: '#22C55E', fontSize: 16, flexShrink: 0 }} />
+                                : <CancelRounded      sx={{ color: '#EF4444', fontSize: 16, flexShrink: 0 }} />
+                            }
+                            <Typography variant="body2" flex={1} noWrap sx={{ fontSize: 13 }}>{q.question}</Typography>
+                            <Typography variant="caption" fontWeight={700} color={ans.isCorrect ? '#22C55E' : 'text.disabled'} sx={{ flexShrink: 0 }}>
+                                +{ans.score} XP
+                            </Typography>
                         </Box>
-                    </CardContent>
-                </Card>
-            )}
+                    );
+                })}
+            </Box>
 
-            {/* Review — wrong answers */}
-            {Object.entries(answers).some(([, a]) => !a.isCorrect) && (
-                <Card elevation={0} sx={{ border: '1px solid', borderColor: '#fca5a5', borderRadius: 2.5, mb: 2.5 }}>
-                    <CardContent>
-                        <Typography variant="overline" fontWeight={700} sx={{ letterSpacing: 1.5, color: '#ef4444' }}>
-                            À revoir / To review
-                        </Typography>
-                        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1, mt: 1 }}>
-                            {questions
-                                .filter((q) => answers[q.id] && !answers[q.id].isCorrect)
-                                .slice(0, 4)
-                                .map((q) => (
-                                    <Box key={q.id} sx={{
-                                        p: 1.5, borderRadius: 1.5,
-                                        bgcolor: '#fef2f2', border: '1px solid #fecaca',
-                                    }}>
-                                        <Typography variant="body2" fontWeight={600} sx={{ color: '#991b1b', mb: 0.25 }} noWrap>
-                                            {q.question}
-                                        </Typography>
-                                        <Typography variant="caption" sx={{ color: '#b91c1c' }}>
-                                            ✓ {answers[q.id]?.correctAnswer}
-                                        </Typography>
-                                    </Box>
-                                ))}
-                        </Box>
-                    </CardContent>
-                </Card>
-            )}
-
-            <Button
-                variant="contained" size="large" fullWidth
-                startIcon={<RefreshRounded />}
-                onClick={onRestart}
-                sx={{
-                    py: 1.6, borderRadius: 2.5, fontWeight: 700,
-                    background: 'linear-gradient(135deg, #1A6EFF 0%, #0D4FC2 100%)',
-                    boxShadow: '0 8px 24px rgba(26,110,255,0.25)',
-                }}
-            >
-                Rejouer / Play again
-            </Button>
+            <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center', flexWrap: 'wrap' }}>
+                <Button
+                    variant="outlined" size="large" onClick={onGoLessons}
+                    startIcon={<AutoStoriesRounded />}
+                    sx={{
+                        py: 1.5, px: 3, borderRadius: 2.5, fontWeight: 700,
+                        borderColor: '#22C55E', color: '#22C55E',
+                        '&:hover': { bgcolor: '#22C55E12', borderColor: '#22C55E' },
+                    }}
+                >
+                    Voir les leçons
+                </Button>
+                <Button
+                    variant="contained" size="large" onClick={onRestart}
+                    startIcon={<RefreshRounded />}
+                    sx={{
+                        py: 1.5, px: 3, borderRadius: 2.5, fontWeight: 700,
+                        background: 'linear-gradient(135deg, #1A6EFF 0%, #0D4FC2 100%)',
+                        boxShadow: '0 8px 24px rgba(26,110,255,0.3)',
+                    }}
+                >
+                    Nouveau quiz
+                </Button>
+            </Box>
         </Box>
     );
 }
@@ -489,18 +475,36 @@ function SessionSummary({ questions, answers, onRestart }) {
 // ─── Main ─────────────────────────────────────────────────────────────────────
 
 export default function QuizPage() {
-    const dispatch = useDispatch();
-    const { questions, currentIndex, answers, loading, submitting, sessionComplete, filters } =
+    const dispatch  = useDispatch();
+    const navigate  = useNavigate();
+    const { questions, currentIndex, answers, sessionComplete, filters, loading, submitting, levelUp } =
         useSelector((s) => s.quiz);
 
-    const started = questions.length > 0;
-    const currentQuestion = questions[currentIndex];
-    const currentAnswer = currentQuestion ? answers[currentQuestion.id] : null;
-    const progress = questions.length
-        ? ((currentIndex + (currentAnswer ? 1 : 0)) / questions.length) * 100
-        : 0;
+    const [stopDialogOpen,     setStopDialogOpen]     = useState(false);
+    const [validateDialogOpen, setValidateDialogOpen] = useState(false);
+    const [wasValidated,       setWasValidated]       = useState(false);
+    const [levelUpSnack,       setLevelUpSnack]       = useState(null); // { from, to }
 
-    // Loading screen
+    const started         = questions.length > 0;
+    const currentQuestion = questions[currentIndex];
+    const currentAnswer   = currentQuestion ? answers[currentQuestion.id] : null;
+    const answeredCount   = Object.keys(answers).length;
+    const remaining       = questions.length - answeredCount;
+    const allAnswered     = answeredCount === questions.length;
+
+    // Reset wasValidated on new session
+    useEffect(() => {
+        if (!started) setWasValidated(false);
+    }, [started]);
+
+    // Déclencher le snackbar dès que levelUp est détecté dans le slice
+    useEffect(() => {
+        if (levelUp) {
+            setLevelUpSnack(levelUp);
+            dispatch(clearLevelUp());
+        }
+    }, [levelUp]);
+
     if (loading) return (
         <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: 320, gap: 2 }}>
             <CircularProgress size={40} />
@@ -520,11 +524,26 @@ export default function QuizPage() {
         <SessionSummary
             questions={questions}
             answers={answers}
-            onRestart={() => dispatch(resetSession())}
+            wasValidated={wasValidated}
+            onRestart={() => { dispatch(resetSession()); setWasValidated(false); }}
+            onGoLessons={() => navigate('/lessons')}
         />
     );
 
     const levelColor = LEVEL_COLORS[currentQuestion?.level] || '#1A6EFF';
+
+    const handleStop = () => {
+        setStopDialogOpen(false);
+        setWasValidated(false);
+        dispatch(resetSession());
+    };
+
+    const handleValidate = () => {
+        setValidateDialogOpen(false);
+        setWasValidated(true);
+        // Force session complete with current answers
+        dispatch(nextQuestion({ forceComplete: true }));
+    };
 
     return (
         <Box sx={{ maxWidth: 620, mx: 'auto' }}>
@@ -539,43 +558,50 @@ export default function QuizPage() {
                             / {questions.length}
                         </Typography>
                     </Box>
-                    <Box sx={{ display: 'flex', gap: 0.75 }}>
+                    <Box sx={{ display: 'flex', gap: 0.75, alignItems: 'center' }}>
                         <Chip
                             label={currentQuestion?.level}
                             size="small"
-                            sx={{
-                                fontWeight: 800, fontSize: 11, height: 22,
-                                bgcolor: levelColor + '18', color: levelColor,
-                                border: `1px solid ${levelColor}44`,
-                            }}
+                            sx={{ fontWeight: 800, fontSize: 11, height: 22, bgcolor: levelColor + '18', color: levelColor, border: `1px solid ${levelColor}44` }}
                         />
-                        <Chip
-                            label={currentQuestion?.category}
-                            size="small"
-                            variant="outlined"
-                            sx={{ fontWeight: 600, fontSize: 11, height: 22 }}
-                        />
+                        <Chip label={currentQuestion?.category} size="small" variant="outlined" sx={{ fontWeight: 600, fontSize: 11, height: 22 }} />
+
+                        {/* Stop button */}
+                        <Button
+                            size="small" color="error" variant="outlined"
+                            startIcon={<StopRounded />}
+                            onClick={() => setStopDialogOpen(true)}
+                            sx={{ ml: 1, height: 26, fontSize: 11, fontWeight: 700, px: 1.25, borderRadius: 1.5 }}
+                        >
+                            Arrêter
+                        </Button>
+
+                        {/* Validate button (shown when at least 1 question answered) */}
+                        {answeredCount > 0 && !allAnswered && (
+                            <Button
+                                size="small" color="success" variant="outlined"
+                                startIcon={<CheckCircleRounded />}
+                                onClick={() => setValidateDialogOpen(true)}
+                                sx={{ height: 26, fontSize: 11, fontWeight: 700, px: 1.25, borderRadius: 1.5 }}
+                            >
+                                Valider
+                            </Button>
+                        )}
                     </Box>
                 </Box>
 
                 {/* Segmented progress bar */}
                 <Box sx={{ display: 'flex', gap: 0.5 }}>
                     {questions.map((q, i) => {
-                        const ans = answers[q.id];
+                        const ans       = answers[q.id];
                         const isCurrent = i === currentIndex;
                         return (
-                            <Box
-                                key={i}
-                                sx={{
-                                    flex: 1, height: 5, borderRadius: 1,
-                                    transition: 'all 0.3s ease',
-                                    bgcolor: ans
-                                        ? (ans.isCorrect ? '#22C55E' : '#EF4444')
-                                        : isCurrent
-                                            ? levelColor + '60'
-                                            : 'action.hover',
-                                }}
-                            />
+                            <Box key={i} sx={{
+                                flex: 1, height: 5, borderRadius: 1, transition: 'all 0.3s ease',
+                                bgcolor: ans
+                                    ? (ans.isCorrect ? '#22C55E' : '#EF4444')
+                                    : isCurrent ? levelColor + '60' : 'action.hover',
+                            }} />
                         );
                     })}
                 </Box>
@@ -584,33 +610,19 @@ export default function QuizPage() {
             {/* Question card */}
             <Card
                 elevation={0}
-                sx={{
-                    border: '1.5px solid', borderColor: 'divider', borderRadius: 3,
-                    overflow: 'visible',
+                sx={{ border: '1.5px solid', borderColor: 'divider', borderRadius: 3, overflow: 'visible',
                     animation: 'cardIn 0.22s ease',
-                    '@keyframes cardIn': {
-                        from: { opacity: 0, transform: 'translateY(6px)' },
-                        to:   { opacity: 1, transform: 'translateY(0)' },
-                    },
+                    '@keyframes cardIn': { from: { opacity: 0, transform: 'translateY(6px)' }, to: { opacity: 1, transform: 'translateY(0)' } },
                 }}
-                key={currentIndex} // forces remount + animation on question change
+                key={currentIndex}
             >
-                {/* Colored top accent */}
                 <Box sx={{ height: 4, bgcolor: levelColor, borderRadius: '12px 12px 0 0' }} />
-
                 <CardContent sx={{ p: { xs: 2.5, sm: 3.5 } }}>
-                    {/* Question text */}
-                    <Typography
-                        variant="h6"
-                        fontWeight={700}
-                        sx={{ lineHeight: 1.55, mb: 2.5, fontSize: { xs: 16, sm: 18 } }}
-                    >
+                    <Typography variant="h6" fontWeight={700} sx={{ lineHeight: 1.55, mb: 2.5, fontSize: { xs: 16, sm: 18 } }}>
                         {currentQuestion?.question}
                     </Typography>
-
                     <Divider sx={{ mb: 2.5 }} />
 
-                    {/* Answer component */}
                     {currentQuestion?.type === 'QCM' ? (
                         <QcmQuestion
                             question={currentQuestion}
@@ -629,10 +641,8 @@ export default function QuizPage() {
                         />
                     )}
 
-                    {/* Feedback */}
                     <ResultFeedback result={currentAnswer} />
 
-                    {/* Next button */}
                     {currentAnswer && (
                         <Button
                             variant="contained" fullWidth
@@ -642,22 +652,17 @@ export default function QuizPage() {
                                 mt: 2.5, py: 1.4, borderRadius: 2, fontWeight: 700,
                                 background: 'linear-gradient(135deg, #1A6EFF 0%, #0D4FC2 100%)',
                                 animation: 'fadeUp 0.2s ease',
-                                '@keyframes fadeUp': {
-                                    from: { opacity: 0, transform: 'translateY(6px)' },
-                                    to:   { opacity: 1, transform: 'translateY(0)' },
-                                },
+                                '@keyframes fadeUp': { from: { opacity: 0, transform: 'translateY(6px)' }, to: { opacity: 1, transform: 'translateY(0)' } },
                             }}
                         >
-                            {currentIndex < questions.length - 1
-                                ? 'Question suivante / Next'
-                                : 'Voir les résultats / Results'}
+                            {currentIndex < questions.length - 1 ? 'Question suivante / Next' : 'Voir les résultats / Results'}
                         </Button>
                     )}
                 </CardContent>
             </Card>
 
-            {/* XP streak indicator */}
-            {Object.values(answers).length > 0 && (
+            {/* XP streak */}
+            {answeredCount > 0 && (
                 <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2, gap: 1.5 }}>
                     <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5, color: '#F59E0B', fontSize: 13, fontWeight: 700 }}>
                         <BoltRounded sx={{ fontSize: 16 }} />
@@ -673,6 +678,43 @@ export default function QuizPage() {
                     </Box>
                 </Box>
             )}
+
+            {/* Dialogs */}
+            <StopDialog
+                open={stopDialogOpen}
+                onCancel={() => setStopDialogOpen(false)}
+                onConfirm={handleStop}
+                answeredCount={answeredCount}
+                totalCount={questions.length}
+            />
+            <ValidateDialog
+                open={validateDialogOpen}
+                onCancel={() => setValidateDialogOpen(false)}
+                onConfirm={handleValidate}
+                remaining={remaining}
+            />
+
+            {/* Level-up notification */}
+            <Snackbar
+                open={!!levelUpSnack}
+                autoHideDuration={6000}
+                onClose={() => setLevelUpSnack(null)}
+                anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+            >
+                <Alert
+                    severity="success"
+                    variant="filled"
+                    icon={<TrendingUpRounded />}
+                    onClose={() => setLevelUpSnack(null)}
+                    sx={{
+                        fontWeight: 700, fontSize: 15,
+                        bgcolor: '#8B5CF6',
+                        '& .MuiAlert-icon': { alignItems: 'center' },
+                    }}
+                >
+                    🎉 Niveau débloqué ! Tu passes de <strong style={{ margin: '0 4px' }}>{levelUpSnack?.from}</strong> à <strong style={{ margin: '0 4px' }}>{levelUpSnack?.to}</strong>
+                </Alert>
+            </Snackbar>
         </Box>
     );
 }

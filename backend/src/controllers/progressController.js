@@ -2,6 +2,12 @@ import prisma from '../prisma.js';
 
 export const getProgress = async (req, res) => {
   const userId = req.user.id;
+
+  // Vérifiez que prisma est défini
+  if (!prisma) {
+    throw new Error('Prisma client not initialized');
+  }
+
   try {
     // Quiz attempts (existant)
     const attempts = await prisma.attempt.findMany({
