@@ -7,12 +7,13 @@ import {fetchMe} from './store/slices/authSlice';
 
 import AuthPage from './pages/AuthPage';
 import DashboardPage from './pages/DashboardPage';
-import QuizPage from './pages/QuizPage';
+import QuizPage from './pages/quiz/QuizPage.jsx';
 import ProgressPage from './pages/ProgressPage';
 import Layout from './components/Layout';
 import LessonsPage from "./pages/lessons/LessonsPage.jsx";
 import LessonDetail from "./pages/lessons/LessonDetail.jsx";
 import ProfilePage from "./pages/profile/ProfilePage.jsx";
+import DictionaryPage from "./pages/dictionnaire/DictionaryPage.jsx";
 
 function ProtectedRoute({ children }) {
   const { token, initialized } = useSelector((s) => s.auth);
@@ -52,6 +53,7 @@ export default function App() {
             <Route index element={<DashboardPage />} />
             <Route path="quiz" element={<QuizPage />} />
             <Route path="progress" element={<ProgressPage />} />
+            <Route path="dictionary" element={<DictionaryPage />} />
             <Route path="profile" element={<ProfilePage />} />
             <Route path="lessons" element={<LessonsPage />} />
             <Route path="lessons/:slug" element={<LessonDetail />} />

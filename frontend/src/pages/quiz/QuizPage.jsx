@@ -36,7 +36,16 @@ import {
     TrendingUpRounded,
 } from '@mui/icons-material';
 import { useDispatch, useSelector } from 'react-redux';
-import { clearLevelUp, fetchQuestions, nextQuestion, resetSession, setFilters, submitAnswer } from '../store/slices/quizSlice';
+// ── CHANGEMENT 1 : import completeSession ──────────────────────────────────────
+import {
+    clearLevelUp,
+    completeSession,
+    fetchQuestions,
+    nextQuestion,
+    resetSession,
+    setFilters,
+    submitAnswer,
+} from '../../store/slices/quizSlice.js';
 
 const LEVELS     = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
 const CATEGORIES = ['', 'GRAMMAR', 'VOCABULARY', 'READING', 'LISTENING'];
@@ -62,9 +71,7 @@ const CAT_LABELS = {
 function StopDialog({ open, onConfirm, onCancel, answeredCount, totalCount }) {
     return (
         <Dialog open={open} onClose={onCancel} maxWidth="xs" fullWidth PaperProps={{ sx: { borderRadius: 3 } }}>
-            <DialogTitle sx={{ fontWeight: 700, pb: 1 }}>
-                ⏹ Arrêter le quiz ?
-            </DialogTitle>
+            <DialogTitle sx={{ fontWeight: 700, pb: 1 }}>⏹ Arrêter le quiz ?</DialogTitle>
             <DialogContent>
                 <Typography color="text.secondary" variant="body2">
                     Tu as répondu à <strong>{answeredCount}</strong> question{answeredCount > 1 ? 's' : ''} sur <strong>{totalCount}</strong>.
@@ -72,12 +79,8 @@ function StopDialog({ open, onConfirm, onCancel, answeredCount, totalCount }) {
                 </Typography>
             </DialogContent>
             <DialogActions sx={{ px: 3, pb: 2.5, gap: 1 }}>
-                <Button onClick={onCancel} variant="outlined" sx={{ borderRadius: 2 }}>
-                    Continuer
-                </Button>
-                <Button onClick={onConfirm} variant="contained" color="error" sx={{ borderRadius: 2 }}>
-                    Arrêter
-                </Button>
+                <Button onClick={onCancel} variant="outlined" sx={{ borderRadius: 2 }}>Continuer</Button>
+                <Button onClick={onConfirm} variant="contained" color="error" sx={{ borderRadius: 2 }}>Arrêter</Button>
             </DialogActions>
         </Dialog>
     );
@@ -88,9 +91,7 @@ function StopDialog({ open, onConfirm, onCancel, answeredCount, totalCount }) {
 function ValidateDialog({ open, onConfirm, onCancel, remaining }) {
     return (
         <Dialog open={open} onClose={onCancel} maxWidth="xs" fullWidth PaperProps={{ sx: { borderRadius: 3 } }}>
-            <DialogTitle sx={{ fontWeight: 700, pb: 1 }}>
-                ✅ Valider le quiz ?
-            </DialogTitle>
+            <DialogTitle sx={{ fontWeight: 700, pb: 1 }}>✅ Valider le quiz ?</DialogTitle>
             <DialogContent>
                 <Typography color="text.secondary" variant="body2">
                     Il reste encore <strong>{remaining}</strong> question{remaining > 1 ? 's' : ''}.
@@ -98,12 +99,8 @@ function ValidateDialog({ open, onConfirm, onCancel, remaining }) {
                 </Typography>
             </DialogContent>
             <DialogActions sx={{ px: 3, pb: 2.5, gap: 1 }}>
-                <Button onClick={onCancel} variant="outlined" sx={{ borderRadius: 2 }}>
-                    Continuer
-                </Button>
-                <Button onClick={onConfirm} variant="contained" color="success" sx={{ borderRadius: 2 }}>
-                    Valider
-                </Button>
+                <Button onClick={onCancel} variant="outlined" sx={{ borderRadius: 2 }}>Continuer</Button>
+                <Button onClick={onConfirm} variant="contained" color="success" sx={{ borderRadius: 2 }}>Valider</Button>
             </DialogActions>
         </Dialog>
     );
@@ -114,7 +111,6 @@ function ValidateDialog({ open, onConfirm, onCancel, remaining }) {
 function QuizSetup({ filters, onStart, loading }) {
     const dispatch = useDispatch();
     const [hovered, setHovered] = useState(null);
-    const levelSelect = (l) => dispatch(setFilters({ level: l }));
 
     return (
         <Box sx={{ maxWidth: 520, mx: 'auto', pt: 2 }}>
@@ -127,12 +123,8 @@ function QuizSetup({ filters, onStart, loading }) {
                 }}>
                     <SchoolRounded sx={{ color: 'white', fontSize: 34 }} />
                 </Box>
-                <Typography variant="h4" fontWeight={800} sx={{ letterSpacing: -0.5 }}>
-                    Quiz
-                </Typography>
-                <Typography color="text.secondary" sx={{ mt: 0.5 }}>
-                    Choisissez votre niveau et lancez-vous
-                </Typography>
+                <Typography variant="h4" fontWeight={800} sx={{ letterSpacing: -0.5 }}>Quiz</Typography>
+                <Typography color="text.secondary" sx={{ mt: 0.5 }}>Choisissez votre niveau et lancez-vous</Typography>
             </Box>
 
             <Typography variant="overline" color="text.secondary" sx={{ letterSpacing: 1.5, fontWeight: 700, display: 'block', mb: 1.5 }}>
@@ -144,15 +136,14 @@ function QuizSetup({ filters, onStart, loading }) {
                     return (
                         <Box
                             key={l}
-                            onClick={() => levelSelect(l)}
+                            onClick={() => dispatch(setFilters({ level: l }))}
                             onMouseEnter={() => setHovered(l)}
                             onMouseLeave={() => setHovered(null)}
                             sx={{
                                 flex: 1, minWidth: 68, textAlign: 'center',
                                 py: 1.5, px: 1, borderRadius: 2, cursor: 'pointer',
                                 fontWeight: 800, fontSize: 15, letterSpacing: 0.5,
-                                border: '2px solid',
-                                transition: 'all 0.16s ease',
+                                border: '2px solid', transition: 'all 0.16s ease',
                                 borderColor: active ? LEVEL_COLORS[l] : 'divider',
                                 bgcolor: active ? LEVEL_BG[l] : hovered === l ? 'action.hover' : 'background.paper',
                                 color: active ? LEVEL_COLORS[l] : 'text.secondary',
@@ -244,9 +235,7 @@ function ChoiceItem({ choice, index, answered, isSelected, isCorrect, isWrong, o
             }}>
                 {letter}
             </Box>
-            <Typography variant="body2" fontWeight={isSelected || isCorrect ? 600 : 400} flex={1}>
-                {choice}
-            </Typography>
+            <Typography variant="body2" fontWeight={isSelected || isCorrect ? 600 : 400} flex={1}>{choice}</Typography>
             {isCorrect && <CheckCircleRounded sx={{ color: '#22C55E', fontSize: 18, flexShrink: 0 }} />}
             {isWrong   && <CancelRounded      sx={{ color: '#EF4444', fontSize: 18, flexShrink: 0 }} />}
         </Box>
@@ -257,7 +246,6 @@ function QcmQuestion({ question, onSubmit, submitting, result }) {
     const [selected, setSelected] = useState(null);
     const answered = !!result;
 
-    // choices peut arriver comme string JSON depuis la DB (Prisma Json field)
     const choices = (() => {
         const raw = question.choices;
         if (!raw) return [];
@@ -276,7 +264,8 @@ function QcmQuestion({ question, onSubmit, submitting, result }) {
                 return (
                     <ChoiceItem
                         key={i} choice={choice} index={i}
-                        answered={answered} isSelected={isSelected || (answered && selected === choice)}
+                        answered={answered}
+                        isSelected={isSelected || (answered && selected === choice)}
                         isCorrect={isCorrect} isWrong={isWrong}
                         onSelect={() => {
                             if (answered || submitting) return;
@@ -290,7 +279,7 @@ function QcmQuestion({ question, onSubmit, submitting, result }) {
     );
 }
 
-// ─── Open question ─────────────────────────────────────────────────────────────
+// ─── Open question ────────────────────────────────────────────────────────────
 
 function OpenQuestion({ question, onSubmit, submitting, result }) {
     const [value, setValue] = useState('');
@@ -316,8 +305,7 @@ function OpenQuestion({ question, onSubmit, submitting, result }) {
                     bgcolor: answered ? (result.isCorrect ? '#f0fdf4' : '#fef2f2') : 'background.paper',
                     color: 'text.primary', outline: 'none', fontFamily: 'inherit',
                     '&:focus': { borderColor: 'primary.main' },
-                    transition: 'border-color 0.18s',
-                    boxSizing: 'border-box',
+                    transition: 'border-color 0.18s', boxSizing: 'border-box',
                 }}
             />
             {!answered && (
@@ -334,7 +322,7 @@ function OpenQuestion({ question, onSubmit, submitting, result }) {
     );
 }
 
-// ─── Feedback ────────────────────────────────────────────────────────────────
+// ─── Feedback ─────────────────────────────────────────────────────────────────
 
 function ResultFeedback({ result }) {
     if (!result) return null;
@@ -366,53 +354,65 @@ function ResultFeedback({ result }) {
 
 // ─── Session summary ──────────────────────────────────────────────────────────
 
-function SessionSummary({ questions, answers, onRestart, wasValidated, onGoLessons }) {
-    const totalAnswered  = Object.keys(answers).length;
-    const correct        = Object.values(answers).filter((a) => a.isCorrect).length;
-    const totalXp        = Object.values(answers).reduce((s, a) => s + a.score, 0);
-    const accuracy       = totalAnswered ? Math.round((correct / totalAnswered) * 100) : 0;
-    const allAnswered    = totalAnswered === questions.length;
-
-    // "Terminé" si toutes les questions ont été répondues (naturellement ou via Valider)
-    const isCompleted = allAnswered || wasValidated;
+// ── CHANGEMENT 5 : signature enrichie avec sessionResult + completing ─────────
+function SessionSummary({ questions, answers, onRestart, wasValidated, sessionResult, completing, onGoLessons }) {
+    const totalAnswered = Object.keys(answers).length;
+    const correct       = Object.values(answers).filter((a) => a.isCorrect).length;
+    const totalXp       = Object.values(answers).reduce((s, a) => s + a.score, 0);
+    const accuracy      = totalAnswered ? Math.round((correct / totalAnswered) * 100) : 0;
+    const allAnswered   = totalAnswered === questions.length;
+    const isCompleted   = allAnswered || wasValidated;
 
     const Icon = accuracy >= 80
         ? SentimentVerySatisfiedRounded
-        : accuracy >= 50
-            ? SentimentNeutralRounded
+        : accuracy >= 50 ? SentimentNeutralRounded
             : SentimentVeryDissatisfiedRounded;
 
     const color = accuracy >= 80 ? '#22C55E' : accuracy >= 50 ? '#F59E0B' : '#EF4444';
 
+    // ── Chip dynamique selon résultat serveur ─────────────────────────────────
+    const serverPassed = sessionResult?.passed;
+    const chipLabel = completing
+        ? 'Sauvegarde en cours…'
+        : serverPassed === true
+            ? `Quiz validé ✓  +${sessionResult.xpAwarded} XP sauvegardés`
+            : serverPassed === false
+                ? 'Score insuffisant — continue à t\'entraîner !'
+                : isCompleted
+                    ? 'Résultats sauvegardés'
+                    : `${totalAnswered}/${questions.length} questions répondues`;
+
+    const chipColor = completing
+        ? '#6B7280'
+        : serverPassed === true ? '#22C55E'
+            : serverPassed === false ? '#EF4444'
+                : isCompleted ? '#22C55E' : '#F59E0B';
+
     const title = isCompleted ? 'Quiz terminé ! 🎉' : 'Quiz arrêté';
-    const chipLabel = isCompleted ? 'Résultats sauvegardés' : `${totalAnswered}/${questions.length} questions répondues`;
-    const chipColor = isCompleted ? '#22C55E' : '#F59E0B';
 
     return (
         <Box sx={{ maxWidth: 500, mx: 'auto', textAlign: 'center', pt: 2 }}>
             <Icon sx={{ fontSize: 72, color, mb: 2 }} />
-            <Typography variant="h4" fontWeight={800} mb={1}>
-                {title}
-            </Typography>
+            <Typography variant="h4" fontWeight={800} mb={1}>{title}</Typography>
 
             <Chip
-                icon={<EmojiEventsRounded sx={{ fontSize: '16px !important', color: `${chipColor} !important` }} />}
+                icon={
+                    completing
+                        ? <CircularProgress size={14} sx={{ color: `${chipColor} !important` }} />
+                        : <EmojiEventsRounded sx={{ fontSize: '16px !important', color: `${chipColor} !important` }} />
+                }
                 label={chipLabel}
                 sx={{ mb: 2, bgcolor: chipColor + '18', color: chipColor, fontWeight: 700 }}
             />
 
             <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, flexWrap: 'wrap', mb: 3 }}>
                 {[
-                    { label: 'Questions', value: `${totalAnswered}/${questions.length}` },
-                    { label: 'Réponses correctes', value: correct, color: '#22C55E' },
-                    { label: 'XP gagnés', value: `+${totalXp}`, color: '#F59E0B' },
-                    { label: 'Précision', value: `${accuracy}%`, color },
+                    { label: 'Questions',          value: `${totalAnswered}/${questions.length}` },
+                    { label: 'Réponses correctes', value: correct,          color: '#22C55E' },
+                    { label: 'XP gagnés',          value: `+${totalXp}`,   color: '#F59E0B' },
+                    { label: 'Précision',          value: `${accuracy}%`,  color },
                 ].map(({ label, value, color: c }) => (
-                    <Box key={label} sx={{
-                        p: 2, borderRadius: 2, minWidth: 100,
-                        border: '1px solid', borderColor: 'divider',
-                        bgcolor: 'background.paper',
-                    }}>
+                    <Box key={label} sx={{ p: 2, borderRadius: 2, minWidth: 100, border: '1px solid', borderColor: 'divider', bgcolor: 'background.paper' }}>
                         <Typography variant="h5" fontWeight={800} sx={{ color: c || 'text.primary' }}>{value}</Typography>
                         <Typography variant="caption" color="text.secondary">{label}</Typography>
                     </Box>
@@ -424,13 +424,8 @@ function SessionSummary({ questions, answers, onRestart, wasValidated, onGoLesso
                 {questions.filter((q) => answers[q.id]).map((q, i) => {
                     const ans = answers[q.id];
                     return (
-                        <Box key={q.id} sx={{
-                            display: 'flex', alignItems: 'center', gap: 1.5,
-                            p: 1.5, mb: 1, borderRadius: 2, bgcolor: 'action.hover',
-                        }}>
-                            <Typography variant="caption" color="text.disabled" sx={{ minWidth: 20, flexShrink: 0 }}>
-                                {i + 1}.
-                            </Typography>
+                        <Box key={q.id} sx={{ display: 'flex', alignItems: 'center', gap: 1.5, p: 1.5, mb: 1, borderRadius: 2, bgcolor: 'action.hover' }}>
+                            <Typography variant="caption" color="text.disabled" sx={{ minWidth: 20, flexShrink: 0 }}>{i + 1}.</Typography>
                             {ans.isCorrect
                                 ? <CheckCircleRounded sx={{ color: '#22C55E', fontSize: 16, flexShrink: 0 }} />
                                 : <CancelRounded      sx={{ color: '#EF4444', fontSize: 16, flexShrink: 0 }} />
@@ -448,22 +443,14 @@ function SessionSummary({ questions, answers, onRestart, wasValidated, onGoLesso
                 <Button
                     variant="outlined" size="large" onClick={onGoLessons}
                     startIcon={<AutoStoriesRounded />}
-                    sx={{
-                        py: 1.5, px: 3, borderRadius: 2.5, fontWeight: 700,
-                        borderColor: '#22C55E', color: '#22C55E',
-                        '&:hover': { bgcolor: '#22C55E12', borderColor: '#22C55E' },
-                    }}
+                    sx={{ py: 1.5, px: 3, borderRadius: 2.5, fontWeight: 700, borderColor: '#22C55E', color: '#22C55E', '&:hover': { bgcolor: '#22C55E12', borderColor: '#22C55E' } }}
                 >
                     Voir les leçons
                 </Button>
                 <Button
                     variant="contained" size="large" onClick={onRestart}
                     startIcon={<RefreshRounded />}
-                    sx={{
-                        py: 1.5, px: 3, borderRadius: 2.5, fontWeight: 700,
-                        background: 'linear-gradient(135deg, #1A6EFF 0%, #0D4FC2 100%)',
-                        boxShadow: '0 8px 24px rgba(26,110,255,0.3)',
-                    }}
+                    sx={{ py: 1.5, px: 3, borderRadius: 2.5, fontWeight: 700, background: 'linear-gradient(135deg, #1A6EFF 0%, #0D4FC2 100%)', boxShadow: '0 8px 24px rgba(26,110,255,0.3)' }}
                 >
                     Nouveau quiz
                 </Button>
@@ -475,15 +462,21 @@ function SessionSummary({ questions, answers, onRestart, wasValidated, onGoLesso
 // ─── Main ─────────────────────────────────────────────────────────────────────
 
 export default function QuizPage() {
-    const dispatch  = useDispatch();
-    const navigate  = useNavigate();
-    const { questions, currentIndex, answers, sessionComplete, filters, loading, submitting, levelUp } =
-        useSelector((s) => s.quiz);
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+    // ── CHANGEMENT 2 : destructuring enrichi ──────────────────────────────────
+    const {
+        questions, currentIndex, answers,
+        sessionComplete, sessionResult,
+        filters, loading, submitting, completing,
+        levelUp,
+    } = useSelector((s) => s.quiz);
 
     const [stopDialogOpen,     setStopDialogOpen]     = useState(false);
     const [validateDialogOpen, setValidateDialogOpen] = useState(false);
     const [wasValidated,       setWasValidated]       = useState(false);
-    const [levelUpSnack,       setLevelUpSnack]       = useState(null); // { from, to }
+    const [levelUpSnack,       setLevelUpSnack]       = useState(null);
 
     const started         = questions.length > 0;
     const currentQuestion = questions[currentIndex];
@@ -492,18 +485,27 @@ export default function QuizPage() {
     const remaining       = questions.length - answeredCount;
     const allAnswered     = answeredCount === questions.length;
 
-    // Reset wasValidated on new session
+    // Reset wasValidated quand on revient au setup
     useEffect(() => {
         if (!started) setWasValidated(false);
     }, [started]);
 
-    // Déclencher le snackbar dès que levelUp est détecté dans le slice
+    // Snackbar level-up
     useEffect(() => {
         if (levelUp) {
             setLevelUpSnack(levelUp);
             dispatch(clearLevelUp());
         }
     }, [levelUp]);
+
+    // ── CHANGEMENT 3 : déclenche /complete dès que sessionComplete passe à true
+    useEffect(() => {
+        if (sessionComplete) {
+            dispatch(completeSession());
+        }
+    }, [sessionComplete]);
+
+    // ─────────────────────────────────────────────────────────────────────────
 
     if (loading) return (
         <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: 320, gap: 2 }}>
@@ -515,16 +517,23 @@ export default function QuizPage() {
     if (!started) return (
         <QuizSetup
             filters={filters}
-            onStart={() => dispatch(fetchQuestions(filters))}
+            // ── CHANGEMENT : onStart génère un lessonSlug synthétique ─────────
+            onStart={() => dispatch(fetchQuestions({
+                ...filters,
+                lessonSlug: `free-${filters.level}${filters.category ? '-' + filters.category : ''}`,
+            }))}
             loading={loading}
         />
     );
 
+    // ── CHANGEMENT 4 : passe sessionResult + completing à SessionSummary ──────
     if (sessionComplete) return (
         <SessionSummary
             questions={questions}
             answers={answers}
             wasValidated={wasValidated}
+            sessionResult={sessionResult}
+            completing={completing}
             onRestart={() => { dispatch(resetSession()); setWasValidated(false); }}
             onGoLessons={() => navigate('/lessons')}
         />
@@ -541,7 +550,6 @@ export default function QuizPage() {
     const handleValidate = () => {
         setValidateDialogOpen(false);
         setWasValidated(true);
-        // Force session complete with current answers
         dispatch(nextQuestion({ forceComplete: true }));
     };
 
@@ -551,22 +559,15 @@ export default function QuizPage() {
             <Box sx={{ mb: 3 }}>
                 <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 1.25 }}>
                     <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                        <Typography variant="body2" fontWeight={700} color="text.secondary">
-                            {currentIndex + 1}
-                        </Typography>
-                        <Typography variant="body2" color="text.disabled">
-                            / {questions.length}
-                        </Typography>
+                        <Typography variant="body2" fontWeight={700} color="text.secondary">{currentIndex + 1}</Typography>
+                        <Typography variant="body2" color="text.disabled">/ {questions.length}</Typography>
                     </Box>
                     <Box sx={{ display: 'flex', gap: 0.75, alignItems: 'center' }}>
                         <Chip
-                            label={currentQuestion?.level}
-                            size="small"
+                            label={currentQuestion?.level} size="small"
                             sx={{ fontWeight: 800, fontSize: 11, height: 22, bgcolor: levelColor + '18', color: levelColor, border: `1px solid ${levelColor}44` }}
                         />
                         <Chip label={currentQuestion?.category} size="small" variant="outlined" sx={{ fontWeight: 600, fontSize: 11, height: 22 }} />
-
-                        {/* Stop button */}
                         <Button
                             size="small" color="error" variant="outlined"
                             startIcon={<StopRounded />}
@@ -575,8 +576,6 @@ export default function QuizPage() {
                         >
                             Arrêter
                         </Button>
-
-                        {/* Validate button (shown when at least 1 question answered) */}
                         {answeredCount > 0 && !allAnswered && (
                             <Button
                                 size="small" color="success" variant="outlined"
@@ -609,12 +608,12 @@ export default function QuizPage() {
 
             {/* Question card */}
             <Card
-                elevation={0}
-                sx={{ border: '1.5px solid', borderColor: 'divider', borderRadius: 3, overflow: 'visible',
+                elevation={0} key={currentIndex}
+                sx={{
+                    border: '1.5px solid', borderColor: 'divider', borderRadius: 3, overflow: 'visible',
                     animation: 'cardIn 0.22s ease',
                     '@keyframes cardIn': { from: { opacity: 0, transform: 'translateY(6px)' }, to: { opacity: 1, transform: 'translateY(0)' } },
                 }}
-                key={currentIndex}
             >
                 <Box sx={{ height: 4, bgcolor: levelColor, borderRadius: '12px 12px 0 0' }} />
                 <CardContent sx={{ p: { xs: 2.5, sm: 3.5 } }}>
@@ -694,7 +693,7 @@ export default function QuizPage() {
                 remaining={remaining}
             />
 
-            {/* Level-up notification */}
+            {/* Level-up snackbar */}
             <Snackbar
                 open={!!levelUpSnack}
                 autoHideDuration={6000}
@@ -702,15 +701,10 @@ export default function QuizPage() {
                 anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
             >
                 <Alert
-                    severity="success"
-                    variant="filled"
+                    severity="success" variant="filled"
                     icon={<TrendingUpRounded />}
                     onClose={() => setLevelUpSnack(null)}
-                    sx={{
-                        fontWeight: 700, fontSize: 15,
-                        bgcolor: '#8B5CF6',
-                        '& .MuiAlert-icon': { alignItems: 'center' },
-                    }}
+                    sx={{ fontWeight: 700, fontSize: 15, bgcolor: '#8B5CF6', '& .MuiAlert-icon': { alignItems: 'center' } }}
                 >
                     🎉 Niveau débloqué ! Tu passes de <strong style={{ margin: '0 4px' }}>{levelUpSnack?.from}</strong> à <strong style={{ margin: '0 4px' }}>{levelUpSnack?.to}</strong>
                 </Alert>

@@ -8,6 +8,10 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+// ─────────────────────────────────────────────────────────────────────────────
+// USERS
+// ─────────────────────────────────────────────────────────────────────────────
+
 model User {
   id        Int       @id @default(autoincrement())
   email     String    @unique @db.VarChar(191)
@@ -27,16 +31,21 @@ model User {
   resetToken        String?   @db.VarChar(64)
   resetTokenExpires DateTime? @db.DateTime(3)
 
-  attempts Attempt[]
-  progress UserProgress[]
+  attempts      Attempt[]
+  progress      UserProgress[]
+  quizSessions  QuizSession[]
 
   @@map("users")
 }
 
+// ─────────────────────────────────────────────────────────────────────────────
+// LESSON PROGRESS
+// ─────────────────────────────────────────────────────────────────────────────
+
 model UserProgress {
   id          Int            @id @default(autoincrement())
   userId      Int            @map("user_id")
-  lessonId    String         @map("lesson_id") @db.VarChar(100) // slug du JSON
+  lessonId    String         @map("lesson_id") @db.VarChar(100)
   status      ProgressStatus @default(NOT_STARTED)
   xpEarned    Int            @default(0) @map("xp_earned")
   completedAt DateTime?      @map("completed_at") @db.DateTime(3)
@@ -48,11 +57,18 @@ model UserProgress {
   @@map("user_progress")
 }
 
+// ─────────────────────────────────────────────────────────────────────────────
+// QUESTIONS
+// ─────────────────────────────────────────────────────────────────────────────
+
 model Question {
   id            Int          @id @default(autoincrement())
   type          QuestionType
   level         Level
   category      Category
+  // Lie la question à une lesson précise (slug du JSON).
+  // NULL = question générique (mode entraînement libre).
+  lessonSlug    String?      @map("lesson_slug") @db.VarChar(100)
   question      String       @db.Text
   choices       Json?
   correctAnswer String       @map("correctAnswer") @db.Text
@@ -60,10 +76,17 @@ model Question {
   points        Int          @default(10)
   createdAt     DateTime     @default(now()) @db.DateTime(3)
 
-  attempts Attempt[]
+  attempts      Attempt[]
+  quizAttempts  QuizAttempt[]
 
+  @@index([level, category])
+  @@index([lessonSlug])
   @@map("questions")
 }
+
+// ─────────────────────────────────────────────────────────────────────────────
+// TENTATIVES LIBRES (ancien système conservé pour compatibilité)
+// ─────────────────────────────────────────────────────────────────────────────
 
 model Attempt {
   id         Int      @id @default(autoincrement())
@@ -80,10 +103,66 @@ model Attempt {
   @@map("attempts")
 }
 
+// ─────────────────────────────────────────────────────────────────────────────
+// SESSIONS DE QUIZ (nouveau — une session = un quiz complet lié à une lesson)
+// ─────────────────────────────────────────────────────────────────────────────
+
+model QuizSession {
+  id          String            @id @default(uuid()) @db.VarChar(36)
+  userId      Int               @map("user_id")
+  lessonSlug  String            @map("lesson_slug") @db.VarChar(100)
+  status      QuizSessionStatus @default(IN_PROGRESS)
+  score       Int               @default(0)
+  maxScore    Int               @default(0)             @map("max_score")
+  // Snapshot ordonné des IDs de questions pour cette session
+  questionIds Json              @map("question_ids")
+  xpAwarded   Boolean           @default(false) @map("xp_awarded")
+  startedAt   DateTime          @default(now()) @map("started_at") @db.DateTime(3)
+  completedAt DateTime?         @map("completed_at") @db.DateTime(3)
+
+  user     User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  attempts QuizAttempt[]
+
+  @@index([userId, lessonSlug])
+  @@index([status])
+  @@map("quiz_sessions")
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// RÉPONSES AU SEIN D'UNE SESSION
+// ─────────────────────────────────────────────────────────────────────────────
+
+model QuizAttempt {
+  id         Int      @id @default(autoincrement())
+  sessionId  String   @map("session_id") @db.VarChar(36)
+  questionId Int      @map("question_id")
+  userAnswer String   @db.Text
+  isCorrect  Boolean
+  score      Int      @default(0)
+  answeredAt DateTime @default(now()) @map("answered_at") @db.DateTime(3)
+
+  session  QuizSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  question Question    @relation(fields: [questionId], references: [id], onDelete: Cascade)
+
+  // Un user ne peut répondre qu'une seule fois à chaque question par session
+  @@unique([sessionId, questionId])
+  @@map("quiz_attempts")
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// ENUMS
+// ─────────────────────────────────────────────────────────────────────────────
+
 enum ProgressStatus {
   NOT_STARTED
   IN_PROGRESS
   COMPLETED
+}
+
+enum QuizSessionStatus {
+  IN_PROGRESS
+  COMPLETED
+  ABANDONED
 }
 
 enum QuestionType {
